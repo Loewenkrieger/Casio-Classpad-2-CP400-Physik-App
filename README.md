@@ -3,6 +3,8 @@
 Eine kompakte Physik-Lernapp für den Casio ClassPad II. Sie enthält
 Theorieartikel und Formelsammlungen für den Physik-Leistungskurs.
 
+(Nutzung im Prüfunsmodus nicht möglich. Wenn ihr es ohne Prüfungsmodus doch in der Klausur nutzt ist es euer Problem wenn ihr erwischt werdet)
+
 Die App läuft mit **PythonExtra** über den Community-Launcher
 **Hollyhock 2**.
 
