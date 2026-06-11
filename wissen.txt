@@ -1,0 +1,5213 @@
+THEORIE: SACHSEN LK 11 UEBERBLICK
+Dieses Programm ist nach typischen Themen des saechsischen Physik-LK Klasse 11 aufgebaut:
+- Erhaltungssaetze, Energie, Arbeit, Leistung, Impuls
+- Kinematik geradliniger Bewegungen
+- Newtonsche Gesetze
+- Modellbildung / Simulation
+- Krummlinige Bewegungen, Kreisbewegung, Wurf
+- Einblick Relativitaet
+- Elektrisches Feld
+- Magnetisches Feld
+- Geladene Teilchen in Feldern
+- Elektromagnetische Induktion
+- Praktikum / Messunsicherheiten
+
+Fokus fuer deine aktuelle Klausur: Induktion, Lenz, Transformator, Selbstinduktion, Wechselstrom.
+THEORIE: MECHANIK SACHSEN LK 11
+Kernidee:
+Mechanik beschreibt Bewegungen und deren Ursachen. Im LK sind besonders Energie, Impuls,
+Kraefte, geradlinige Bewegungen, Kreisbewegung und Wurfbewegungen wichtig.
+
+1 Energie:
+- Bewegungsenergie: E_kin = 0.5*m*v^2
+- Lageenergie: E_pot = m*g*h
+- Spannenergie: E_sp = 0.5*D*s^2
+- Energieerhaltung bedeutet: Energie verschwindet nicht, sie wird nur umgewandelt.
+
+2 Arbeit und Leistung:
+- Arbeit ist Energieuebertragung durch eine Kraft entlang eines Weges: W = F*s*cos(alpha)
+- Leistung ist Energie pro Zeit: P = W/t
+- Wirkungsgrad: eta = E_nutz/E_zu oder P_nutz/P_zu
+
+3 Kinematik:
+- Gleichfoermig: s = v*t
+- Gleichmaessig beschleunigt: v = v0 + a*t und s = s0 + v0*t + 0.5*a*t^2
+- Freier Fall: h = 0.5*g*t^2, v = sqrt(2*g*h)
+
+4 Kraefte:
+- Newton: F = m*a
+- Gewichtskraft: F_G = m*g
+- Reibungskraft: F_R = mu*F_N
+- Kraefte sind vektoriell: Richtung ist wichtig.
+
+5 Kreisbewegung und Wurf:
+- Kreis: v = 2*pi*r/T, a_r = v^2/r, F_r = m*v^2/r
+- Wurfbewegungen zerlegt man in x- und y-Richtung.
+
+Rechnen: Hauptmenue -> 2 Rechnen -> 5 Mechanik
+THEORIE: ELEKTRISCHES FELD / KONDENSATOR
+Kernidee:
+Ein elektrisches Feld beschreibt, welche Kraft auf eine Ladung wirkt.
+
+1 Elektrische Feldstaerke:
+- E = F/q
+- Im homogenen Plattenfeld gilt: E = U/d
+- Einheit: V/m oder N/C
+
+2 Kraft und Energie:
+- Kraft auf Ladung: F = q*E
+- Energie/Arbeit beim Durchlaufen einer Spannung: W = q*U
+- Fuer geladene Teilchen wird daraus oft Bewegungsenergie.
+
+3 Coulomb-Kraft:
+- Zwischen Punktladungen wirkt F = k*|q1*q2|/r^2
+- Gleiche Vorzeichen stossen ab, ungleiche ziehen an.
+
+4 Kondensator:
+- Speichert Ladung und Energie im elektrischen Feld.
+- Kapazitaet: C = Q/U
+- Plattenkondensator: C = eps0*epsr*A/d
+- Energie: E_C = 0.5*C*U^2
+
+Rechnen: Hauptmenue -> 2 Rechnen -> 6 Elektrisches Feld / Kondensator
+THEORIE: MAGNETFELD / GELADENE TEILCHEN
+Kernidee:
+Magnetfelder wirken auf bewegte Ladungen und stromdurchflossene Leiter.
+
+1 Lorentzkraft auf Ladungen:
+- F_L = |q|*v*B*sin(alpha)
+- Nur der Anteil der Bewegung senkrecht zum Magnetfeld fuehrt zur Kraft.
+- Die Kraft steht senkrecht zu Bewegungsrichtung und Magnetfeld.
+
+2 Kraft auf Leiter:
+- F = B*I*l*sin(alpha)
+- Bei 90 Grad ist die Kraft maximal.
+
+3 Spulenfeld:
+- Magnetische Feldstaerke: H = N*I/l
+- Magnetische Flussdichte: B = mu0*mu_r*H
+- Luft: mu_r etwa 1, Eisen: mu_r viel groesser.
+
+4 Kreisbahn geladener Teilchen:
+- Lorentzkraft kann Zentripetalkraft sein.
+- r = m*v/(|q|*B)
+- Daraus lassen sich Masse, Ladung oder Geschwindigkeit bestimmen.
+
+Rechnen: Hauptmenue -> 2 Rechnen -> 7 Magnetfeld / geladene Teilchen
+THEORIE: TEILCHENBESCHLEUNIGER
+Kernidee:
+Geladene Teilchen werden durch elektrische Felder beschleunigt. Magnetfelder lenken sie oft auf Bahnen.
+
+Warum ist das wichtig?
+Das braucht man in Medizin, Forschung, Strahlentherapie und grossen Anlagen wie Synchrotrons.
+
+Wichtige Formeln:
+- E_kin = q * U
+- klassisch: v = sqrt(2*q*U/m)
+- relativistisch: E_kin = (gamma-1)*m*c^2
+
+Typische Aufgaben:
+- Geschwindigkeit nach Beschleunigungsspannung berechnen
+- klassisch und relativistisch vergleichen
+- Energie in eV/J umrechnen
+
+Ganz simpel gesagt:
+Ein elektrisches Feld ist wie ein Hang fuer Ladungen: Es gibt ihnen Energie. Bei sehr schnellen Teilchen reicht die klassische Formel nicht mehr.
+THEORIE: ELEKTRON IM B-FELD
+Kernidee:
+Ein bewegtes geladenes Teilchen erfaehrt im Magnetfeld die Lorentzkraft. Senkrecht zum Feld entsteht eine Kreisbahn.
+
+Warum ist das wichtig?
+Damit kann man z.B. die spezifische Ladung e/m von Elektronen bestimmen oder Teilchenbahnen erklaeren.
+
+Wichtige Formeln:
+- F_L = |q|*v*B
+- r = m*v/(|q|*B)
+- e/m = 2*U/(B^2*r^2)
+
+Typische Aufgaben:
+- Kreisbahnradius berechnen
+- spezifische Ladung bestimmen
+- Schraubenbahn erklaeren
+
+Ganz simpel gesagt:
+Das Magnetfeld zieht nicht schneller oder langsamer, sondern immer seitlich. Deshalb wird aus gerader Bewegung eine Kreis- oder Schraubenbahn.
+THEORIE: MASSENSPEKTROMETER / GESCHWINDIGKEITSFILTER
+Kernidee:
+Teilchen werden nach Geschwindigkeit und Masse-Ladungs-Verhaeltnis sortiert.
+
+Warum ist das wichtig?
+Damit kann man Ionen oder Molekuele unterscheiden, z.B. in Chemie, Medizin oder Klimaforschung.
+
+Wichtige Formeln:
+- Geschwindigkeitsfilter: v = E/B
+- Kreisbahn: r = m*v/(q*B)
+- m/q = r*B/v
+
+Typische Aufgaben:
+- Geschwindigkeit im Filter berechnen
+- Masse aus Radius bestimmen
+- erklaeren, warum schwere Teilchen anders abgelenkt werden
+
+Ganz simpel gesagt:
+Der Filter laesst nur Teilchen mit passender Geschwindigkeit geradeaus. Danach zeigt der Kreisradius, wie schwer sie im Vergleich zur Ladung sind.
+THEORIE: INDUKTION
+Kernidee:
+Eine Spannung wird induziert, wenn sich der magnetische Fluss durch eine Schleife/Spule aendert.
+
+Allgemeines Induktionsgesetz:
+U_ind = -N * Delta(Phi) / Delta(t)
+Phi = B * A * cos(alpha)
+
+Die Spannung wird groesser, wenn sich der Fluss schneller aendert oder wenn die Spule mehr Windungen hat.
+Das Minuszeichen steht fuer die Lenzsche Regel.
+THEORIE: IQB PARAMETER A-F
+A Windungszahl N: U_ind ist proportional zu N.
+B Flaeche A: U_ind ist proportional zur wirksamen Flaeche.
+C Geschwindigkeit v: Bei Bewegungsinduktion waechst U_ind mit v.
+D Winkel alpha: U_ind haengt ueber cos(alpha) ab.
+E Amplitude B_max: groessere Feldamplitude -> groessere Spannung.
+F Frequenz f: hoehere Frequenz -> schnellere Flussaenderung -> groessere Spannung.
+
+Bei Dreieckssignalen ist die Induktionsspannung abschnittsweise konstant.
+Bei Sinussignalen ist die Induktionsspannung zeitlich verschoben und wieder sinusfoermig/cosinusfoermig.
+THEORIE: INDUKTION UND ABLEITUNGEN
+Kernidee:
+Induktionsspannung haengt davon ab, wie schnell sich der magnetische Fluss aendert.
+
+Warum ist das wichtig?
+Bei LK-Aufgaben kommen oft Steigungen, Ableitungen und Produktregel vor.
+
+Wichtige Formeln:
+- U_ind = -N*dPhi/dt
+- Phi = B*A
+- d(B*A)/dt = A*dB/dt + B*dA/dt
+- Bei B=Bmax*sin(w*t): U ~ cos(w*t)
+
+Typische Aufgaben:
+- U(t)-Diagramme aus B(t)
+- Dreiecksignal -> konstante U-Abschnitte
+- Generator mit Sinus
+
+Ganz simpel gesagt:
+Nicht der Fluss selbst erzeugt Spannung, sondern seine Aenderung. Je steiler das Diagramm, desto groesser die Spannung.
+THEORIE: LENZSCHE REGEL
+Merksatz:
+Der Induktionsstrom ist so gerichtet, dass er seiner Ursache entgegenwirkt.
+
+Typische Faelle:
+- Magnet wird in Ring hineingeschoben -> Ring wird abgestossen.
+- Magnet wird herausgezogen -> Ring wird angezogen.
+- Strom in Spule wird eingeschaltet -> Ring wird abgestossen.
+- Strom wird ausgeschaltet -> Ring wird angezogen.
+- Metall im Magnetfeld bewegt sich -> Wirbelstroeme bremsen die Bewegung.
+
+Das ist Energieerhaltung: Der Induktionsstrom macht keine Bewegung von allein staerker.
+THEORIE: WIRBELSTROEME ANWENDUNGEN
+Kernidee:
+Wirbelstroeme sind geschlossene induzierte Stroeme in Metallflaechen. Sie entstehen bei Aenderung des magnetischen Flusses.
+
+Warum ist das wichtig?
+Sie bremsen Bewegungen, erzeugen Waerme und koennen fuer Motoren oder Magnetschweben genutzt werden.
+
+Wichtige Formeln:
+- U_ind = -N*Delta(Phi)/Delta(t)
+- I = U/R
+- P = I^2*R
+- F = B*I*l
+
+Typische Aufgaben:
+- Wirbelstrombremse erklaeren
+- Aluring/Induktionskanone
+- Verlustleistung berechnen
+- warum Trafokerne geblaettert sind
+
+Ganz simpel gesagt:
+Metall wird quasi zu vielen kleinen Stromschleifen. Diese Stroeme erzeugen Magnetfelder, die der Ursache entgegenwirken.
+THEORIE: SELBSTINDUKTION
+Wenn sich die Stromstaerke durch eine Spule aendert, aendert sich ihr Magnetfeld.
+Dadurch induziert die Spule in sich selbst eine Spannung.
+
+Formel:
+U_ind = -L * Delta(I) / Delta(t)
+
+Bedeutung:
+- Beim Einschalten bremst die Spule den Stromanstieg.
+- Beim Ausschalten versucht die Spule den Strom weiterfliessen zu lassen.
+- Dabei koennen kurzzeitig hohe Spannungen entstehen.
+- Energie steckt im Magnetfeld: E_mag = 0.5 * L * I^2
+THEORIE: TRANSFORMATOR
+Ein Transformator besteht aus Primaerspule und Sekundaerspule an einem gemeinsamen Kern.
+Nur Wechselstrom bzw. ein veraenderlicher Strom erzeugt dauerhaft Induktion im Trafo.
+
+Idealer Transformator:
+U2/U1 = N2/N1
+U1*I1 = U2*I2
+
+Merken:
+- N2 > N1 -> Spannung wird hochtransformiert.
+- N2 < N1 -> Spannung wird heruntertransformiert.
+- Wenn Spannung steigt, sinkt bei idealer Leistungserhaltung die Stromstaerke.
+- Blechkern reduziert Wirbelstromverluste.
+THEORIE: TRANSFORMATOR UND ENERGIEUEBERTRAGUNG
+Kernidee:
+Ein Trafo uebertraegt Energie durch ein wechselndes Magnetfeld von einer Spule zur anderen.
+
+Warum ist das wichtig?
+Er macht Spannungen groesser oder kleiner und ist zentral fuer Stromnetze, Ladegeraete und Schweissgeraete.
+
+Wichtige Formeln:
+- U2/U1 = N2/N1
+- I2/I1 = N1/N2
+- ideal: P1 = P2
+- Verlust: P_V = I^2*R
+
+Typische Aufgaben:
+- Sekundaerspannung berechnen
+- Stromuebersetzung
+- Wirkungsgrad
+- Warum Hochspannung beim Transport?
+
+Ganz simpel gesagt:
+Der Trafo tauscht Spannung gegen Stromstaerke. Hohe Spannung bedeutet kleine Stromstaerke, dadurch weniger Leitungsverluste.
+THEORIE WSK: OHMSCHES BAUELEMENT
+Simple Erklaerung:
+Ein ohmscher Widerstand verhaelt sich im Wechselstrom fast wie im Gleichstrom.
+Wenn die Spannung groesser wird, wird sofort auch der Strom groesser.
+Es gibt keine zeitliche Verzoegerung zwischen U(t) und I(t).
+
+Wichtig:
+- keine Phasenverschiebung: Delta phi = 0 Grad
+- U(t) = U0 * sin(omega*t)
+- I(t) = I0 * sin(omega*t)
+- I = U / R
+- R ist frequenzunabhaengig
+
+Merksatz:
+Beim ohmschen Widerstand laufen Strom und Spannung gleichzeitig.
+
+Im Rechner findest du das hier:
+Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 10 Ohmsches Bauelement im WSK
+THEORIE WSK: KONDENSATOR
+Simple Erklaerung:
+Ein Kondensator wird bei Wechselspannung staendig geladen, entladen
+und danach mit umgekehrter Polung wieder geladen.
+Damit Spannung an den Platten entstehen kann, muss zuerst Ladung fliessen.
+
+Phasenlage:
+- Der Strom eilt der Spannung um pi/2 bzw. 90 Grad voraus.
+- Merksatz: Kondensator, da eilt der Strom vor.
+
+Kapazitiver Blindwiderstand:
+X_C = 1 / (2*pi*f*C)
+
+Abhaengigkeiten:
+- groessere Frequenz f -> kleineres X_C
+- groessere Kapazitaet C -> kleineres X_C
+- Bei hoher Frequenz kommt Strom besser durch den Kondensator.
+
+Im Rechner findest du das hier:
+Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 11 Kondensator im WSK
+THEORIE WSK: SPULE
+Simple Erklaerung:
+Eine Spule wehrt sich gegen schnelle Stromveraenderungen.
+Bei Wechselstrom aendert sich der Strom staendig, also wirkt Selbstinduktion.
+
+Phasenlage:
+- Der Strom laeuft der Spannung um pi/2 bzw. 90 Grad hinterher.
+- Merksatz: Induktivitaeten, da wo Stroeme sich verspaeten.
+
+Induktiver Blindwiderstand:
+X_L = 2*pi*f*L
+
+Abhaengigkeiten:
+- groessere Frequenz f -> groesseres X_L
+- groessere Induktivitaet L -> groesseres X_L
+- Bei hoher Frequenz sperrt die Spule staerker.
+
+Im Rechner findest du das hier:
+Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 12 Spule im WSK
+THEORIE WSK: WIRK- UND BLINDWIDERSTAND
+Simple Erklaerung:
+Nicht jeder Widerstand verbraucht dauerhaft Energie.
+
+Wirkwiderstand R:
+- ohmscher Widerstand
+- elektrische Energie wird dauerhaft in Waerme umgewandelt
+- Beispiel: Heizdraht, Gluehlampe, normaler Widerstand
+
+Blindwiderstand X_L oder X_C:
+- Spule und Kondensator speichern Energie kurzzeitig im Feld
+- danach geben sie die Energie wieder an die Quelle zurueck
+- deshalb heisst es Blindwiderstand
+
+Spule: Energie im Magnetfeld
+Kondensator: Energie im elektrischen Feld
+
+Im Rechner findest du das hier:
+Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 13 Wirk-/Blindwiderstand Energie-Check
+THEORIE WSK: ZEIGERDIAGRAMM
+Simple Erklaerung:
+Im Wechselstromkreis kann man Widerstaende wie Pfeile zeichnen.
+Warum? Weil Strom und Spannung phasenverschoben sein koennen.
+
+Zeiger-Regeln:
+- R zeigt nach rechts auf der x-Achse
+- X_L zeigt nach oben
+- X_C zeigt nach unten
+- X = X_L - X_C ist der gesamte Blindanteil
+- Z ist der schraege resultierende Pfeil
+
+Formeln:
+Z = sqrt(R^2 + (X_L - X_C)^2)
+tan(Delta phi) = (X_L - X_C) / R
+
+Deutung:
+- X_L > X_C: Schaltung wirkt induktiv
+- X_C > X_L: Schaltung wirkt kapazitiv
+- X_L = X_C: Resonanz, Blindanteil 0
+
+Im Rechner findest du das hier:
+Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 14 Zeigerdiagramm / Phasenwinkel
+THEORIE WSK: RLC-REIHE / SIEBKREIS
+Simple Erklaerung:
+In einer Reihenschaltung aus R, L und C ist der Strom ueberall gleich.
+Aber die Spannungen an R, L und C sind nicht alle gleichzeitig maximal.
+Darum addiert man nicht einfach alle Widerstaende normal, sondern vektoriell.
+
+Formeln:
+X_L = 2*pi*f*L
+X_C = 1/(2*pi*f*C)
+Z = sqrt(R^2 + (X_L - X_C)^2)
+I_eff = U_eff / Z
+
+Frequenzverhalten:
+- bei kleiner f sperrt der Kondensator stark
+- bei grosser f sperrt die Spule stark
+- bei Resonanz ist Z minimal und I_eff maximal
+
+Siebkreis:
+Ein RLC-Kreis kann bestimmte Frequenzen besonders gut durchlassen.
+Anwendung: Frequenzfilter, Signaltechnik, Lautsprecherweichen.
+
+Im Rechner findest du das hier:
+Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 15 RLC-Reihe komplett
+THEORIE WSK: RESONANZ / THOMSON
+Simple Erklaerung:
+Bei Resonanz gleichen sich Spule und Kondensator im Blindwiderstand aus.
+Dann gilt X_L = X_C, also ist der Blindanteil null.
+
+Formeln:
+omega0 = 1 / sqrt(L*C)
+f0 = 1 / (2*pi*sqrt(L*C))
+T = 2*pi*sqrt(L*C)
+
+Bedeutung:
+- f0 ist die Eigenfrequenz
+- bei f0 ist im Serienkreis der Strom maximal
+- die Schaltung kann diese Frequenz herausfiltern
+
+Im Rechner findest du das hier:
+Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 16 Thomson / Resonanz
+THEORIE WSK: ENERGIEUMWANDLUNG IM RLC
+Simple Erklaerung:
+Im RLC-Kreis passiert Energieaustausch:
+- Widerstand: Energie wird zu Waerme
+- Kondensator: Energie steckt im elektrischen Feld
+- Spule: Energie steckt im Magnetfeld
+
+Formeln:
+P_R = I_eff^2 * R
+E_C = 0.5 * C * U^2
+E_L = 0.5 * L * I^2
+
+Wichtig:
+Blindwiderstaende speichern Energie nur zwischen und geben sie wieder zurueck.
+
+Im Rechner findest du das hier:
+Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 13 Wirk-/Blindwiderstand Energie-Check
+THEORIE: KONZEPTE ELEKTROMAGNETISMUS
+Kernidee:
+Elektrische und magnetische Felder haengen zusammen. Bewegte Ladungen erzeugen Magnetfelder und erfahren magnetische Kraefte.
+
+Warum ist das wichtig?
+Das erklaert Stromleiter, Lorentzkraft, Elektromotor, Induktion und viele scheinbar verschiedene Effekte als ein Gesamtbild.
+
+Wichtige Formeln:
+- F_el = q*E
+- F_mag = q*v*B*sin(alpha)
+- F_Leiter = B*I*l*sin(alpha)
+
+Typische Aufgaben:
+- Richtung der Kraft bestimmen
+- bewegte Ladung im Feld
+- warum Stromleiter sich anziehen/abstossen
+
+Ganz simpel gesagt:
+Ein ruhender Beobachter sieht Magnetismus, wenn Ladungen bewegt sind. Elektromagnetismus ist ein zusammenhaengendes Paket.
+THEORIE: PRAKTIKUM / MESSUNSICHERHEITEN
+Kernidee:
+Im Praktikum geht es nicht nur um Ergebnisse, sondern auch darum, wie verlaesslich sie sind.
+
+Wichtige Begriffe:
+- Messwert: ein einzelner gemessener Wert
+- Mittelwert: Durchschnitt mehrerer Messwerte
+- Absolute Abweichung: Betrag der Differenz
+- Relative Abweichung: absolute Abweichung geteilt durch Bezugswert
+- Prozentuale Abweichung: relative Abweichung * 100
+
+Fehlerfortpflanzung grob:
+- Bei Summe/Differenz addiert man absolute Unsicherheiten.
+- Bei Produkt/Quotient addiert man relative Unsicherheiten.
+
+Rechnen: Hauptmenue -> 2 Rechnen -> 11 Praktikum / Messwerte
+THEORIE: EINHEITEN UND TYPISCHE FEHLER
+Einheiten sind in Physik fast genauso wichtig wie Formeln.
+
+Haeufige Umrechnungen:
+- mT -> T: durch 1000 teilen
+- cm^2 -> m^2: durch 10000 teilen
+- cm -> m: durch 100 teilen
+- mm -> m: durch 1000 teilen
+- mA -> A: durch 1000 teilen
+- microF -> F: mal 0.000001
+- mH -> H: durch 1000 teilen
+- km/h -> m/s: durch 3.6 teilen
+- eV -> J: mal Elementarladung e
+
+Typische Klausurfehler:
+- B in mT eingesetzt statt in T
+- Flaeche in cm^2 eingesetzt statt in m^2
+- U_eff und U_max verwechselt
+- T als Periodendauer mit T als Tesla verwechselt
+- L als Induktivitaet mit l als Laenge verwechselt
+- Vorzeichen beim Induktionsgesetz falsch interpretiert
+
+Rechnen/Umrechnen: Hauptmenue -> 2 Rechnen -> 14 Einheiten / Checks
+LEHRER-MATERIAL: KOMPLETTUEBERBLICK
+Diese Erweiterung deckt die hochgeladenen Online-Arbeitsblaetter ab:
+- Teilchenbeschleuniger: Linearbeschleuniger, Zyklotron, Synchrotron, relativistische Energie
+- Wirbelstroeme: Bremsen, Schweben, linearer Induktionsmotor, Induktionsmotor
+- Elektron im B-Feld: Kreisbahn, spezifische Ladung e/m, Schraubenbahn
+- Ableitungsregeln Induktion: dB/dt, Produktregel, Generator, Flaechenaenderung
+- Konzepte Elektromagnetismus: Zusammenhang E-Feld, B-Feld, bewegte Ladungen
+- Lenzsche Regel: Richtung des Induktionsstroms, Gegenwirkung, Wirbelstrombremse
+- Transformator: Spannung, Strom, Leistung, Verluste, Energieuebertragung
+- Massenspektrometer und Geschwindigkeitsfilter: v=E/B, Kreisbahn, Trennung nach m/q
+- Aufgaben Magnetismus/Induktion: Spule, Leiterkraft, parallele Leiter, Induktivitaet
+
+Ziel: Nicht nur rechnen, sondern auch verstehen, was physikalisch passiert.
+Symbol: mu0
+Name: magnetische Feldkonstante
+Einheit: T*m/A oder N/A^2
+
+Bedeutung:
+Naturkonstante fuer magnetische Felder. Sie verbindet H und B im Vakuum bzw. in Luft naeherungsweise.
+
+Wie bekommt man die Groesse?
+Als Konstante: mu0 = 4*pi*10^-7.
+
+Wichtige Formeln:
+- B = mu0*mu_r*H
+- B = mu0*mu_r*N*I/l
+- L = mu0*mu_r*N^2*A/l
+
+Typische Fehler:
+- mu0 nicht mit mu_r verwechseln
+- mu0 ist konstant, mu_r haengt vom Material ab
+Symbol: mu_r
+Name: relative Permeabilitaet
+Einheit: 1
+
+Bedeutung:
+Materialfaktor, der beschreibt, wie stark ein Material ein Magnetfeld gegenueber Vakuum/Luft verstaerkt.
+
+Wie bekommt man die Groesse?
+Meist gegeben. Luft etwa 1, Eisen deutlich groesser.
+
+Wichtige Formeln:
+- B = mu0*mu_r*H
+- L = mu0*mu_r*N^2*A/l
+
+Typische Fehler:
+- bei Eisen nicht automatisch konstant fuer alle Feldstaerken
+- ohne Eisenkern oft mu_r = 1
+Symbol: H
+Name: magnetische Feldstaerke
+Einheit: A/m
+
+Bedeutung:
+Beschreibt die magnetisierende Wirkung einer Spule oder eines Stroms.
+
+Wie bekommt man die Groesse?
+Bei langer Spule: H = N*I/l.
+
+Wichtige Formeln:
+- H = N*I/l
+- B = mu0*mu_r*H
+
+Typische Fehler:
+- H ist nicht dasselbe wie B
+- Laenge l in Meter einsetzen
+Symbol: B
+Name: magnetische Flussdichte
+Einheit: Tesla [T]
+
+Bedeutung:
+Beschreibt die Staerke des Magnetfeldes, die fuer Lorentzkraft und magnetischen Fluss wichtig ist.
+
+Wie bekommt man die Groesse?
+Aus Messwert, Spulenformel oder B=Phi/A.
+
+Wichtige Formeln:
+- B = mu0*mu_r*H
+- Phi = B*A*cos(alpha)
+- F_L = q*v*B*sin(alpha)
+
+Typische Fehler:
+- mT in T umrechnen
+- B nicht mit H verwechseln
+Symbol: Phi
+Name: magnetischer Fluss
+Einheit: Weber [Wb]
+
+Bedeutung:
+Magnetfeldanteil durch eine Flaeche. Aendert sich Phi, entsteht Induktion.
+
+Wie bekommt man die Groesse?
+Phi = B*A*cos(alpha).
+
+Wichtige Formeln:
+- Phi = B*A*cos(alpha)
+- U_ind = -N*Delta(Phi)/Delta(t)
+
+Typische Fehler:
+- Winkel vergessen
+- nur wirksame Flaeche verwenden
+Symbol: eps0
+Name: elektrische Feldkonstante
+Einheit: F/m
+
+Bedeutung:
+Naturkonstante fuer elektrische Felder und Kondensatoren.
+
+Wie bekommt man die Groesse?
+Als Konstante: eps0 = 8.854*10^-12 F/m.
+
+Wichtige Formeln:
+- C = eps0*eps_r*A/d
+- k = 1/(4*pi*eps0)
+
+Typische Fehler:
+- eps0 nicht mit eps_r verwechseln
+Symbol: eps_r
+Name: relative Permittivitaet
+Einheit: 1
+
+Bedeutung:
+Materialfaktor eines Dielektrikums im Kondensator. Erhoeht die Kapazitaet.
+
+Wie bekommt man die Groesse?
+Meist gegeben, Luft etwa 1.
+
+Wichtige Formeln:
+- C = eps0*eps_r*A/d
+
+Typische Fehler:
+- eps_r ist nicht mu_r
+- Material beachten
+Symbol: rho
+Name: spezifischer elektrischer Widerstand
+Einheit: Ohm*m oder Ohm*mm^2/m
+
+Bedeutung:
+Materialeigenschaft eines Leiters. Gibt an, wie stark das Material Strom behindert.
+
+Wie bekommt man die Groesse?
+Aus Leiterwiderstand, Laenge und Querschnitt.
+
+Wichtige Formeln:
+- R = rho*l/A
+- rho = R*A/l
+
+Typische Fehler:
+- Einheiten von A und l muessen zusammenpassen
+- Ohm*m und Ohm*mm^2/m nicht vermischen
+Symbol: e
+Name: Elementarladung
+Einheit: C
+
+Bedeutung:
+Betrag der Ladung eines Protons bzw. Elektrons.
+
+Wie bekommt man die Groesse?
+Konstante: e = 1.602*10^-19 C.
+
+Wichtige Formeln:
+- W = q*U
+- 1 eV = e*1 V
+
+Typische Fehler:
+- Elektron hat Ladung -e, der Betrag ist e
+Symbol: c
+Name: Lichtgeschwindigkeit
+Einheit: m/s
+
+Bedeutung:
+Grenzgeschwindigkeit nach der Relativitaetstheorie.
+
+Wie bekommt man die Groesse?
+Konstante: c = 299792458 m/s.
+
+Wichtige Formeln:
+- beta = v/c
+- E = m*c^2
+- gamma = 1/sqrt(1-v^2/c^2)
+
+Typische Fehler:
+- klassische Formeln bei sehr hohen Geschwindigkeiten nicht mehr blind nutzen
+Symbol: U_ind
+Name: Induktionsspannung
+Einheit: V
+
+Bedeutung:
+Spannung, die durch eine Aenderung des magnetischen Flusses entsteht.
+
+Wie bekommt man die Groesse?
+Messen oder mit Induktionsgesetz berechnen.
+
+Wichtige Formeln:
+- U_ind = -N*Delta(Phi)/Delta(t)
+- U_ind = -L*Delta(I)/Delta(t)
+- U = B*l*v
+
+Typische Fehler:
+- Minuszeichen ist Lenzsche Regel
+- Betrag und Richtung trennen
+Symbol: N
+Name: Windungszahl
+Einheit: 1
+
+Bedeutung:
+Anzahl der Windungen einer Spule. Mehr Windungen bedeuten mehr Induktionsspannung.
+
+Wie bekommt man die Groesse?
+Auf Spule angegeben oder aus Formel umstellen.
+
+Wichtige Formeln:
+- U_ind proportional N
+- N = -U*Delta(t)/Delta(Phi)
+
+Typische Fehler:
+- Nicht mit Newton N verwechseln
+Symbol: A
+Name: wirksame Flaeche
+Einheit: m^2
+
+Bedeutung:
+Flaeche, die wirklich vom Magnetfeld durchsetzt wird.
+
+Wie bekommt man die Groesse?
+Aus Geometrie: Rechteck, Kreis oder aus Phi umstellen.
+
+Wichtige Formeln:
+- Phi = B*A*cos(alpha)
+- A = Phi/(B*cos(alpha))
+
+Typische Fehler:
+- cm^2 durch 10000 teilen
+- bei Winkel wirkt A*cos(alpha)
+Symbol: alpha
+Name: Winkel
+Einheit: Grad
+
+Bedeutung:
+Winkel zwischen Magnetfeldrichtung und Spulenachse/Flaechennormale.
+
+Wie bekommt man die Groesse?
+Aus Skizze ablesen oder ueber arccos bestimmen.
+
+Wichtige Formeln:
+- Phi = B*A*cos(alpha)
+
+Typische Fehler:
+- 0 Grad maximal, 90 Grad kein Fluss
+- Winkeldefinition beachten
+Symbol: Delta Phi
+Name: Flussaenderung
+Einheit: Wb
+
+Bedeutung:
+Aenderung des magnetischen Flusses im betrachteten Zeitintervall.
+
+Wie bekommt man die Groesse?
+Phi2 - Phi1.
+
+Wichtige Formeln:
+- Delta(Phi) = Phi2 - Phi1
+- U_ind = -N*Delta(Phi)/Delta(t)
+
+Typische Fehler:
+- Start- und Endwert nicht vertauschen
+Symbol: dPhi/dt
+Name: momentane Flussaenderungsrate
+Einheit: Wb/s
+
+Bedeutung:
+Ableitung des magnetischen Flusses nach der Zeit.
+
+Wie bekommt man die Groesse?
+Aus Diagrammsteigung oder Ableitung.
+
+Wichtige Formeln:
+- U_ind = -N*dPhi/dt
+
+Typische Fehler:
+- bei nichtlinearer Aenderung ist Delta/Phi nur Mittelwert
+Symbol: L
+Name: Induktivitaet
+Einheit: H
+
+Bedeutung:
+Eigenschaft der Spule, Stromaenderungen entgegenzuwirken.
+
+Wie bekommt man die Groesse?
+Gegeben oder aus Spulenformel.
+
+Wichtige Formeln:
+- U_ind = -L*Delta(I)/Delta(t)
+- L = mu0*mu_r*N^2*A/l
+- E_mag = 0.5*L*I^2
+
+Typische Fehler:
+- mH in H
+- L nicht mit Leiterlaenge l verwechseln
+Symbol: E_mag
+Name: magnetische Energie
+Einheit: J
+
+Bedeutung:
+Energie, die im Magnetfeld einer Spule gespeichert ist.
+
+Wie bekommt man die Groesse?
+Aus L und I berechnen.
+
+Wichtige Formeln:
+- E_mag = 0.5*L*I^2
+
+Typische Fehler:
+- I wird quadriert
+- nicht mit elektrischer Feldenergie verwechseln
+Symbol: R
+Name: ohmscher Wirkwiderstand
+Einheit: Ohm
+
+Bedeutung:
+Normaler Widerstand. Spannung und Strom sind im Wechselstromkreis gleichphasig.
+
+Wie bekommt man die Groesse?
+Aus U/I oder Bauteilwert.
+
+Wichtige Formeln:
+- R = U/I
+- P = I_eff^2*R
+
+Typische Fehler:
+- R ist ideal frequenzunabhaengig
+- nicht mit Z verwechseln
+Symbol: X_L
+Name: induktiver Blindwiderstand
+Einheit: Ohm
+
+Bedeutung:
+Widerstand einer Spule im Wechselstromkreis. Je groesser f oder L, desto groesser X_L.
+
+Wie bekommt man die Groesse?
+X_L = 2*pi*f*L.
+
+Wichtige Formeln:
+- X_L = 2*pi*f*L
+
+Typische Fehler:
+- L in H einsetzen
+- Strom laeuft Spannung hinterher
+Symbol: X_C
+Name: kapazitiver Blindwiderstand
+Einheit: Ohm
+
+Bedeutung:
+Widerstand eines Kondensators im Wechselstromkreis. Je groesser f oder C, desto kleiner X_C.
+
+Wie bekommt man die Groesse?
+X_C = 1/(2*pi*f*C).
+
+Wichtige Formeln:
+- X_C = 1/(2*pi*f*C)
+
+Typische Fehler:
+- C in F einsetzen
+- Strom eilt Spannung voraus
+Symbol: Z
+Name: Impedanz / Scheinwiderstand
+Einheit: Ohm
+
+Bedeutung:
+Gesamtwiderstand einer Wechselstromschaltung mit Phasenverschiebung.
+
+Wie bekommt man die Groesse?
+Aus R, X_L und X_C vektoriell berechnen.
+
+Wichtige Formeln:
+- Z = sqrt(R^2 + (X_L - X_C)^2)
+- I_eff = U_eff/Z
+
+Typische Fehler:
+- X_L und X_C gegeneinander rechnen
+- nicht einfach alles addieren
+Symbol: Delta phi
+Name: Phasenverschiebung
+Einheit: Grad oder rad
+
+Bedeutung:
+Verschiebung zwischen Strom und Spannung.
+
+Wie bekommt man die Groesse?
+Aus Zeigerdiagramm oder Tangens.
+
+Wichtige Formeln:
+- tan(Delta phi) = (X_L - X_C)/R
+
+Typische Fehler:
+- induktiv: Strom hinterher
+- kapazitiv: Strom voraus
+Symbol: omega
+Name: Kreisfrequenz
+Einheit: rad/s
+
+Bedeutung:
+Frequenz als Winkelgeschwindigkeit.
+
+Wie bekommt man die Groesse?
+omega = 2*pi*f.
+
+Wichtige Formeln:
+- omega = 2*pi*f
+- omega0 = 1/sqrt(L*C)
+
+Typische Fehler:
+- omega nicht mit f verwechseln
+Symbol: f0
+Name: Resonanzfrequenz
+Einheit: Hz
+
+Bedeutung:
+Frequenz, bei der X_L = X_C gilt. Im Serienkreis ist der Strom maximal.
+
+Wie bekommt man die Groesse?
+Aus L und C berechnen.
+
+Wichtige Formeln:
+- f0 = 1/(2*pi*sqrt(L*C))
+
+Typische Fehler:
+- nur bei L und C sinnvoll
+- bei Resonanz bleibt ideal nur R
+Symbol: T
+Name: Periodendauer / Schwingungsdauer
+Einheit: s
+
+Bedeutung:
+Zeit fuer eine ganze Schwingung.
+
+Wie bekommt man die Groesse?
+T = 1/f oder Thomson: T = 2*pi*sqrt(L*C).
+
+Wichtige Formeln:
+- T = 1/f
+- T = 2*pi*sqrt(L*C)
+
+Typische Fehler:
+- T nicht mit Tesla verwechseln
+Symbol: U_eff
+Name: Effektivspannung
+Einheit: V
+
+Bedeutung:
+Gleichwertige Gleichspannung bezueglich Leistung.
+
+Wie bekommt man die Groesse?
+Aus Scheitelwert oder Messgeraet.
+
+Wichtige Formeln:
+- U_eff = U_max/sqrt(2)
+
+Typische Fehler:
+- 230 V Netzspannung ist Effektivwert
+Symbol: I_eff
+Name: Effektivstrom
+Einheit: A
+
+Bedeutung:
+Effektiver Wechselstromwert fuer Leistungsrechnungen.
+
+Wie bekommt man die Groesse?
+Aus I_max oder U_eff/Z.
+
+Wichtige Formeln:
+- I_eff = I_max/sqrt(2)
+- I_eff = U_eff/Z
+
+Typische Fehler:
+- nicht mit I_max verwechseln
+Symbol: E_kin
+Name: Bewegungsenergie
+Einheit: J
+
+Bedeutung:
+Energie durch Bewegung.
+
+Wie bekommt man die Groesse?
+Aus Masse und Geschwindigkeit.
+
+Wichtige Formeln:
+- E_kin=0.5*m*v^2
+
+Typische Fehler:
+- v quadriert
+- m in kg
+Symbol: E_pot
+Name: Lageenergie
+Einheit: J
+
+Bedeutung:
+Energie durch Hoehe im Schwerefeld.
+
+Wie bekommt man die Groesse?
+Aus Masse, g, Hoehe.
+
+Wichtige Formeln:
+- E_pot=m*g*h
+
+Typische Fehler:
+- h in m
+Symbol: E_sp
+Name: Spannenergie
+Einheit: J
+
+Bedeutung:
+Energie einer gespannten Feder.
+
+Wie bekommt man die Groesse?
+Aus Federkonstante und Auslenkung.
+
+Wichtige Formeln:
+- E_sp=0.5*D*s^2
+
+Typische Fehler:
+- s in m
+Symbol: W
+Name: Arbeit
+Einheit: J
+
+Bedeutung:
+Energieuebertragung durch Kraft entlang Weg.
+
+Wie bekommt man die Groesse?
+Aus Kraft, Weg und Winkel.
+
+Wichtige Formeln:
+- W=F*s*cos(alpha)
+- W=Delta E
+
+Typische Fehler:
+- Winkel beachten
+Symbol: P
+Name: Leistung
+Einheit: W
+
+Bedeutung:
+Energie pro Zeit.
+
+Wie bekommt man die Groesse?
+Aus Energie/Zeit oder Kraft*Geschwindigkeit.
+
+Wichtige Formeln:
+- P=Delta E/Delta t
+- P=F*v
+
+Typische Fehler:
+- nicht mit Druck verwechseln
+Symbol: p
+Name: Impuls
+Einheit: kg*m/s
+
+Bedeutung:
+Bewegungszustand eines Koerpers.
+
+Wie bekommt man die Groesse?
+p=m*v
+
+Wichtige Formeln:
+- p=m*v
+- F*Delta t=Delta p
+
+Typische Fehler:
+- Vorzeichen beachten
+Symbol: F
+Name: Kraft
+Einheit: N
+
+Bedeutung:
+Ursache fuer Bewegungsaenderung oder Verformung.
+
+Wie bekommt man die Groesse?
+Newton: F=m*a
+
+Wichtige Formeln:
+- F=m*a
+- F_G=m*g
+- F_R=mu*F_N
+
+Typische Fehler:
+- Kraefte vektoriell
+Symbol: a
+Name: Beschleunigung
+Einheit: m/s^2
+
+Bedeutung:
+Aenderung der Geschwindigkeit pro Zeit.
+
+Wie bekommt man die Groesse?
+a=Delta v/Delta t
+
+Wichtige Formeln:
+- a=(v-v0)/t
+
+Typische Fehler:
+- Vorzeichen beachten
+Symbol: E
+Name: elektrische Feldstaerke
+Einheit: V/m oder N/C
+
+Bedeutung:
+Kraft pro Ladung im elektrischen Feld.
+
+Wie bekommt man die Groesse?
+E=F/q oder E=U/d.
+
+Wichtige Formeln:
+- E=F/q
+- E=U/d
+
+Typische Fehler:
+- E-Feld nicht mit Energie E verwechseln
+Symbol: q
+Name: elektrische Ladung
+Einheit: C
+
+Bedeutung:
+Eigenschaft geladener Teilchen.
+
+Wie bekommt man die Groesse?
+Gegeben oder Vielfaches von e.
+
+Wichtige Formeln:
+- F=q*E
+- W=q*U
+
+Typische Fehler:
+- Vorzeichen bei Elektronen
+Symbol: C
+Name: Kapazitaet
+Einheit: F
+
+Bedeutung:
+Speicherfaehigkeit eines Kondensators.
+
+Wie bekommt man die Groesse?
+Aus Geometrie oder Ladung/Spannung.
+
+Wichtige Formeln:
+- C=Q/U
+- C=eps0*epsr*A/d
+
+Typische Fehler:
+- microF in F
+Symbol: F_L
+Name: Lorentzkraft
+Einheit: N
+
+Bedeutung:
+Kraft auf bewegte Ladung im Magnetfeld.
+
+Wie bekommt man die Groesse?
+Aus q, v, B und Winkel.
+
+Wichtige Formeln:
+- F=|q|*v*B*sin(alpha)
+- F=B*I*l*sin(alpha)
+
+Typische Fehler:
+- nur senkrechter Anteil zaehlt
+Symbol: r
+Name: Kreisbahnradius
+Einheit: m
+
+Bedeutung:
+Radius der Bahn geladener Teilchen im B-Feld.
+
+Wie bekommt man die Groesse?
+Aus Zentripetalkraft=Lorentzkraft.
+
+Wichtige Formeln:
+- r=m*v/(|q|*B)
+
+Typische Fehler:
+- q-Betrag nehmen
+Symbol: q
+Name: Ladung
+Einheit: C
+
+Bedeutung:
+Elektrische Ladung eines Teilchens oder Koerpers.
+
+Wie bekommt man die Groesse?
+Gegeben oder Vielfaches der Elementarladung.
+
+Wichtige Formeln:
+- F=q*E
+- W=q*U
+- F_L=q*v*B
+
+Typische Fehler:
+- Vorzeichen bei Elektronen beachten
+Symbol: m
+Name: Masse
+Einheit: kg
+
+Bedeutung:
+Traege Masse eines Teilchens oder Koerpers.
+
+Wie bekommt man die Groesse?
+Gegeben, aus Massenspektrometer oder aus q/m.
+
+Wichtige Formeln:
+- r=m*v/(q*B)
+- q/m = 2U/(B^2*r^2)
+
+Typische Fehler:
+- Elektronenmasse sehr klein
+- Einheiten kg
+Symbol: q/m
+Name: spezifische Ladung
+Einheit: C/kg
+
+Bedeutung:
+Ladung pro Masse. Wichtig bei Elektronen im Magnetfeld.
+
+Wie bekommt man die Groesse?
+Aus Beschleunigungsspannung, Magnetfeld und Radius.
+
+Wichtige Formeln:
+- q/m = 2U/(B^2*r^2)
+
+Typische Fehler:
+- Radius in m
+- B in T
+Symbol: r
+Name: Kreisbahnradius
+Einheit: m
+
+Bedeutung:
+Radius der Kreisbahn eines geladenen Teilchens im Magnetfeld.
+
+Wie bekommt man die Groesse?
+Aus m, v, q, B.
+
+Wichtige Formeln:
+- r=m*v/(|q|*B)
+
+Typische Fehler:
+- nur bei Bewegung senkrecht zu B einfache Kreisbahn
+Symbol: v
+Name: Teilchengeschwindigkeit
+Einheit: m/s
+
+Bedeutung:
+Geschwindigkeit eines Teilchens, z.B. nach Beschleunigung oder im Geschwindigkeitsfilter.
+
+Wie bekommt man die Groesse?
+Aus Spannung oder E/B.
+
+Wichtige Formeln:
+- v=sqrt(2*q*U/m)
+- v=E/B
+
+Typische Fehler:
+- bei hohen Geschwindigkeiten relativistisch pruefen
+Symbol: E_kin
+Name: kinetische Energie
+Einheit: J oder eV
+
+Bedeutung:
+Bewegungsenergie eines Teilchens.
+
+Wie bekommt man die Groesse?
+Aus Beschleunigungsspannung oder Geschwindigkeit.
+
+Wichtige Formeln:
+- E_kin=q*U
+- E_kin=0.5*m*v^2
+- relativistisch: E_kin=(gamma-1)*m*c^2
+
+Typische Fehler:
+- eV und J nicht mischen
+- klassisch nicht bei v nahe c
+Symbol: gamma
+Name: Lorentzfaktor
+Einheit: 1
+
+Bedeutung:
+Faktor der Relativitaetstheorie bei hohen Geschwindigkeiten.
+
+Wie bekommt man die Groesse?
+Aus v/c berechnen.
+
+Wichtige Formeln:
+- gamma=1/sqrt(1-v^2/c^2)
+
+Typische Fehler:
+- nur fuer v<c
+- bei kleinen v etwa 1
+Symbol: U_B
+Name: Beschleunigungsspannung
+Einheit: V
+
+Bedeutung:
+Spannung, durch die ein geladenes Teilchen kinetische Energie gewinnt.
+
+Wie bekommt man die Groesse?
+Aus Energiegleichung.
+
+Wichtige Formeln:
+- q*U_B = 0.5*m*v^2
+
+Typische Fehler:
+- q als Betrag nutzen, wenn nur Energie gesucht
+Symbol: q/m
+Name: spezifische Ladung
+Einheit: C/kg
+
+Bedeutung:
+Ladung pro Masse eines Teilchens. Wichtig bei Elektronenbahn und Massenspektrometer.
+
+Wie bekommt man die Groesse?
+Aus Kreisbahn nach Beschleunigung: q/m=2U/(B^2*r^2).
+
+Wichtige Formeln:
+- q/m=2U/(B^2*r^2)
+- r=m*v/(q*B)
+
+Typische Fehler:
+- Radius in m
+- B in T
+- Vorzeichen meist als Betrag
+Symbol: v_filter
+Name: Filtergeschwindigkeit
+Einheit: m/s
+
+Bedeutung:
+Geschwindigkeit, bei der elektrische und magnetische Kraft sich aufheben.
+
+Wie bekommt man die Groesse?
+Im Wien-Filter aus E und B.
+
+Wichtige Formeln:
+- v=E/B
+- E=U/d
+
+Typische Fehler:
+- E-Feld in V/m
+- B darf nicht 0 sein
+Symbol: rho
+Name: spezifischer Widerstand
+Einheit: Ohm*m
+
+Bedeutung:
+Materialeigenschaft eines Leiters. Bei Wirbelstromringen kann man rho aus R, A, l bestimmen.
+
+Wie bekommt man die Groesse?
+rho=R*A/l
+
+Wichtige Formeln:
+- R=rho*l/A
+- rho=R*A/l
+
+Typische Fehler:
+- A in m^2
+- l in m
+- mm^2 vorher umrechnen
+Symbol: H
+Name: magnetische Feldstaerke
+Einheit: A/m
+
+Bedeutung:
+Beschreibt die Erregung eines Magnetfeldes durch Strom und Windungen.
+
+Wie bekommt man die Groesse?
+Bei langer Spule: H=N*I/l.
+
+Wichtige Formeln:
+- H=N*I/l
+- B=mu0*mur*H
+
+Typische Fehler:
+- nicht mit Henry H verwechseln
+Symbol: mu_r
+Name: relative Permeabilitaet
+Einheit: 1
+
+Bedeutung:
+Materialfaktor, der Magnetfelder im Kern verstaerkt.
+
+Wie bekommt man die Groesse?
+Gegeben oder vereinfacht Luft=1.
+
+Wichtige Formeln:
+- B=mu0*mu_r*H
+- L=mu0*mu_r*N^2*A/l
+
+Typische Fehler:
+- bei Eisen stark nichtlinear, Schulaufgaben oft konstant
+Symbol: P_V
+Name: Verlustleistung
+Einheit: W
+
+Bedeutung:
+Leistung, die z.B. in Leitungen als Waerme verloren geht.
+
+Wie bekommt man die Groesse?
+Mit Strom und Widerstand berechnen.
+
+Wichtige Formeln:
+- P_V=I^2*R
+- I=P/U
+
+Typische Fehler:
+- Hochspannung reduziert I und damit P_V stark
+Symbol: gamma
+Name: Lorentzfaktor
+Einheit: 1
+
+Bedeutung:
+Faktor der Relativitaet bei hohen Geschwindigkeiten.
+
+Wie bekommt man die Groesse?
+Aus v/c oder kinetischer Energie.
+
+Wichtige Formeln:
+- gamma=1/sqrt(1-v^2/c^2)
+- E_kin=(gamma-1)mc^2
+
+Typische Fehler:
+- nur wichtig nahe Lichtgeschwindigkeit
+Symbol: E_kin
+Name: kinetische Energie geladener Teilchen
+Einheit: J oder eV
+
+Bedeutung:
+Energie nach Beschleunigung durch Spannung.
+
+Wie bekommt man die Groesse?
+E_kin=q*U
+
+Wichtige Formeln:
+- E_kin=qU
+- 1 eV = 1.602e-19 J
+
+Typische Fehler:
+- q als Betrag
+- MeV/eV/J sauber umrechnen
+Symbol: R
+Name: ohmscher Wirkwiderstand
+Einheit: Ohm
+
+Bedeutung:
+Normaler Widerstand. Strom und Spannung sind gleichphasig.
+
+Wie bekommt man die Groesse?
+Aus R=U/I oder Bauteilwert.
+
+Wichtige Formeln:
+- R=U/I
+- P=I_eff^2*R
+
+Typische Fehler:
+- R ist im Idealfall nicht frequenzabhaengig
+- nicht mit Impedanz Z verwechseln
+Symbol: X_L
+Name: induktiver Blindwiderstand
+Einheit: Ohm
+
+Bedeutung:
+Wechselstromwiderstand einer Spule. Wird bei hoher Frequenz groesser.
+
+Wie bekommt man die Groesse?
+Aus Frequenz und Induktivitaet berechnen.
+
+Wichtige Formeln:
+- X_L=2*pi*f*L
+
+Typische Fehler:
+- L in Henry
+- Strom laeuft Spannung hinterher
+Symbol: X_C
+Name: kapazitiver Blindwiderstand
+Einheit: Ohm
+
+Bedeutung:
+Wechselstromwiderstand eines Kondensators. Wird bei hoher Frequenz kleiner.
+
+Wie bekommt man die Groesse?
+Aus Frequenz und Kapazitaet berechnen.
+
+Wichtige Formeln:
+- X_C=1/(2*pi*f*C)
+
+Typische Fehler:
+- C in Farad
+- Strom eilt Spannung voraus
+Symbol: Z
+Name: Impedanz / Scheinwiderstand
+Einheit: Ohm
+
+Bedeutung:
+Resultierender Gesamtwiderstand im Wechselstromkreis.
+
+Wie bekommt man die Groesse?
+Vektoriell aus R und Blindanteil berechnen.
+
+Wichtige Formeln:
+- Z=sqrt(R^2+(X_L-X_C)^2)
+- I_eff=U_eff/Z
+
+Typische Fehler:
+- X_L und X_C wirken gegeneinander
+- nicht einfach R+X_L+X_C rechnen
+Symbol: Delta phi
+Name: Phasenverschiebung
+Einheit: Grad oder rad
+
+Bedeutung:
+Zeitliche Verschiebung zwischen Spannung und Strom.
+
+Wie bekommt man die Groesse?
+Aus Zeigerdiagramm oder tan(Delta phi).
+
+Wichtige Formeln:
+- tan(Delta phi)=(X_L-X_C)/R
+
+Typische Fehler:
+- Vorzeichen beachten: induktiv positiv, kapazitiv negativ
+Symbol: f0
+Name: Resonanzfrequenz
+Einheit: Hz
+
+Bedeutung:
+Frequenz, bei der X_L=X_C gilt.
+
+Wie bekommt man die Groesse?
+Aus L und C berechnen.
+
+Wichtige Formeln:
+- f0=1/(2*pi*sqrt(L*C))
+
+Typische Fehler:
+- bei f0 ist im Serienkreis I_eff maximal
+Symbol: T
+Name: Schwingungsdauer
+Einheit: s
+
+Bedeutung:
+Dauer einer vollen Schwingung im LC-Kreis.
+
+Wie bekommt man die Groesse?
+Mit Thomsonformel berechnen.
+
+Wichtige Formeln:
+- T=2*pi*sqrt(L*C)
+- T=1/f0
+
+Typische Fehler:
+- nicht mit Tesla T verwechseln
+Symbol: omega
+Name: Kreisfrequenz
+Einheit: rad/s
+
+Bedeutung:
+Frequenz in Winkelmass.
+
+Wie bekommt man die Groesse?
+Aus f berechnen.
+
+Wichtige Formeln:
+- omega=2*pi*f
+- omega0=1/sqrt(L*C)
+
+Typische Fehler:
+- omega ist nicht f
+Groesse:
+A - Flaeche aus Induktivitaet
+
+Formel:
+A = L * l_spule / (mu0 * mu_r * N^2)
+
+Einheiten:
+A [m^2], L [H], l_spule [m], mu0 [T*m/A], mu_r [1], N [1]
+
+Wofuer:
+Wenn Induktivitaet, Spulenlaenge, Windungszahl und Material bekannt sind.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+A ist die Querschnittsflaeche der Spule.
+Groesse:
+A - Kreisflaeche aus Radius
+
+Formel:
+A = pi * r^2
+
+Einheiten:
+A [m^2], r [m]
+
+Wofuer:
+Querschnittsflaeche von Spule, Draht oder Kreisflaeche.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik/Induktion
+
+Hinweis:
+cm in m umrechnen.
+Groesse:
+A - Kreisflaeche aus Durchmesser
+
+Formel:
+A = pi * d^2 / 4
+
+Einheiten:
+A [m^2], d [m]
+
+Wofuer:
+Wenn der Durchmesser statt Radius gegeben ist.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik/Induktion
+
+Hinweis:
+d muss in Meter eingesetzt werden.
+Groesse:
+A - Rechteckflaeche
+
+Formel:
+A = a * b
+
+Einheiten:
+A [m^2], a [m], b [m]
+
+Wofuer:
+Flaeche einer rechteckigen Leiterschleife oder Platte.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Nur die vom Feld durchsetzte Flaeche zaehlt.
+Groesse:
+A - Drahtquerschnitt aus Widerstand
+
+Formel:
+A = rho * l / R
+
+Einheiten:
+A [m^2], rho [Ohm*m], l [m], R [Ohm]
+
+Wofuer:
+Wenn Drahtlaenge, Widerstand und Material bekannt sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Achtung: mm^2 in m^2 umrechnen.
+Groesse:
+B - B aus Feldstaerke und Permeabilitaet
+
+Formel:
+B = mu0 * mu_r * H
+
+Einheiten:
+B [T], mu0 [T*m/A], mu_r [1], H [A/m]
+
+Wofuer:
+Wenn magnetische Feldstaerke H und Material bekannt sind.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Verbindet H und B im Material.
+Groesse:
+B - magnetische Flussdichte aus Fluss
+
+Formel:
+B = Phi / (A * cos(alpha))
+
+Einheiten:
+B [T], Phi [Wb], A [m^2], alpha [Grad]
+
+Wofuer:
+Wenn magnetischer Fluss, Flaeche und Winkel bekannt sind.
+
+Rechnen:
+Rechnen -> Formel umstellen / Solver
+
+Hinweis:
+Nicht moeglich, wenn A*cos(alpha)=0.
+Groesse:
+B - Magnetfeld einer langen Spule
+
+Formel:
+B = mu0 * mu_r * N * I / l_spule
+
+Einheiten:
+B [T], mu0 [T*m/A], mu_r [1], N [1], I [A], l_spule [m]
+
+Wofuer:
+Naehere Berechnung des Felds im Inneren einer langen Spule.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Bei Luft gilt naeherungsweise mu_r = 1.
+Groesse:
+B - B aus Lorentzkraft auf Ladung
+
+Formel:
+B = F_L / (/q/ * v * sin(alpha))
+
+Einheiten:
+B [T], F_L [N], q [C], v [m/s]
+
+Wofuer:
+Wenn Kraft auf ein bewegtes geladenes Teilchen bekannt ist.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Maximalfall bei alpha=90 Grad.
+Groesse:
+B - B aus Kraft auf stromdurchflossenen Leiter
+
+Formel:
+B = F / (I * l * sin(alpha))
+
+Einheiten:
+B [T], F [N], I [A], l [m]
+
+Wofuer:
+Wenn auf einen Leiter im Magnetfeld eine Kraft wirkt.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Bei senkrechter Anordnung ist sin(alpha)=1.
+Groesse:
+B - B aus Bewegungsinduktion
+
+Formel:
+B = U_ind / (l * v * sin(alpha))
+
+Einheiten:
+B [T], U_ind [V], l [m], v [m/s]
+
+Wofuer:
+Wenn Spannung, Laenge und Geschwindigkeit bekannt sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Winkel beachten.
+Groesse:
+B_max - B-Amplitude aus Generator
+
+Formel:
+B_max = U_max / (N*A*2*pi*f*abs(cos(alpha)))
+
+Einheiten:
+B_max [T], U_max [V], N [1], A [m^2], f [Hz]
+
+Wofuer:
+Umstellung der Sinus-Induktion nach B_max.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Winkel beachten.
+Groesse:
+B_max - B-Amplitude aus Dreiecksignal
+
+Formel:
+B_max = abs(U_ind) / (4*N*A*f*abs(cos(alpha)))
+
+Einheiten:
+B_max [T], U_ind [V], f [Hz]
+
+Wofuer:
+Wenn Dreiecksignal und Uind bekannt sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Nur Betrag.
+Groesse:
+C - Kapazitaet aus X_C
+
+Formel:
+C = 1 / (2*pi*f*X_C)
+
+Einheiten:
+C [F], f [Hz], X_C [Ohm]
+
+Wofuer:
+Wenn kapazitiver Blindwiderstand und Frequenz bekannt sind.
+
+Rechnen:
+Rechnen -> Formel umstellen / Solver
+
+Hinweis:
+microF zuerst in F umrechnen.
+Groesse:
+C - Kapazitaet Plattenkondensator
+
+Formel:
+C = eps0 * eps_r * A / d
+
+Einheiten:
+C [F], A [m^2], d [m]
+
+Wofuer:
+Kapazitaet eines Plattenkondensators.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+eps_r ist die relative Permittivitaet des Materials.
+Groesse:
+DeltaA - Flaechenaenderung aus Induktion
+
+Formel:
+DeltaA = -U_ind * DeltaT / (N*B*cos(alpha))
+
+Einheiten:
+DeltaA [m^2], U_ind [V], DeltaT [s]
+
+Wofuer:
+Umstellung nach Flaechenaenderung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+B und cos(alpha) duerfen nicht 0 sein.
+Groesse:
+DeltaA - Flaechenaenderung
+
+Formel:
+DeltaA = A2 - A1
+
+Einheiten:
+DeltaA [m^2], A1/A2 [m^2]
+
+Wofuer:
+Aenderung der wirksamen Flaeche.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Endwert minus Anfangswert.
+Groesse:
+DeltaB - B-Aenderung aus Induktion
+
+Formel:
+DeltaB = -U_ind * DeltaT / (N*A*cos(alpha))
+
+Einheiten:
+DeltaB [T], U_ind [V], DeltaT [s]
+
+Wofuer:
+Umstellung nach DeltaB.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+cos(alpha) darf nicht 0 sein.
+Groesse:
+DeltaB - Magnetfeldaenderung
+
+Formel:
+DeltaB = B2 - B1
+
+Einheiten:
+DeltaB [T], B1/B2 [T]
+
+Wofuer:
+Aenderung der magnetischen Flussdichte.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Endwert minus Anfangswert.
+Groesse:
+DeltaI - Stromaenderung bei Selbstinduktion
+
+Formel:
+DeltaI = -U_ind * DeltaT / L
+
+Einheiten:
+DeltaI [A], U_ind [V], DeltaT [s], L [H]
+
+Wofuer:
+Wenn die Stromaenderung aus Selbstinduktionsdaten gesucht ist.
+
+Rechnen:
+Rechnen -> Formel umstellen / Solver
+
+Hinweis:
+Vorzeichen nur wichtig, wenn Richtung/Polung gefragt ist.
+Groesse:
+DeltaI - Stromaenderung
+
+Formel:
+DeltaI = I2 - I1
+
+Einheiten:
+DeltaI [A], I1/I2 [A]
+
+Wofuer:
+Aenderung der Stromstaerke.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Endwert minus Anfangswert.
+Groesse:
+DeltaPhi - Aenderung des magnetischen Flusses
+
+Formel:
+DeltaPhi = Phi2 - Phi1
+
+Einheiten:
+DeltaPhi [Wb], Phi1/Phi2 [Wb]
+
+Wofuer:
+Wenn Anfangs- und Endfluss gegeben oder berechenbar sind.
+
+Rechnen:
+Rechnen -> Induktion / magnetischer Fluss
+
+Hinweis:
+Vorzeichen beachten: Endwert minus Anfangswert.
+Groesse:
+DeltaPhi - Flussaenderung aus Induktionsspannung
+
+Formel:
+DeltaPhi = -U_ind * DeltaT / N
+
+Einheiten:
+DeltaPhi [Wb], U_ind [V], DeltaT [s], N [1]
+
+Wofuer:
+Wenn die induzierte Spannung gemessen wurde und die Flussaenderung gesucht ist.
+
+Rechnen:
+Rechnen -> Formel umstellen / Solver
+
+Hinweis:
+Fuer Betragsaufgaben kann das Minuszeichen ignoriert werden.
+Groesse:
+DeltaPhi_phase - Phasenverschiebung im RLC-Kreis
+
+Formel:
+tan(DeltaPhi_phase) = (X_L - X_C) / R
+
+Einheiten:
+DeltaPhi_phase [Grad oder rad], X/R [Ohm]
+
+Wofuer:
+Bestimmt, ob Strom hinterherlaeuft oder voreilt.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK -> Zeigerdiagramm / Phasenwinkel
+
+Hinweis:
+X_L>X_C: induktiv. X_C>X_L: kapazitiv.
+Groesse:
+DeltaPhi_phase - Phasenwinkel aus Zeigerdiagramm
+
+Formel:
+DeltaPhi_phase = atan((X_L - X_C) / R)
+
+Einheiten:
+DeltaPhi_phase [rad], X_L/X_C/R [Ohm]
+
+Wofuer:
+Phasenverschiebung in RLC-Reihe.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Vorzeichen zeigt induktiv/kapazitiv.
+Groesse:
+DeltaPhi_phase - Phasenwinkel aus Leistungsfaktor
+
+Formel:
+DeltaPhi_phase = acos(R / Z)
+
+Einheiten:
+DeltaPhi_phase [rad], R [Ohm], Z [Ohm]
+
+Wofuer:
+Alternative ueber cos(phi)=R/Z.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Betrag des Winkels.
+Groesse:
+E - elektrische Feldstaerke aus Kraft
+
+Formel:
+E = F / q
+
+Einheiten:
+E [N/C] oder [V/m], F [N], q [C]
+
+Wofuer:
+Definition der elektrischen Feldstaerke.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+q mit Vorzeichen, wenn Richtung gefragt ist.
+Groesse:
+E - homogenes elektrisches Feld
+
+Formel:
+E = U / d
+
+Einheiten:
+E [V/m], U [V], d [m]
+
+Wofuer:
+Feld zwischen Kondensatorplatten naeherungsweise homogen.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+d ist der Plattenabstand.
+Groesse:
+E0 - Ruheenergie
+
+Formel:
+E0 = m * c^2
+
+Einheiten:
+E0 [J], m [kg]
+
+Wofuer:
+Masse-Energie-Aequivalenz.
+
+Rechnen:
+Rechnen -> Relativitaet
+
+Hinweis:
+Fuer Teilchenphysik wichtig.
+Groesse:
+E0 - Ruheenergie in eV
+
+Formel:
+E0_eV = m*c^2 / e
+
+Einheiten:
+E0 [eV], m [kg], c [m/s], e [C]
+
+Wofuer:
+Ruheenergie in Elektronenvolt.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Relativitaet
+
+Hinweis:
+1 eV = e Joule.
+Groesse:
+E_cap - Energie im Kondensator
+
+Formel:
+E_cap = 0.5 * C * U^2
+
+Einheiten:
+E_cap [J], C [F], U [V]
+
+Wofuer:
+Energie im elektrischen Feld eines Kondensators.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+Doppelte Spannung bedeutet vierfache Energie.
+Groesse:
+E_cap - Kondensatorenergie aus Q und U
+
+Formel:
+E_cap = 0.5 * Q * U
+
+Einheiten:
+E_cap [J], Q [C], U [V]
+
+Wofuer:
+Alternative Energieformel beim Kondensator.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Kondensator
+
+Hinweis:
+Mittelwert der Spannung beim Laden.
+Groesse:
+E_cap - Kondensatorenergie aus Ladung
+
+Formel:
+E_cap = Q^2 / (2*C)
+
+Einheiten:
+E_cap [J], Q [C], C [F]
+
+Wofuer:
+Wenn Ladung und Kapazitaet gegeben sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Kondensator
+
+Hinweis:
+C darf nicht 0 sein.
+Groesse:
+E_kin - kinetische Energie klassisch
+
+Formel:
+E_kin = 0.5 * m * v^2
+
+Einheiten:
+E_kin [J], m [kg], v [m/s]
+
+Wofuer:
+Bewegungsenergie in Mechanik und Teilchenphysik klassisch.
+
+Rechnen:
+Rechnen -> Mechanik oder Lehrer-Material Rechner / Teilchenbeschleuniger
+
+Hinweis:
+Bei v nahe c relativistisch rechnen.
+Groesse:
+E_kin - kinetische Energie aus Beschleunigungsspannung
+
+Formel:
+E_kin = /q/ * U
+
+Einheiten:
+E_kin [J], q [C], U [V]
+
+Wofuer:
+Energiegewinn eines geladenen Teilchens im elektrischen Feld.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Teilchenbeschleuniger
+
+Hinweis:
+1 eV = e * 1 V.
+Groesse:
+E_kin - kinetische Energie relativistisch
+
+Formel:
+E_kin = (gamma - 1) * m * c^2
+
+Einheiten:
+E_kin [J], m [kg], c [m/s]
+
+Wofuer:
+Fuer Teilchen nahe Lichtgeschwindigkeit.
+
+Rechnen:
+Rechnen -> Relativitaet oder Lehrer-Material Rechner / Teilchenbeschleuniger
+
+Hinweis:
+Klassische Formel wird bei hohen Geschwindigkeiten falsch.
+Groesse:
+E_kin - kinetische Energie Mechanik
+
+Formel:
+E_kin = 0.5 * m * v^2
+
+Einheiten:
+E_kin [J], m [kg], v [m/s]
+
+Wofuer:
+Bewegungsenergie eines Koerpers.
+
+Rechnen:
+Rechnen -> Mechanik
+
+Hinweis:
+Klassische Mechanik.
+Groesse:
+E_mag - Energie im Magnetfeld der Spule
+
+Formel:
+E_mag = 0.5 * L * I^2
+
+Einheiten:
+E_mag [J], L [H], I [A]
+
+Wofuer:
+Gespeicherte Energie im Magnetfeld einer stromdurchflossenen Spule.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+Doppelter Strom bedeutet vierfache Energie.
+Groesse:
+E_mag - Energie im Magnetfeld ueber B,H,V
+
+Formel:
+E_mag = 0.5 * B * H * V
+
+Einheiten:
+E_mag [J], B [T], H [A/m], V [m^3]
+
+Wofuer:
+Energie in einem magnetischen Feldvolumen.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Fuer homogenes Feld naeherungsweise.
+Groesse:
+E_mag - Energie ueber Leistung-Zeit-Flaeche
+
+Formel:
+E_mag = Flaeche unter P(t)
+
+Einheiten:
+E_mag [J], P [W], t [s]
+
+Wofuer:
+Bei Ausschaltvorgang: Energie aus Leistungsdiagramm.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Aus Literatur: Energie entspricht Flaeche unter P(t).
+Groesse:
+E_pot - potentielle Energie
+
+Formel:
+E_pot = m * g * h
+
+Einheiten:
+E_pot [J], m [kg], h [m]
+
+Wofuer:
+Lageenergie im Gravitationsfeld nahe Erdoberflaeche.
+
+Rechnen:
+Rechnen -> Mechanik
+
+Hinweis:
+Nullniveau muss festgelegt sein.
+Groesse:
+E_pot - potentielle Energie aus Energieerhaltung
+
+Formel:
+E_pot = E_ges - E_kin
+
+Einheiten:
+E_pot [J], E_ges [J], E_kin [J]
+
+Wofuer:
+Wenn Gesamtenergie und kinetische Energie bekannt sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+Ohne Verluste.
+Groesse:
+F - Newtonsche Kraft
+
+Formel:
+F = m * a
+
+Einheiten:
+F [N], m [kg], a [m/s^2]
+
+Wofuer:
+Grundgesetz der Dynamik.
+
+Rechnen:
+Rechnen -> Mechanik
+
+Hinweis:
+F ist die resultierende Kraft.
+Groesse:
+F - Kraft auf Leiter im Magnetfeld
+
+Formel:
+F = B * I * l * sin(alpha)
+
+Einheiten:
+F [N], B [T], I [A], l [m], alpha [Grad]
+
+Wofuer:
+Stromdurchflossener Leiter im Magnetfeld.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Magnetfeld / Teilchen
+
+Hinweis:
+Bei 90 Grad ist sin(alpha)=1.
+Groesse:
+F - Kraft zwischen parallelen Leitern
+
+Formel:
+F = mu0 * I1 * I2 * l / (2*pi*a)
+
+Einheiten:
+F [N], I1/I2 [A], l [m], a [m]
+
+Wofuer:
+Zwei parallele stromdurchflossene Leiter.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Magnetfeld / Teilchen
+
+Hinweis:
+Gleiche Stromrichtung: Anziehung; entgegengesetzt: Abstossung.
+Groesse:
+F_G - Gewichtskraft
+
+Formel:
+F_G = m * g
+
+Einheiten:
+F_G [N], m [kg]
+
+Wofuer:
+Kraft durch Gravitation nahe Erdoberflaeche.
+
+Rechnen:
+Rechnen -> Mechanik
+
+Hinweis:
+Masse in kg einsetzen.
+Groesse:
+F_G - Gravitationskraft allgemein
+
+Formel:
+F_G = G * m1 * m2 / r^2
+
+Einheiten:
+F_G [N], G [N*m^2/kg^2], m1/m2 [kg], r [m]
+
+Wofuer:
+Allgemeines Gravitationsgesetz.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+Bei Erde nahe Oberflaeche meist F_G=m*g.
+Groesse:
+F_L - Lorentzkraft auf Ladung
+
+Formel:
+F_L = /q/ * v * B * sin(alpha)
+
+Einheiten:
+F_L [N], q [C], v [m/s], B [T]
+
+Wofuer:
+Kraft auf bewegte Ladungen im Magnetfeld.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Steht senkrecht auf v und B.
+Groesse:
+F_L - Kraft auf stromdurchflossenen Leiter
+
+Formel:
+F_L = B * I * l * sin(alpha)
+
+Einheiten:
+F_L [N], B [T], I [A], l [m]
+
+Wofuer:
+Kraft auf einen Leiter im Magnetfeld.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Bei 90 Grad: F=B*I*l.
+Groesse:
+F_R - Reibungskraft
+
+Formel:
+F_R = mu * F_N
+
+Einheiten:
+F_R [N], mu [1], F_N [N]
+
+Wofuer:
+Gleitreibung vereinfacht.
+
+Rechnen:
+Rechnen -> Mechanik
+
+Hinweis:
+mu ist Reibungszahl, nicht mu_r.
+Groesse:
+F_R - Reibungskraft aus Arbeit
+
+Formel:
+F_R = W_R / s
+
+Einheiten:
+F_R [N], W_R [J], s [m]
+
+Wofuer:
+Wenn Reibungsarbeit und Weg bekannt sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+Kraft als mittlere Reibungskraft.
+Groesse:
+F_el - elektrische Kraft
+
+Formel:
+F_el = q * E
+
+Einheiten:
+F_el [N], q [C], E [N/C]
+
+Wofuer:
+Kraft auf eine Ladung im elektrischen Feld.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+Richtung haengt vom Vorzeichen der Ladung ab.
+Groesse:
+F_el - Coulomb-Kraft
+
+Formel:
+F_el = k * /q1*q2/ / r^2
+
+Einheiten:
+F_el [N], q [C], r [m]
+
+Wofuer:
+Kraft zwischen zwei Punktladungen.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+Gleichnamig abstossend, ungleichnamig anziehend.
+Groesse:
+F_r - Radialkraft
+
+Formel:
+F_r = m * v^2 / r
+
+Einheiten:
+F_r [N], m [kg], v [m/s], r [m]
+
+Wofuer:
+Kraft, die Kreisbewegung erzwingt.
+
+Rechnen:
+Rechnen -> Mechanik -> Kreisbewegung
+
+Hinweis:
+Keine eigene neue Kraftart, sondern resultierende Kraft zur Mitte.
+Groesse:
+F_r - Radialkraft aus Winkelgeschwindigkeit
+
+Formel:
+F_r = m * omega^2 * r
+
+Einheiten:
+F_r [N], m [kg], omega [rad/s], r [m]
+
+Wofuer:
+Kreisbewegung ueber omega.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+omega in rad/s.
+Groesse:
+H - Feldstaerke aus B
+
+Formel:
+H = B / (mu0 * mu_r)
+
+Einheiten:
+H [A/m], B [T], mu0 [T*m/A], mu_r [1]
+
+Wofuer:
+Wenn B und Material bekannt sind.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Aus B = mu0 * mu_r * H.
+Groesse:
+H - magnetische Feldstaerke einer Spule
+
+Formel:
+H = N * I / l_spule
+
+Einheiten:
+H [A/m], N [1], I [A], l_spule [m]
+
+Wofuer:
+Magnetische Feldstaerke im Inneren einer langen Spule.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Spule-Magnetfeld
+
+Hinweis:
+B = mu0 * mu_r * H.
+Groesse:
+H - Feldstaerke Ringkern
+
+Formel:
+H = N * I / l_m
+
+Einheiten:
+H [A/m], N [1], I [A], l_m [m]
+
+Wofuer:
+Magnetische Feldstaerke im Ringkern/Toroid.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+l_m ist die magnetische Weglaenge.
+Groesse:
+I - Strom aus magnetischer Flussdichte einer Spule
+
+Formel:
+I = B * l_spule / (mu0 * mu_r * N)
+
+Einheiten:
+I [A], B [T], l_spule [m], mu0 [T*m/A], mu_r [1], N [1]
+
+Wofuer:
+Wenn die Flussdichte B im Inneren einer langen Spule gegeben ist und die Stromstaerke gesucht ist.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Aus B = mu0 * mu_r * N * I / l_spule. Luft: mu_r ungefaehr 1.
+Groesse:
+I - Strom aus magnetischer Feldstaerke
+
+Formel:
+I = H * l_spule / N
+
+Einheiten:
+I [A], H [A/m], l_spule [m], N [1]
+
+Wofuer:
+Wenn magnetische Feldstaerke H, Spulenlaenge und Windungszahl gegeben sind.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Aus H = N * I / l_spule.
+Groesse:
+I - Strom aus magnetischem Fluss und Induktivitaet
+
+Formel:
+I = N * Phi / L
+
+Einheiten:
+I [A], N [1], Phi [Wb], L [H]
+
+Wofuer:
+Wenn magnetischer Fluss, Windungszahl und Induktivitaet bekannt sind.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+Aus Phi = L * I / N. Achtung: L ist Induktivitaet, nicht Laenge.
+Groesse:
+I - Strom aus Kraft auf Leiter im Magnetfeld
+
+Formel:
+I = F / (B * l * sin(alpha))
+
+Einheiten:
+I [A], F [N], B [T], l [m], alpha [Grad]
+
+Wofuer:
+Wenn ein stromdurchflossener Leiter im Magnetfeld eine Kraft erfaehrt.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Bei senkrechtem Leiter gilt sin(alpha)=1, also I = F/(B*l).
+Groesse:
+I - Strom aus elektrischer Leistung
+
+Formel:
+I = P / U
+
+Einheiten:
+I [A], P [W], U [V]
+
+Wofuer:
+Wenn Leistung und Spannung gegeben sind.
+
+Rechnen:
+Rechnen -> Einheiten / Checks oder Transformator
+
+Hinweis:
+Bei Wechselstrom meist Effektivwerte verwenden.
+Groesse:
+I - Strom aus Leistung am Widerstand
+
+Formel:
+I = sqrt(P / R)
+
+Einheiten:
+I [A], P [W], R [Ohm]
+
+Wofuer:
+Wenn Leistung und Widerstand gegeben sind.
+
+Rechnen:
+Rechnen -> Einheiten / Checks
+
+Hinweis:
+Mathematisch gibt es auch -I; physikalisch meist Betrag.
+Groesse:
+I - Strom aus Wechselstromkreis
+
+Formel:
+I_eff = U_eff / Z
+
+Einheiten:
+I_eff [A], U_eff [V], Z [Ohm]
+
+Wofuer:
+Wenn Effektivspannung und Impedanz im Wechselstromkreis gegeben sind.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+Das ist die effektive Stromstaerke im Wechselstromkreis.
+Groesse:
+I - Strom aus magnetischer Energie
+
+Formel:
+I = sqrt(2 * E_mag / L)
+
+Einheiten:
+I [A], E_mag [J], L [H]
+
+Wofuer:
+Wenn Energie und Induktivitaet bekannt sind.
+
+Rechnen:
+Rechnen -> Formel umstellen / Solver
+
+Hinweis:
+Mathematisch gibt es auch -I; physikalisch meist Betrag.
+Groesse:
+I - Stromstaerke nach Ohm
+
+Formel:
+I = U / R
+
+Einheiten:
+I [A], U [V], R [Ohm]
+
+Wofuer:
+Wenn Spannung und Widerstand gegeben sind.
+
+Rechnen:
+Rechnen -> Einheiten / Checks
+
+Hinweis:
+R darf nicht 0 sein.
+Groesse:
+I - Strom im Ringkern aus Feldstaerke
+
+Formel:
+I = H * l_m / N
+
+Einheiten:
+I [A], H [A/m], l_m [m], N [1]
+
+Wofuer:
+Wenn H, Weglaenge und Windungszahl bekannt sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Fuer lange Spule analog mit l_spule.
+Groesse:
+I0 - Stromamplitude am Kondensator
+
+Formel:
+I0 = omega * C * U0
+
+Einheiten:
+I0 [A], omega [rad/s], C [F], U0 [V]
+
+Wofuer:
+Aus Ableitung Q=C*U beim Kondensator im WSK.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Strom eilt Spannung voraus.
+Groesse:
+I0 - Stromamplitude aus XL
+
+Formel:
+I0 = U0 / X_L
+
+Einheiten:
+I0 [A], U0 [V], X_L [Ohm]
+
+Wofuer:
+Stromamplitude an idealer Spule.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Strom laeuft Spannung hinterher.
+Groesse:
+I0 - Stromamplitude aus XC
+
+Formel:
+I0 = U0 / X_C
+
+Einheiten:
+I0 [A], U0 [V], X_C [Ohm]
+
+Wofuer:
+Stromamplitude am idealen Kondensator.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Strom eilt Spannung voraus.
+Groesse:
+I1 - Primaerstrom am Transformator
+
+Formel:
+I1 = U2 * I2 / U1
+
+Einheiten:
+I1 [A], U2 [V], I2 [A], U1 [V]
+
+Wofuer:
+Wenn beim idealen Transformator U1, U2 und I2 gegeben sind.
+
+Rechnen:
+Rechnen -> Transformator
+
+Hinweis:
+Aus Leistungserhaltung U1*I1 = U2*I2.
+Groesse:
+I1 - Strom paralleler Leiter
+
+Formel:
+I1 = 2*pi*a*F / (mu0*I2*l)
+
+Einheiten:
+I1 [A], a [m], F [N], I2 [A], l [m]
+
+Wofuer:
+Wenn die Kraft zwischen parallelen Leitern gegeben ist.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Magnetfeld / Teilchen
+
+Hinweis:
+Abstand a in Meter.
+Groesse:
+I2 - Sekundaerstrom am Transformator
+
+Formel:
+I2 = U1 * I1 / U2
+
+Einheiten:
+I2 [A], U1 [V], I1 [A], U2 [V]
+
+Wofuer:
+Wenn beim idealen Transformator U1, I1 und U2 gegeben sind.
+
+Rechnen:
+Rechnen -> Transformator
+
+Hinweis:
+Wenn die Spannung hochtransformiert wird, sinkt die Stromstaerke.
+Groesse:
+I2 - Sekundaerstrom idealer Transformator
+
+Formel:
+I2 = U1 * I1 / U2
+
+Einheiten:
+I2 [A], U1/U2 [V], I1 [A]
+
+Wofuer:
+Leistungserhaltung beim idealen Trafo.
+
+Rechnen:
+Rechnen -> Transformator
+
+Hinweis:
+Wenn Spannung hochtransformiert wird, sinkt die Stromstaerke.
+Groesse:
+I2 - Strom paralleler Leiter
+
+Formel:
+I2 = 2*pi*a*F / (mu0*I1*l)
+
+Einheiten:
+I2 [A], a [m], F [N], I1 [A], l [m]
+
+Wofuer:
+Umstellung der Leiterkraftformel nach I2.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Magnetfeld / Teilchen
+
+Hinweis:
+Gleiche Stromrichtung zieht sich an.
+Groesse:
+I_eff - Effektivstrom
+
+Formel:
+I_eff = U_eff / Z
+
+Einheiten:
+I_eff [A], U_eff [V], Z [Ohm]
+
+Wofuer:
+Strom im Wechselstromkreis mit Impedanz.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+In Reihenschaltung ist I fuer alle Bauelemente gleich.
+Groesse:
+I_eff - Effektivstrom aus Scheitelwert
+
+Formel:
+I_eff = I0 / sqrt(2)
+
+Einheiten:
+I_eff [A], I0 [A]
+
+Wofuer:
+Effektivwert eines sinusfoermigen Wechselstroms.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Analog zu U_eff.
+Groesse:
+I_eff - Effektivstrom aus Wirkleistung
+
+Formel:
+I_eff = P / (U_eff * cos_phi)
+
+Einheiten:
+I_eff [A], P [W], U_eff [V]
+
+Wofuer:
+Umstellung der Wirkleistung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+cos_phi darf nicht 0 sein.
+Groesse:
+L - Induktivitaet aus Spulengeometrie
+
+Formel:
+L = mu0 * mu_r * N^2 * A / l_spule
+
+Einheiten:
+L [H], A [m^2], l_spule [m]
+
+Wofuer:
+Naehere Induktivitaet einer langen Spule.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+Nicht mit Leiterlaenge l verwechseln.
+Groesse:
+L - Induktivitaet aus Selbstinduktion
+
+Formel:
+L = -U_ind * DeltaT / DeltaI
+
+Einheiten:
+L [H], U_ind [V], DeltaT [s], DeltaI [A]
+
+Wofuer:
+Wenn Selbstinduktionsspannung und Stromaenderung gegeben sind.
+
+Rechnen:
+Rechnen -> Formel umstellen / Solver
+
+Hinweis:
+Bei Betragsrechnung: L = /U_ind/*DeltaT//DeltaI/.
+Groesse:
+L - Induktivitaet aus X_L
+
+Formel:
+L = X_L / (2*pi*f)
+
+Einheiten:
+L [H], X_L [Ohm], f [Hz]
+
+Wofuer:
+Wenn induktiver Blindwiderstand und Frequenz gegeben sind.
+
+Rechnen:
+Rechnen -> Formel umstellen / Solver
+
+Hinweis:
+f darf nicht 0 sein.
+Groesse:
+L - Induktivitaet aus Fluss
+
+Formel:
+L = N * Phi / I
+
+Einheiten:
+L [H], N [1], Phi [Wb], I [A]
+
+Wofuer:
+Folgt aus Flussverkettung N*Phi=L*I.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Phi pro Windung einsetzen.
+Groesse:
+N - Windungszahl aus Spulenfeld
+
+Formel:
+N = B * l_spule / (mu0 * mu_r * I)
+
+Einheiten:
+N [1], B [T], l_spule [m], mu0 [T*m/A], mu_r [1], I [A]
+
+Wofuer:
+Wenn B, Spulenlaenge, Material und Strom gegeben sind.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Aus B = mu0 * mu_r * N * I / l_spule.
+Groesse:
+N - Windungszahl aus Feldstaerke
+
+Formel:
+N = H * l_spule / I
+
+Einheiten:
+N [1], H [A/m], l_spule [m], I [A]
+
+Wofuer:
+Wenn H, Spulenlaenge und Stromstaerke gegeben sind.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Aus H = N * I / l_spule.
+Groesse:
+N - Windungszahl aus Drahtdurchmesser
+
+Formel:
+N = z * l_spule / d_Draht
+
+Einheiten:
+N [1], z [1], l_spule [m], d_Draht [m]
+
+Wofuer:
+Dicht gewickelte Spule mit z Lagen.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Nur Naeherung, wenn Windungen dicht nebeneinander liegen.
+Groesse:
+N - Windungszahl aus Flussverkettung
+
+Formel:
+N = L * I / Phi
+
+Einheiten:
+N [1], L [H], I [A], Phi [Wb]
+
+Wofuer:
+Wenn L, I und magnetischer Fluss gegeben sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Aus N*Phi=L*I.
+Groesse:
+N1 - Primaerwindungen aus Spannung
+
+Formel:
+N1 = U1 * N2 / U2
+
+Einheiten:
+N1 [1], U1/U2 [V], N2 [1]
+
+Wofuer:
+Umstellung nach Primaerwindungszahl.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator
+
+Hinweis:
+U2 darf nicht 0 sein.
+Groesse:
+N1 - Primaerwindungen aus Stromverhaeltnis
+
+Formel:
+N1 = N2 * I2 / I1
+
+Einheiten:
+N1 [1], N2 [1], I2/I1 [A]
+
+Wofuer:
+Idealtrafo: N1/N2 = I2/I1.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator
+
+Hinweis:
+Nur ideal ohne Verluste.
+Groesse:
+N2 - Sekundaerwindungszahl
+
+Formel:
+N2 = U2 * N1 / U1
+
+Einheiten:
+N2 [1], U1/U2 [V], N1 [1]
+
+Wofuer:
+Trafo dimensionieren: Wie viele Windungen braucht die Sekundaerspule?
+
+Rechnen:
+Rechnen -> Transformator
+
+Hinweis:
+Windungszahl muss praktisch ganzzahlig sein.
+Groesse:
+N2 - Sekundaerwindungen aus Stromverhaeltnis
+
+Formel:
+N2 = N1 * I1 / I2
+
+Einheiten:
+N2 [1], N1 [1], I1/I2 [A]
+
+Wofuer:
+Idealtrafo ueber Stromverhaeltnis.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator
+
+Hinweis:
+Stromverhaeltnis ist umgekehrt zum Spannungsverhaeltnis.
+Groesse:
+P - elektrische Leistung
+
+Formel:
+P = U * I
+
+Einheiten:
+P [W], U [V], I [A]
+
+Wofuer:
+Leistung aus Spannung und Stromstaerke.
+
+Rechnen:
+Rechnen -> Einheiten / Checks oder Transformator
+
+Hinweis:
+Bei Wechselstrom mit Effektivwerten rechnen.
+Groesse:
+P - Leistung am Widerstand
+
+Formel:
+P = I^2 * R = U^2 / R
+
+Einheiten:
+P [W], I [A], R [Ohm], U [V]
+
+Wofuer:
+Waermeleistung am ohmschen Widerstand, auch bei Wirbelstrom-Aufgaben.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Wirbelstroeme
+
+Hinweis:
+Nuetzlich fuer R = P/I^2 beim Aluminiumring.
+Groesse:
+P - Wirkleistung Wechselstrom
+
+Formel:
+P = U_eff * I_eff * cos_phi
+
+Einheiten:
+P [W], U_eff [V], I_eff [A]
+
+Wofuer:
+Wirkleistung bei Phasenverschiebung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Bei reinem R: cos_phi=1.
+Groesse:
+P_V - Verlustleistung in Leitung
+
+Formel:
+P_V = I^2 * R
+
+Einheiten:
+P_V [W], I [A], R [Ohm]
+
+Wofuer:
+Berechnet Waermeverluste in Leitungen oder Widerstaenden.
+
+Rechnen:
+Rechnen -> Transformator oder Hilfsrechner/Leistung
+
+Hinweis:
+Darum nutzt man Hochspannung: kleiner I bedeutet viel kleinere Verluste.
+Groesse:
+P_V - Verlustleistung aus Spannung
+
+Formel:
+P_V = U^2 / R
+
+Einheiten:
+P_V [W], U [V], R [Ohm]
+
+Wofuer:
+Verlustleistung an einem Widerstand.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator/WSK
+
+Hinweis:
+Bei Leitungsverlusten relevant.
+Groesse:
+P_V - Verlustleistung als Differenz
+
+Formel:
+P_V = P_in - P_out
+
+Einheiten:
+P_V [W], P_in/P_out [W]
+
+Wofuer:
+Verluste im Trafo oder Leitungen.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator
+
+Hinweis:
+Kann auch Waermeverlust sein.
+Groesse:
+Phi - magnetischer Fluss
+
+Formel:
+Phi = B * A * cos(alpha)
+
+Einheiten:
+Phi [Wb], B [T], A [m^2], alpha [Grad]
+
+Wofuer:
+Standardformel, wenn ein homogenes Magnetfeld eine Flaeche durchsetzt.
+
+Rechnen:
+Rechnen -> Induktion / magnetischer Fluss
+
+Hinweis:
+alpha ist der Winkel zwischen Feldrichtung und Flaechennormale bzw. Spulenachse.
+Groesse:
+Phi - magnetischer Fluss aus Induktivitaet
+
+Formel:
+Phi = L * I / N
+
+Einheiten:
+Phi [Wb], L [H], I [A], N [1]
+
+Wofuer:
+Wenn Induktivitaet, Stromstaerke und Windungszahl einer Spule bekannt sind.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+Folgt aus der Flussverkettung N*Phi = L*I.
+Groesse:
+Phi - magnetischer Fluss aus B und Flaeche
+
+Formel:
+Phi = B * A
+
+Einheiten:
+Phi [Wb], B [T], A [m^2]
+
+Wofuer:
+Wenn Feld senkrecht durch die Flaeche geht.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Spezialfall von Phi=B*A*cos(alpha) mit alpha=0.
+Groesse:
+Phi_E - elektrischer Fluss
+
+Formel:
+Phi_E = E * A * cos(alpha)
+
+Einheiten:
+Phi_E [V*m], E [V/m], A [m^2], alpha [Grad]
+
+Wofuer:
+Elektrisches Analogon zum magnetischen Fluss; praktisch bei Feldlinien durch Flaechen.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+Kommt bei euch vermutlich seltener vor als der magnetische Fluss Phi.
+Groesse:
+Phi_E - elektrischer Fluss aus Ladung
+
+Formel:
+Phi_E = Q / eps0
+
+Einheiten:
+Phi_E [V*m], Q [C], eps0 [F/m]
+
+Wofuer:
+Gauss-Gesetz im Vakuum.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Elektrisches Feld
+
+Hinweis:
+Nur fuer passende geschlossene Flaeche.
+Groesse:
+Q - Kondensatorladung
+
+Formel:
+Q = C * U
+
+Einheiten:
+Q [C], C [F], U [V]
+
+Wofuer:
+Ladung auf einem Kondensator.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+Nicht mit Teilchenladung q verwechseln.
+Groesse:
+Q - Ladung aus Strom und Zeit
+
+Formel:
+Q = I * t
+
+Einheiten:
+Q [C], I [A], t [s]
+
+Wofuer:
+Definition der Stromstaerke.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Elektrisches Feld
+
+Hinweis:
+Konstanter Strom angenommen.
+Groesse:
+Q - Ladung aus Feldfluss
+
+Formel:
+Q = eps0 * Phi_E
+
+Einheiten:
+Q [C], eps0 [F/m], Phi_E [V*m]
+
+Wofuer:
+Aus elektrischem Fluss nach Gauss im Vakuum.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Elektrisches Feld
+
+Hinweis:
+Vereinfachte Gauss-Form.
+Groesse:
+Q_blind - Blindleistung
+
+Formel:
+Q_blind = U_eff * I_eff * sin(phi)
+
+Einheiten:
+Q_blind [var], U_eff [V], I_eff [A]
+
+Wofuer:
+Blindleistung durch Spule/Kondensator.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Nicht mit Ladung Q verwechseln.
+Groesse:
+Q_blind - Blindleistung aus S und P
+
+Formel:
+Q_blind = sqrt(S^2 - P^2)
+
+Einheiten:
+Q_blind [var], S [VA], P [W]
+
+Wofuer:
+Blindleistung aus Scheinleistung und Wirkleistung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Leistungsdreieck.
+Groesse:
+R - Ohmscher Widerstand
+
+Formel:
+R = U / I
+
+Einheiten:
+R [Ohm], U [V], I [A]
+
+Wofuer:
+Grundformel fuer ohmsche Bauelemente.
+
+Rechnen:
+Rechnen -> Einheiten / Checks oder Wechselstrom / RLC
+
+Hinweis:
+Im Wechselstromkreis ist R frequenzunabhaengig.
+Groesse:
+R - Wirkwiderstand aus Impedanz
+
+Formel:
+R = sqrt(Z^2 - (X_L - X_C)^2)
+
+Einheiten:
+R [Ohm], Z [Ohm], X_L/X_C [Ohm]
+
+Wofuer:
+Umstellung der RLC-Impedanz.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Nur reelle Loesung wenn Ausdruck >=0.
+Groesse:
+R - Widerstand aus Leistung
+
+Formel:
+R = P / I^2
+
+Einheiten:
+R [Ohm], P [W], I [A]
+
+Wofuer:
+Wenn Leistung und Strom gegeben sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Auch bei Wirbelstromaufgaben.
+Groesse:
+R - Widerstand aus Leistung und Spannung
+
+Formel:
+R = U^2 / P
+
+Einheiten:
+R [Ohm], U [V], P [W]
+
+Wofuer:
+Umstellung von P=U^2/R.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+U als Effektivwert im WSK.
+Groesse:
+R - Drahtwiderstand
+
+Formel:
+R = rho * l / A
+
+Einheiten:
+R [Ohm], rho [Ohm*m], l [m], A [m^2]
+
+Wofuer:
+Widerstand eines Drahtes.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+A in m^2.
+Groesse:
+S - Scheinleistung
+
+Formel:
+S = U_eff * I_eff
+
+Einheiten:
+S [VA], U_eff [V], I_eff [A]
+
+Wofuer:
+Gesamtleistung im Wechselstromkreis als Scheinleistung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Einheit VA.
+Groesse:
+S - Scheinleistung aus P und Q
+
+Formel:
+S = sqrt(P^2 + Q_blind^2)
+
+Einheiten:
+S [VA], P [W], Q_blind [var]
+
+Wofuer:
+Leistungsdreieck im Wechselstromkreis.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Nicht mit Weg s verwechseln.
+Groesse:
+T - Periodendauer
+
+Formel:
+T = 1 / f
+
+Einheiten:
+T [s], f [Hz]
+
+Wofuer:
+Dauer einer vollen Schwingung.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+Bei Schwingkreis auch T = 2*pi*sqrt(L*C).
+Groesse:
+T - Thomsonsche Schwingungsdauer
+
+Formel:
+T = 2*pi*sqrt(L*C)
+
+Einheiten:
+T [s], L [H], C [F]
+
+Wofuer:
+Schwingungsdauer eines idealen LC-Schwingkreises.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK -> Thomson / Resonanz
+
+Hinweis:
+Dazu gehoert f0 = 1/T.
+Groesse:
+U - Spannung am Widerstand
+
+Formel:
+U = R * I
+
+Einheiten:
+U [V], R [Ohm], I [A]
+
+Wofuer:
+Ohmsches Gesetz.
+
+Rechnen:
+Rechnen -> Einheiten / Checks
+
+Hinweis:
+Bei Wechselstrom meist Effektivwerte verwenden.
+Groesse:
+U - Spannung im homogenen E-Feld
+
+Formel:
+U = E * d
+
+Einheiten:
+U [V], E [V/m], d [m]
+
+Wofuer:
+Wenn Feldstaerke und Plattenabstand bekannt sind.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+Gilt fuer homogenes Feld.
+Groesse:
+U0 - Spannungsamplitude Kondensator
+
+Formel:
+U0 = I0 / (omega * C)
+
+Einheiten:
+U0 [V], I0 [A], omega [rad/s], C [F]
+
+Wofuer:
+Umstellung beim kapazitiven Widerstand.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+C in Farad.
+Groesse:
+U0 - Scheitelspannung aus Effektivwert
+
+Formel:
+U0 = sqrt(2) * U_eff
+
+Einheiten:
+U0 [V], U_eff [V]
+
+Wofuer:
+Spannungsamplitude einer sinusfoermigen Spannung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+U0 entspricht U_max.
+Groesse:
+U1 - Primaerspannung Transformator
+
+Formel:
+U1 = U2 * N1 / N2
+
+Einheiten:
+U1/U2 [V], N1/N2 [1]
+
+Wofuer:
+Wenn Ausgangsspannung und Windungszahlen bekannt sind.
+
+Rechnen:
+Rechnen -> Transformator
+
+Hinweis:
+Gilt idealisiert ohne Verluste.
+Groesse:
+U1 - Primaerspannung aus Stromverhaeltnis
+
+Formel:
+U1 = U2 * I2 / I1
+
+Einheiten:
+U1 [V], U2 [V], I2/I1 [A]
+
+Wofuer:
+Umstellung von U1*I1=U2*I2.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator
+
+Hinweis:
+I1 darf nicht 0 sein.
+Groesse:
+U2 - Sekundaerspannung Transformator
+
+Formel:
+U2 = U1 * N2 / N1
+
+Einheiten:
+U1/U2 [V], N1/N2 [1]
+
+Wofuer:
+Idealer Transformator: Spannung aus Windungsverhaeltnis.
+
+Rechnen:
+Rechnen -> Transformator
+
+Hinweis:
+N2>N1: Hochtransformator; N2<N1: Heruntertransformator.
+Groesse:
+U2 - Sekundaerspannung aus Stromverhaeltnis
+
+Formel:
+U2 = U1 * I1 / I2
+
+Einheiten:
+U2 [V], U1 [V], I1/I2 [A]
+
+Wofuer:
+Idealtrafo ueber Leistungserhaltung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator
+
+Hinweis:
+Ohne Verluste.
+Groesse:
+U_eff - Effektivspannung
+
+Formel:
+U_eff = U_max / sqrt(2)
+
+Einheiten:
+U_eff [V], U_max [V]
+
+Wofuer:
+Effektiver Wert einer sinusfoermigen Wechselspannung.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+230 V Netzspannung ist Effektivwert.
+Groesse:
+U_eff - Effektivspannung aus Leistung
+
+Formel:
+U_eff = sqrt(P * R)
+
+Einheiten:
+U_eff [V], P [W], R [Ohm]
+
+Wofuer:
+Bei ohmschem Widerstand im WSK.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Mit Effektivwerten.
+Groesse:
+U_ind - Induktionsspannung nach Faraday
+
+Formel:
+U_ind = -N * DeltaPhi / DeltaT
+
+Einheiten:
+U_ind [V], N [1], DeltaPhi [Wb], DeltaT [s]
+
+Wofuer:
+Grundformel fuer Induktion durch Flussaenderung.
+
+Rechnen:
+Rechnen -> Induktion / magnetischer Fluss
+
+Hinweis:
+Minuszeichen = Lenzsche Regel.
+Groesse:
+U_ind - Induktion durch Feldaenderung
+
+Formel:
+U_ind = -N * A * cos(alpha) * DeltaB / DeltaT
+
+Einheiten:
+U_ind [V], N [1], A [m^2], DeltaB [T], DeltaT [s]
+
+Wofuer:
+Wenn sich B aendert, aber Flaeche und Winkel gleich bleiben.
+
+Rechnen:
+Rechnen -> Induktion / magnetischer Fluss
+
+Hinweis:
+Bei linearer B-Aenderung ist U_ind konstant.
+Groesse:
+U_ind - Induktion durch Flaechenaenderung
+
+Formel:
+U_ind = -N * B * cos(alpha) * DeltaA / DeltaT
+
+Einheiten:
+U_ind [V], N [1], B [T], DeltaA [m^2], DeltaT [s]
+
+Wofuer:
+Wenn sich die wirksame Flaeche im Magnetfeld aendert.
+
+Rechnen:
+Rechnen -> Induktion / magnetischer Fluss
+
+Hinweis:
+Typisch: Rahmen taucht in ein Magnetfeld ein.
+Groesse:
+U_ind - Bewegungsinduktion am Leiter
+
+Formel:
+U_ind = B * l * v
+
+Einheiten:
+U_ind [V], B [T], l [m], v [m/s]
+
+Wofuer:
+Wenn ein Leiter senkrecht zum Magnetfeld bewegt wird.
+
+Rechnen:
+Rechnen -> Induktion / Bewegungsinduktion
+
+Hinweis:
+Bei schraeger Bewegung kommt sin(alpha) als Faktor dazu.
+Groesse:
+U_ind - Rahmen tritt in Magnetfeld ein/aus
+
+Formel:
+/U_ind/ = N * B * d * v
+
+Einheiten:
+U_ind [V], N [1], B [T], d [m], v [m/s]
+
+Wofuer:
+Rechteckrahmen bewegt sich in ein homogenes Magnetfeld hinein oder heraus.
+
+Rechnen:
+Rechnen -> Individuelle Situationen
+
+Hinweis:
+Wenn der Rahmen ganz im homogenen Feld ist, ist U_ind = 0.
+Groesse:
+U_ind - Generator mit sinusfoermigem Feld
+
+Formel:
+U_max = N * A * B_max * 2*pi*f * /cos(alpha)/
+
+Einheiten:
+U_max [V], N [1], A [m^2], B_max [T], f [Hz]
+
+Wofuer:
+Maximale Induktionsspannung bei sinusfoermiger Flussaenderung.
+
+Rechnen:
+Rechnen -> Individuelle Situationen -> Sinusfoermiges B-Feld
+
+Hinweis:
+Frequenz und Feldamplitude erhoehen die Spannung direkt.
+Groesse:
+U_ind - Dreieckgenerator / Dreiecksignal
+
+Formel:
+/U_ind/ = N * A * 4 * B_max * f * /cos(alpha)/
+
+Einheiten:
+U_ind [V], N [1], A [m^2], B_max [T], f [Hz]
+
+Wofuer:
+Schulversuche mit Dreieckgenerator; Spannung ist abschnittsweise konstant.
+
+Rechnen:
+Rechnen -> Individuelle Situationen -> Dreiecksignal
+
+Hinweis:
+Beim Dreiecksignal gilt /dB/dt/ = 4*B_max*f.
+Groesse:
+U_ind - Selbstinduktionsspannung
+
+Formel:
+U_ind = -L * DeltaI / DeltaT
+
+Einheiten:
+U_ind [V], L [H], DeltaI [A], DeltaT [s]
+
+Wofuer:
+Wenn sich der Strom durch eine Spule aendert.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+Die Spule wirkt der Stromaenderung entgegen.
+Groesse:
+U_ind - Bewegungsinduktion mit Winkel
+
+Formel:
+U_ind = B * l * v * sin(alpha)
+
+Einheiten:
+U_ind [V], B [T], l [m], v [m/s], alpha [Grad]
+
+Wofuer:
+Wenn ein Leiter sich schraeg zu Feldlinien bewegt.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Nur der senkrechte Geschwindigkeitsanteil zaehlt.
+Groesse:
+U_ind - Dreiecksignal Induktion
+
+Formel:
+abs(U_ind) = N * A * 4 * B_max * f * abs(cos(alpha))
+
+Einheiten:
+U_ind [V], N [1], A [m^2], B_max [T], f [Hz]
+
+Wofuer:
+Dreiecksignal erzeugt abschnittsweise konstante Induktionsspannung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Aus IQB-Versuchen mit Dreieckgenerator.
+Groesse:
+U_max - Scheitelspannung
+
+Formel:
+U_max = U_eff * sqrt(2)
+
+Einheiten:
+U_max [V], U_eff [V]
+
+Wofuer:
+Maximalwert einer sinusfoermigen Wechselspannung.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+Nicht mit Spitze-Spitze-Spannung verwechseln.
+Groesse:
+U_max - Generator Sinus-Spannung
+
+Formel:
+U_max = N * A * B_max * 2*pi*f * abs(cos(alpha))
+
+Einheiten:
+U_max [V], N [1], A [m^2], B_max [T], f [Hz]
+
+Wofuer:
+Sinusfoermig veraenderliche Flussdichte.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Amplitude der Induktionsspannung.
+Groesse:
+W - mechanische Arbeit
+
+Formel:
+W = F * s * cos(alpha)
+
+Einheiten:
+W [J], F [N], s [m], alpha [Grad]
+
+Wofuer:
+Arbeit einer Kraft entlang eines Weges.
+
+Rechnen:
+Rechnen -> Mechanik
+
+Hinweis:
+Bei gleicher Richtung: cos(0)=1.
+Groesse:
+W - Arbeit aus Energiedifferenz
+
+Formel:
+W = DeltaE
+
+Einheiten:
+W [J], DeltaE [J]
+
+Wofuer:
+Arbeit als uebertragene Energie.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+Vorzeichen je nach Richtung.
+Groesse:
+W_el - elektrische Arbeit/Energie
+
+Formel:
+W_el = q * U
+
+Einheiten:
+W_el [J], q [C], U [V]
+
+Wofuer:
+Energiegewinn einer Ladung beim Durchlaufen einer Spannung.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator oder Teilchenbeschleuniger
+
+Hinweis:
+Bei Teilchenbeschleunigern ist das die kinetische Energie.
+Groesse:
+W_el - elektrische Arbeit aus Leistung
+
+Formel:
+W_el = P * t
+
+Einheiten:
+W_el [J], P [W], t [s]
+
+Wofuer:
+Elektrische Energie/Arbeit ueber Zeit.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Elektrisches Feld
+
+Hinweis:
+1 Wh = 3600 J.
+Groesse:
+X_C - kapazitiver Blindwiderstand
+
+Formel:
+X_C = 1 / (2*pi*f*C) = 1/(omega*C)
+
+Einheiten:
+X_C [Ohm], f [Hz], C [F]
+
+Wofuer:
+Widerstand eines Kondensators im Wechselstromkreis.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+Je groesser f oder C, desto kleiner X_C.
+Groesse:
+X_C - kapazitiver Widerstand aus Amplituden
+
+Formel:
+X_C = U0 / I0
+
+Einheiten:
+X_C [Ohm], U0 [V], I0 [A]
+
+Wofuer:
+Definition als Verhaeltnis der Scheitelwerte.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Auch mit Effektivwerten nutzbar.
+Groesse:
+X_L - induktiver Blindwiderstand
+
+Formel:
+X_L = 2*pi*f*L = omega*L
+
+Einheiten:
+X_L [Ohm], f [Hz], L [H]
+
+Wofuer:
+Widerstand einer Spule im Wechselstromkreis.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+Je groesser f oder L, desto groesser X_L.
+Groesse:
+X_L - induktiver Widerstand aus Amplituden
+
+Formel:
+X_L = U0 / I0
+
+Einheiten:
+X_L [Ohm], U0 [V], I0 [A]
+
+Wofuer:
+Definition als Verhaeltnis der Scheitelwerte.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Ideale Spule.
+Groesse:
+Z - Impedanz RLC-Reihenschaltung
+
+Formel:
+Z = sqrt(R^2 + (X_L - X_C)^2)
+
+Einheiten:
+Z [Ohm], R [Ohm], X_L/X_C [Ohm]
+
+Wofuer:
+Gesamtwiderstand im Wechselstromkreis mit R, L und C in Reihe.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+X_L und X_C wirken gegeneinander.
+Groesse:
+Z - Impedanz RL-Reihe
+
+Formel:
+Z = sqrt(R^2 + X_L^2)
+
+Einheiten:
+Z [Ohm], R [Ohm], X_L [Ohm]
+
+Wofuer:
+Reihenschaltung aus R und L.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Schwerpunkt aus WSK-Folien.
+Groesse:
+Z - Impedanz RC-Reihe
+
+Formel:
+Z = sqrt(R^2 + X_C^2)
+
+Einheiten:
+Z [Ohm], R [Ohm], X_C [Ohm]
+
+Wofuer:
+Reihenschaltung aus R und C.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Betrag der Impedanz.
+Groesse:
+a - Abstand paralleler Leiter
+
+Formel:
+a = mu0 * I1 * I2 * l / (2*pi*F)
+
+Einheiten:
+a [m], I1/I2 [A], l [m], F [N]
+
+Wofuer:
+Abstand aus Kraft zwischen parallelen Leitern.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Magnetfeld / Teilchen
+
+Hinweis:
+F darf nicht 0 sein.
+Groesse:
+a - Beschleunigung nach Newton
+
+Formel:
+a = F / m
+
+Einheiten:
+a [m/s^2], F [N], m [kg]
+
+Wofuer:
+Beschleunigung aus Kraft und Masse.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+Nicht mit Abstand a verwechseln.
+Groesse:
+a - Beschleunigung aus Geschwindigkeit
+
+Formel:
+a = (v - u) / t
+
+Einheiten:
+a [m/s^2], v/u [m/s], t [s]
+
+Wofuer:
+Gleichmaessige Beschleunigung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+t darf nicht 0 sein.
+Groesse:
+a_r - Radialbeschleunigung
+
+Formel:
+a_r = v^2 / r
+
+Einheiten:
+a_r [m/s^2], v [m/s], r [m]
+
+Wofuer:
+Beschleunigung bei Kreisbewegung Richtung Kreismitte.
+
+Rechnen:
+Rechnen -> Mechanik -> Kreisbewegung
+
+Hinweis:
+Auch bei konstantem Betrag von v gibt es Beschleunigung.
+Groesse:
+a_r - Radialbeschleunigung aus T
+
+Formel:
+a_r = 4*pi^2*r / T^2
+
+Einheiten:
+a_r [m/s^2], r [m], T [s]
+
+Wofuer:
+Kreisbewegung mit Periodendauer.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+T darf nicht 0 sein.
+Groesse:
+beta - Geschwindigkeit relativ zu c
+
+Formel:
+beta = v / c
+
+Einheiten:
+beta [1], v [m/s], c [m/s]
+
+Wofuer:
+Vergleich einer Geschwindigkeit mit der Lichtgeschwindigkeit.
+
+Rechnen:
+Rechnen -> Relativitaet
+
+Hinweis:
+beta darf nicht groesser/gleich 1 sein.
+Groesse:
+beta - beta aus gamma
+
+Formel:
+beta = sqrt(1 - 1/gamma^2)
+
+Einheiten:
+beta [1], gamma [1]
+
+Wofuer:
+Umstellung des Lorentzfaktors.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Relativitaet
+
+Hinweis:
+0 <= beta < 1.
+Groesse:
+cos_phi - Leistungsfaktor
+
+Formel:
+cos_phi = R / Z
+
+Einheiten:
+cos_phi [1], R [Ohm], Z [Ohm]
+
+Wofuer:
+Wirkanteil im Wechselstromkreis.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Bei rein ohmsch: cos_phi=1.
+Groesse:
+cos_phi - Leistungsfaktor aus Leistung
+
+Formel:
+cos_phi = P / (U_eff * I_eff)
+
+Einheiten:
+cos_phi [1], P [W], U_eff [V], I_eff [A]
+
+Wofuer:
+Leistungsfaktor bei Wechselstrom.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Zwischen 0 und 1 bei passiven Lasten.
+Groesse:
+d - Durchmesser aus Flaeche
+
+Formel:
+d = sqrt(4*A/pi)
+
+Einheiten:
+d [m], A [m^2]
+
+Wofuer:
+Wenn aus Kreisflaeche der Durchmesser gesucht ist.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+Hilfreich bei Spulenquerschnitten.
+Groesse:
+d - Durchmesser aus Radius
+
+Formel:
+d = 2 * r
+
+Einheiten:
+d [m], r [m]
+
+Wofuer:
+Geometrie von Kreis/Spule/Draht.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+r ist Radius.
+Groesse:
+d - Plattenabstand aus E-Feld
+
+Formel:
+d = U / E
+
+Einheiten:
+d [m], U [V], E [V/m]
+
+Wofuer:
+Homogenes elektrisches Feld zwischen Platten.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Elektrisches Feld
+
+Hinweis:
+E darf nicht 0 sein.
+Groesse:
+eps0 - elektrische Feldkonstante
+
+Formel:
+eps0 = 8.854... * 10^-12 F/m
+
+Einheiten:
+eps0 [F/m]
+
+Wofuer:
+Konstante fuer elektrische Felder und Kondensatoren.
+
+Rechnen:
+Theorie -> Groessen-Lexikon
+
+Hinweis:
+Naturkonstante.
+Groesse:
+eps_r - relative Permittivitaet
+
+Formel:
+eps_r = C * d / (eps0 * A)
+
+Einheiten:
+eps_r [1], C [F], d [m], A [m^2]
+
+Wofuer:
+Materialfaktor im Kondensator.
+
+Rechnen:
+Rechnen -> Elektrisches Feld / Kondensator
+
+Hinweis:
+Luft ist ungefaehr 1.
+Groesse:
+eps_r - relative Permittivitaet aus Feldstaerken
+
+Formel:
+eps_r = E0 / E
+
+Einheiten:
+eps_r [1], E0 [V/m], E [V/m]
+
+Wofuer:
+Material schwaecht das elektrische Feld gegenueber Vakuum.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Kondensator
+
+Hinweis:
+Vereinfachte Beziehung.
+Groesse:
+eta - Wirkungsgrad
+
+Formel:
+eta = P_out / P_in
+
+Einheiten:
+eta [1] oder [%], P [W]
+
+Wofuer:
+Anteil der Eingangsleistung, der nutzbar herauskommt.
+
+Rechnen:
+Rechnen -> Transformator oder Rechnen -> Mechanik
+
+Hinweis:
+85 Prozent als 0.85 einsetzen.
+Groesse:
+eta - Trafo-Wirkungsgrad
+
+Formel:
+eta = (U2 * I2) / (U1 * I1)
+
+Einheiten:
+eta [1], U/I in V/A
+
+Wofuer:
+Wirkungsgrad aus Eingangs- und Ausgangsleistung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator
+
+Hinweis:
+In Prozent: eta*100.
+Groesse:
+eta - Wirkungsgrad aus Verlustleistung
+
+Formel:
+eta = 1 - P_V / P_in
+
+Einheiten:
+eta [1], P_V [W], P_in [W]
+
+Wofuer:
+Wenn Verlustleistung bekannt ist.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Transformator
+
+Hinweis:
+Nur wenn P_V Teil von P_in ist.
+Groesse:
+f - Frequenz aus Periodendauer
+
+Formel:
+f = 1 / T
+
+Einheiten:
+f [Hz], T [s]
+
+Wofuer:
+Anzahl Schwingungen pro Sekunde.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+T nicht mit Tesla verwechseln.
+Groesse:
+f - Frequenz aus Sinus-Induktion
+
+Formel:
+f = U_max / (N*A*B_max*2*pi*abs(cos(alpha)))
+
+Einheiten:
+f [Hz], U_max [V], B_max [T]
+
+Wofuer:
+Wenn Induktionsspannungsamplitude und B-Amplitude bekannt sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Gilt fuer sinusfoermiges B.
+Groesse:
+f - Frequenz aus Dreiecksignal
+
+Formel:
+f = abs(U_ind) / (4*N*A*B_max*abs(cos(alpha)))
+
+Einheiten:
+f [Hz], U_ind [V], B_max [T]
+
+Wofuer:
+Umstellung der Dreiecksignal-Formel.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Nur bei Dreiecksignal.
+Groesse:
+f0 - Resonanzfrequenz / Eigenfrequenz
+
+Formel:
+f0 = 1 / (2*pi*sqrt(L*C))
+
+Einheiten:
+f0 [Hz], L [H], C [F]
+
+Wofuer:
+Frequenz, bei der X_L = X_C gilt und der Serienkreis maximalen Strom hat.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK -> Thomson / Resonanz
+
+Hinweis:
+Grundlage von Siebkreis/Frequenzfilter.
+Groesse:
+f0 - Resonanzfrequenz aus Periodendauer
+
+Formel:
+f0 = 1 / T
+
+Einheiten:
+f0 [Hz], T [s]
+
+Wofuer:
+Wenn die Periodendauer des Schwingkreises gegeben ist.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+T=2*pi*sqrt(L*C).
+Groesse:
+gamma - Lorentzfaktor
+
+Formel:
+gamma = 1 / sqrt(1 - v^2/c^2)
+
+Einheiten:
+gamma [1], v [m/s], c [m/s]
+
+Wofuer:
+Relativistische Korrektur bei sehr hohen Geschwindigkeiten.
+
+Rechnen:
+Rechnen -> Relativitaet
+
+Hinweis:
+v muss kleiner als c sein.
+Groesse:
+gamma - gamma aus Zeitdilatation
+
+Formel:
+gamma = t / t0
+
+Einheiten:
+gamma [1], t [s], t0 [s]
+
+Wofuer:
+Wenn bewegte Zeit und Eigenzeit gegeben sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Relativitaet
+
+Hinweis:
+t >= t0.
+Groesse:
+h - Fallhoehe aus Geschwindigkeit
+
+Formel:
+h = v^2 / (2*g)
+
+Einheiten:
+h [m], v [m/s]
+
+Wofuer:
+Rueckwaerts aus Fallgeschwindigkeit.
+
+Rechnen:
+Rechnen -> Mechanik
+
+Hinweis:
+Ohne Luftwiderstand.
+Groesse:
+h - Hoehe aus Lageenergie
+
+Formel:
+h = E_pot / (m*g)
+
+Einheiten:
+h [m], E_pot [J], m [kg], g [m/s^2]
+
+Wofuer:
+Hoehe aus potentieller Energie.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+m und g duerfen nicht 0 sein.
+Groesse:
+h - Fallhoehe aus Zeit
+
+Formel:
+h = 0.5 * g * t^2
+
+Einheiten:
+h [m], g [m/s^2], t [s]
+
+Wofuer:
+Freier Fall aus Ruhe.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+Ohne Luftreibung.
+Groesse:
+l - Laenge eines Leiters im Magnetfeld
+
+Formel:
+l = U_ind / (B * v)
+
+Einheiten:
+l [m], U_ind [V], B [T], v [m/s]
+
+Wofuer:
+Wenn ein gerader Leiter sich im Magnetfeld bewegt und die wirksame Leiterlaenge gesucht ist.
+
+Rechnen:
+Rechnen -> Induktion / Bewegungsinduktion
+
+Hinweis:
+Gilt fuer senkrechte Bewegung zu den Feldlinien. Bei Winkeln muss der passende sin/cos-Faktor beachtet werden.
+Groesse:
+l - Laenge aus Kraft auf stromdurchflossenen Leiter
+
+Formel:
+l = F / (B * I * sin(alpha))
+
+Einheiten:
+l [m], F [N], B [T], I [A], alpha [Grad]
+
+Wofuer:
+Wenn ein stromdurchflossener Leiter im Magnetfeld eine Kraft erfaehrt und die Leiterlaenge gesucht ist.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Bei senkrechtem Leiter zu den Feldlinien ist sin(alpha)=1, also l = F/(B*I).
+Groesse:
+l - Spulenlaenge aus magnetischer Feldstaerke
+
+Formel:
+l = N * I / H
+
+Einheiten:
+l [m], N [1], I [A], H [A/m]
+
+Wofuer:
+Wenn bei einer langen Spule Windungszahl, Stromstaerke und magnetische Feldstaerke gegeben sind.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Aus H = N*I/l. Nicht mit Induktivitaet L verwechseln.
+Groesse:
+l - Spulenlaenge aus magnetischer Flussdichte
+
+Formel:
+l = mu0 * mu_r * N * I / B
+
+Einheiten:
+l [m], mu0 [T*m/A], mu_r [1], N [1], I [A], B [T]
+
+Wofuer:
+Wenn die magnetische Flussdichte im Inneren einer langen Spule gegeben ist und die Spulenlaenge gesucht wird.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Gilt naeherungsweise fuer lange Spulen. Luft: mu_r ungefaehr 1.
+Groesse:
+l - Spulenlaenge aus Induktivitaet
+
+Formel:
+l = mu0 * mu_r * N^2 * A / L
+
+Einheiten:
+l [m], mu0 [T*m/A], mu_r [1], N [1], A [m^2], L [H]
+
+Wofuer:
+Wenn die Induktivitaet einer langen Spule gegeben ist und die Spulenlaenge gesucht wird.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+Achtung: kleines l ist Laenge, grosses L ist Induktivitaet.
+Groesse:
+l - Drahtlaenge aus Widerstandsgesetz
+
+Formel:
+l = R * A / rho
+
+Einheiten:
+l [m], R [Ohm], A [m^2], rho [Ohm*m]
+
+Wofuer:
+Wenn Widerstand, Querschnitt und spezifischer Widerstand eines Drahtes bekannt sind.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Wirbelstroeme oder Einheiten
+
+Hinweis:
+Wichtig bei Drahtspulen, Aluminiumringen und Widerstandsaufgaben.
+Groesse:
+l - Wellenlaenge aus Wellengeschwindigkeit
+
+Formel:
+lambda = v / f
+
+Einheiten:
+lambda [m], v [m/s], f [Hz]
+
+Wofuer:
+Wenn bei Schwingungen/Wellen die Wellenlaenge gesucht ist.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC oder Mechanik
+
+Hinweis:
+Hier wird die Laenge oft als lambda geschrieben, nicht als l.
+Groesse:
+l - magnetische Weglaenge im Ringkern
+
+Formel:
+l_m = 2*pi*r_m
+
+Einheiten:
+l_m [m], r_m [m]
+
+Wofuer:
+Magnetische Weglaenge eines ringfoermigen Kerns.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+r_m ist der mittlere Radius.
+Groesse:
+l_Draht - Drahtlaenge aus Windungszahl und Umfang
+
+Formel:
+l_Draht = N * u
+
+Einheiten:
+l_Draht [m], N [1], u [m]
+
+Wofuer:
+Drahtlaenge einer Spulenwicklung aus Umfang und Windungszahl.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Bei mehreren Lagen naeherungsweise mittleren Umfang nutzen.
+Groesse:
+l_Draht - Drahtlaenge aus Widerstandsgesetz
+
+Formel:
+l_Draht = R * A / rho
+
+Einheiten:
+l_Draht [m], R [Ohm], A [m^2], rho [Ohm*m]
+
+Wofuer:
+Drahtlaenge aus Widerstand, Querschnitt und Material.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+A in m^2.
+Groesse:
+m - Masse im Massenspektrometer
+
+Formel:
+m = /q/ * B * r / v
+
+Einheiten:
+m [kg], q [C], B [T], r [m], v [m/s]
+
+Wofuer:
+Teilchenmasse aus Ablenkradius im Magnetfeld.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Massenspektrometer und Filter
+
+Hinweis:
+Oft vorher v mit Geschwindigkeitsfilter bestimmen.
+Groesse:
+m - Masse aus Beschleunigung und Kreisbahn
+
+Formel:
+m = /q/ * B^2 * r^2 / (2*U)
+
+Einheiten:
+m [kg], q [C], B [T], r [m], U [V]
+
+Wofuer:
+Wenn Teilchen durch U beschleunigt und danach im Magnetfeld abgelenkt werden.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Klassische Naeherung.
+Groesse:
+mu0 - magnetische Feldkonstante
+
+Formel:
+mu0 = 4*pi*10^-7 T*m/A
+
+Einheiten:
+mu0 [T*m/A] oder [N/A^2]
+
+Wofuer:
+Konstante in Spulen- und Magnetfeldformeln.
+
+Rechnen:
+Theorie -> Groessen-Lexikon oder Rechnen -> Magnetfeld
+
+Hinweis:
+Das ist eine Naturkonstante, keine zu berechnende Variable.
+Groesse:
+mu_r - relative Permeabilitaet aus B
+
+Formel:
+mu_r = B * l_spule / (mu0 * N * I)
+
+Einheiten:
+mu_r [1], B [T], l_spule [m], mu0 [T*m/A], N [1], I [A]
+
+Wofuer:
+Wenn Materialwirkung aus Spulenfeld bestimmt werden soll.
+
+Rechnen:
+Rechnen -> Magnetfeld / Spule
+
+Hinweis:
+Luft hat ungefaehr mu_r = 1; Eisen deutlich groesser.
+Groesse:
+mu_r - relative Permeabilitaet aus Induktivitaet
+
+Formel:
+mu_r = L * l_spule / (mu0 * N^2 * A)
+
+Einheiten:
+mu_r [1], L [H], l_spule [m], mu0 [T*m/A], N [1], A [m^2]
+
+Wofuer:
+Wenn Induktivitaet und Spulengeometrie bekannt sind.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+Aus L = mu0 * mu_r * N^2 * A / l_spule.
+Groesse:
+mu_r - relative Permeabilitaet
+
+Formel:
+mu_r = B / (mu0 * H)
+
+Einheiten:
+mu_r [1], B [T], H [A/m]
+
+Wofuer:
+Materialfaktor: wie stark ein Material das Magnetfeld im Vergleich zu Luft/Vakuum verstaerkt.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Spule-Magnetfeld
+
+Hinweis:
+Luft etwa 1, Eisen oft viel groesser.
+Groesse:
+omega - Kreisfrequenz
+
+Formel:
+omega = 2*pi*f
+
+Einheiten:
+omega [rad/s], f [Hz]
+
+Wofuer:
+Praktisch fuer Wechselstromformeln und Schwingungen.
+
+Rechnen:
+Rechnen -> Wechselstrom / RLC / WSK
+
+Hinweis:
+In Formeln steht oft omega statt 2*pi*f.
+Groesse:
+omega - Kreisfrequenz aus Periodendauer
+
+Formel:
+omega = 2*pi/T
+
+Einheiten:
+omega [rad/s], T [s]
+
+Wofuer:
+Alternative zur Formel omega=2*pi*f.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+T=1/f.
+Groesse:
+omega - Eigenkreisfrequenz LC
+
+Formel:
+omega0 = 1 / sqrt(L*C)
+
+Einheiten:
+omega0 [rad/s], L [H], C [F]
+
+Wofuer:
+Eigenkreisfrequenz eines LC-Schwingkreises.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+omega0=2*pi*f0.
+Groesse:
+omega - omega aus XL
+
+Formel:
+omega = X_L / L
+
+Einheiten:
+omega [rad/s], X_L [Ohm], L [H]
+
+Wofuer:
+Umstellung von X_L=omega*L.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+L in Henry.
+Groesse:
+omega - omega aus XC
+
+Formel:
+omega = 1 / (X_C * C)
+
+Einheiten:
+omega [rad/s], X_C [Ohm], C [F]
+
+Wofuer:
+Umstellung von X_C=1/(omega*C).
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+C in Farad.
+Groesse:
+p - Impuls
+
+Formel:
+p = m * v
+
+Einheiten:
+p [kg*m/s], m [kg], v [m/s]
+
+Wofuer:
+Bewegungsmenge eines Koerpers.
+
+Rechnen:
+Rechnen -> Mechanik
+
+Hinweis:
+Impuls ist richtungsabhaengig.
+Groesse:
+p - Impulsaenderung
+
+Formel:
+Delta p = F * DeltaT
+
+Einheiten:
+Delta p [kg*m/s], F [N], DeltaT [s]
+
+Wofuer:
+Kraftstoss.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+F als mittlere Kraft.
+Groesse:
+q_m - spezifische Ladung q/m
+
+Formel:
+q/m = 2*U / (B^2 * r^2)
+
+Einheiten:
+q/m [C/kg], U [V], B [T], r [m]
+
+Wofuer:
+Elektron im B-Feld / Fadenstrahlrohr.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Elektron im B-Feld
+
+Hinweis:
+Kombiniert Beschleunigungsspannung und Kreisbahn.
+Groesse:
+q_m - spezifische Ladung aus Kreisbahn
+
+Formel:
+q/m = v / (B * r)
+
+Einheiten:
+q/m [C/kg], v [m/s], B [T], r [m]
+
+Wofuer:
+Wenn Teilchengeschwindigkeit bekannt ist.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Gilt fuer senkrechte Kreisbahn im Magnetfeld.
+Groesse:
+r - Radius der Kreisbahn im B-Feld
+
+Formel:
+r = m * v / (/q/ * B)
+
+Einheiten:
+r [m], m [kg], v [m/s], q [C], B [T]
+
+Wofuer:
+Geladene Teilchen bewegen sich senkrecht im Magnetfeld auf Kreisbahnen.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Groessere Masse oder Geschwindigkeit -> groesserer Radius.
+Groesse:
+r - Radius aus Flaeche
+
+Formel:
+r = sqrt(A/pi)
+
+Einheiten:
+r [m], A [m^2]
+
+Wofuer:
+Wenn aus Kreisflaeche der Radius gesucht ist.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Mechanik
+
+Hinweis:
+Nicht mit Kreisbahnradius verwechseln.
+Groesse:
+r - mittlerer Radius Ringkern
+
+Formel:
+r_m = (r_a + r_i) / 2
+
+Einheiten:
+r_m [m], r_a [m], r_i [m]
+
+Wofuer:
+Bei Eisenringen/Toroiden fuer magnetische Weglaenge.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Aussen- und Innenradius in Meter.
+Groesse:
+rho - spezifischer Widerstand
+
+Formel:
+rho = R * A / l
+
+Einheiten:
+rho [Ohm*m] oder [Ohm*mm^2/m], R [Ohm], A [m^2], l [m]
+
+Wofuer:
+Materialeigenschaft eines Leiters, z.B. Aluminiumring bei Wirbelstroemen.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Wirbelstroeme
+
+Hinweis:
+Einheiten bei A besonders sauber halten.
+Groesse:
+rho - spezifischer Widerstand aus U,I
+
+Formel:
+rho = U * A / (I * l)
+
+Einheiten:
+rho [Ohm*m], U [V], A [m^2], I [A], l [m]
+
+Wofuer:
+Wenn U, I und Drahtgeometrie gegeben sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Spule
+
+Hinweis:
+Aus R=U/I und R=rho*l/A.
+Groesse:
+tau - Zeitkonstante RL-Kreis
+
+Formel:
+tau = L / R
+
+Einheiten:
+tau [s], L [H], R [Ohm]
+
+Wofuer:
+Beschreibt, wie schnell Strom in einem Spulenkreis ansteigt oder abklingt.
+
+Rechnen:
+Rechnen -> Selbstinduktion / Spule
+
+Hinweis:
+Nach etwa 5*tau ist der Vorgang praktisch fast abgeschlossen.
+Groesse:
+tau - Zeitkonstante RC-Kreis
+
+Formel:
+tau = R * C
+
+Einheiten:
+tau [s], R [Ohm], C [F]
+
+Wofuer:
+Zeitkonstante beim Laden/Entladen eines Kondensators.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Kondensator
+
+Hinweis:
+Andere Bedeutung als RL: tau=L/R.
+Groesse:
+v - Teilchengeschwindigkeit aus Kreisbahn
+
+Formel:
+v = /q/ * B * r / m
+
+Einheiten:
+v [m/s], q [C], B [T], r [m], m [kg]
+
+Wofuer:
+Wenn Radius, Masse, Ladung und Magnetfeld bekannt sind.
+
+Rechnen:
+Rechnen -> Magnetfeld / geladene Teilchen
+
+Hinweis:
+Nur klassisch und fuer senkrechten Einschuss.
+Groesse:
+v - Geschwindigkeit nach Beschleunigungsspannung
+
+Formel:
+v = sqrt(2 * /q/ * U / m)
+
+Einheiten:
+v [m/s], q [C], U [V], m [kg]
+
+Wofuer:
+Klassische Geschwindigkeit eines Teilchens nach Beschleunigung durch Spannung U.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Teilchenbeschleuniger
+
+Hinweis:
+Bei sehr hohen Geschwindigkeiten relativistisch rechnen.
+Groesse:
+v - Geschwindigkeit aus Fallhoehe
+
+Formel:
+v = sqrt(2*g*h)
+
+Einheiten:
+v [m/s], g [m/s^2], h [m]
+
+Wofuer:
+Freier Fall aus Ruhe ohne Luftwiderstand.
+
+Rechnen:
+Rechnen -> Mechanik oder Induktion / fallender Magnet
+
+Hinweis:
+Wichtig beim fallenden Magneten durch Spule.
+Groesse:
+v - Geschwindigkeit aus Bewegungsinduktion
+
+Formel:
+v = U_ind / (B * l * sin(alpha))
+
+Einheiten:
+v [m/s], U_ind [V], B [T], l [m]
+
+Wofuer:
+Umstellung nach Geschwindigkeit.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Induktion
+
+Hinweis:
+Bei 90 Grad: v=U/(B*l).
+Groesse:
+v_filter - Geschwindigkeit im Wien-Filter
+
+Formel:
+v_filter = E / B
+
+Einheiten:
+v_filter [m/s], E [V/m], B [T]
+
+Wofuer:
+Nur Teilchen mit dieser Geschwindigkeit passieren geradeaus.
+
+Rechnen:
+Rechnen -> Lehrer-Material Rechner / Massenspektrometer und Filter
+
+Hinweis:
+Elektrische und magnetische Kraft gleichen sich aus.
+Groesse:
+v_filter - Filtergeschwindigkeit mit Plattenfeld
+
+Formel:
+v_filter = U / (d * B)
+
+Einheiten:
+v_filter [m/s], U [V], d [m], B [T]
+
+Wofuer:
+Wien-Filter mit E=U/d.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Magnetfeld / Teilchen
+
+Hinweis:
+B und d duerfen nicht 0 sein.
