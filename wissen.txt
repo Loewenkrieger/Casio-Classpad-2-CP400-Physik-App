@@ -45,6 +45,189 @@ Kraefte, geradlinige Bewegungen, Kreisbewegung und Wurfbewegungen wichtig.
 - Wurfbewegungen zerlegt man in x- und y-Richtung.
 
 Rechnen: Hauptmenue -> 2 Rechnen -> 5 Mechanik
+THEORIE: MECHANISCHE SCHWINGUNG GRUNDIDEE
+Eine mechanische Schwingung ist eine wiederholte Bewegung um eine Ruhelage.
+Typisch ist: Ein Koerper wird ausgelenkt, eine Rueckstellkraft zieht ihn zurueck, wegen Traegheit schiesst er ueber die Ruhelage hinaus.
+
+Wichtige Groessen:
+- x oder y: momentane Auslenkung aus der Ruhelage
+- A_s: Amplitude, also maximale Auslenkung
+- T: Periodendauer einer vollen Schwingung
+- f: Frequenz, also Schwingungen pro Sekunde
+- omega: Kreisfrequenz, omega = 2*pi*f
+- phi0: Anfangsphase
+
+Zusammenhaenge:
+f = 1/T
+T = 1/f
+omega = 2*pi*f = 2*pi/T
+
+Harmonisch heisst:
+Die Rueckstellkraft ist proportional zur Auslenkung und zeigt zur Ruhelage.
+Dann entsteht eine Sinus- oder Cosinusbewegung.
+
+Typische Beispiele:
+- Federpendel
+- kleines Fadenpendel
+- Schwingkreis als elektrische Analogie
+- Molekuelschwingungen naeherungsweise
+
+Merksatz:
+Schwingung braucht Rueckstellkraft und Traegheit. Ohne Rueckstellkraft keine Rueckbewegung, ohne Traegheit kein Ueberschwingen.
+THEORIE: HARMONISCHE SCHWINGUNG
+Mathematische Form:
+x(t) = A_s * sin(omega*t + phi0)
+oder
+x(t) = A_s * cos(omega*t + phi0)
+
+Bedeutung:
+- A_s bestimmt, wie weit die Schwingung maximal ausschlaegt.
+- omega bestimmt, wie schnell der Winkel im Sinus laeuft.
+- phi0 verschiebt den Startpunkt der Schwingung.
+
+Geschwindigkeit:
+v(t) = omega*A_s*cos(omega*t + phi0)
+v_max = omega*A_s
+
+Beschleunigung:
+a(t) = -omega^2*x(t)
+a_max = omega^2*A_s
+
+Wichtig:
+Die Beschleunigung ist immer zur Ruhelage gerichtet. Bei maximaler Auslenkung ist die Geschwindigkeit null und die Beschleunigung maximal. In der Ruhelage ist die Geschwindigkeit maximal und die Beschleunigung null.
+
+Typischer Denkfehler:
+Maximale Geschwindigkeit ist nicht am Umkehrpunkt, sondern in der Ruhelage.
+THEORIE: FEDERPENDEL
+Beim Federpendel schwingt eine Masse m an einer Feder mit Federkonstante D.
+
+Hookesches Gesetz:
+F_D = -D*x
+
+Aus Newton folgt:
+m*a = -D*x
+also
+a = -(D/m)*x
+
+Daraus folgt die Eigenkreisfrequenz:
+omega0 = sqrt(D/m)
+
+Periodendauer:
+T = 2*pi*sqrt(m/D)
+
+Frequenz:
+f = 1/(2*pi)*sqrt(D/m)
+
+Interpretation:
+- groessere Masse m -> langsamere Schwingung, T wird groesser
+- haertere Feder D -> schnellere Schwingung, T wird kleiner
+- bei idealer Feder ist T unabhaengig von der Amplitude
+
+Typische Aufgaben:
+- D aus T und m bestimmen
+- m aus T und D bestimmen
+- maximale Geschwindigkeit berechnen
+- Energie bei maximaler Auslenkung bestimmen
+THEORIE: FADENPENDEL
+Beim Fadenpendel schwingt eine Masse an einem Faden der Laenge l.
+Fuer kleine Auslenkungen ist die Schwingung naeherungsweise harmonisch.
+
+Periodendauer fuer kleine Winkel:
+T = 2*pi*sqrt(l/g)
+
+Frequenz:
+f = 1/(2*pi)*sqrt(g/l)
+
+Eigenkreisfrequenz:
+omega0 = sqrt(g/l)
+
+Wichtig:
+- l ist die Pendellaenge vom Aufhaengepunkt bis zum Schwerpunkt
+- g ist die Fallbeschleunigung, auf der Erde etwa 9.81 m/s^2
+- Die Formel gilt nur gut fuer kleine Winkel, grob bis etwa 10 Grad
+- Die Masse kommt in der Formel nicht vor
+
+Deutung:
+Ein laengeres Pendel schwingt langsamer. Ein kuerzeres Pendel schwingt schneller.
+
+Typische Aufgaben:
+- Pendellaenge aus Periodendauer bestimmen
+- g aus Pendelversuch bestimmen
+- Frequenz aus Laenge berechnen
+THEORIE: ENERGIE BEI MECHANISCHEN SCHWINGUNGEN
+Bei einer idealen harmonischen Schwingung bleibt die Gesamtenergie konstant.
+Sie wandelt sich staendig zwischen potentieller Energie und kinetischer Energie um.
+
+Federpendel:
+E_ges = 0.5*D*A_s^2
+E_sp = 0.5*D*x^2
+E_kin = 0.5*m*v^2
+
+Energieerhaltung:
+E_ges = E_sp + E_kin
+
+Am Umkehrpunkt:
+- x = A_s
+- v = 0
+- Energie steckt voll in der Feder
+
+In der Ruhelage:
+- x = 0
+- v = v_max
+- Energie steckt voll in Bewegung
+
+Maximalgeschwindigkeit:
+v_max = omega*A_s
+
+Merksatz:
+Auslenkung maximal heisst Geschwindigkeit null. Geschwindigkeit maximal heisst Auslenkung null.
+THEORIE: DAEMPFUNG UND RESONANZ
+Reale Schwingungen verlieren Energie, z.B. durch Reibung, Luftwiderstand oder elektrische Verluste.
+Dann nimmt die Amplitude mit der Zeit ab.
+
+Daempfung:
+- schwache Daempfung: viele Schwingungen, Amplitude nimmt langsam ab
+- starke Daempfung: kaum Ueberschwingen
+- aperiodischer Grenzfall: schnellste Rueckkehr ohne Ueberschwingen
+
+Erzwungene Schwingung:
+Ein aeusserer periodischer Antrieb zwingt ein System zum Mitschwingen.
+
+Resonanz:
+Wenn die Anregungsfrequenz nahe der Eigenfrequenz liegt, wird die Amplitude besonders gross.
+
+Wichtig fuer Aufgaben:
+- Eigenfrequenz ist die natuerliche Frequenz des Systems
+- Resonanz kann nuetzlich sein, z.B. bei Musikinstrumenten
+- Resonanz kann gefaehrlich sein, z.B. bei Bruecken oder Maschinen
+- Daempfung begrenzt die Resonanzamplitude
+
+Merksatz:
+Resonanz ist nicht einfach laut oder stark, sondern passend getaktet.
+THEORIE: ANALOGIE MECHANIK UND SCHWINGKREIS
+Mechanische und elektrische Schwingungen sehen mathematisch sehr aehnlich aus.
+
+Mechanik:
+- Masse m speichert kinetische Energie
+- Feder D speichert Spannenergie
+- Reibung b vernichtet Energie als Waerme
+- Auslenkung x ist die zentrale Groesse
+
+Elektrischer Schwingkreis:
+- Spule L speichert magnetische Energie
+- Kondensator C speichert elektrische Energie
+- Widerstand R vernichtet Energie als Waerme
+- Ladung q oder Spannung U_C schwingt
+
+Analogie grob:
+- Masse m entspricht Induktivitaet L
+- Federhaerte D entspricht 1/C
+- Reibung entspricht Widerstand R
+- Auslenkung x entspricht Ladung q
+- Geschwindigkeit v entspricht Strom I
+
+Gemeinsame Idee:
+Energie pendelt zwischen zwei Speicherformen hin und her. Verluste sorgen fuer Daempfung.
 THEORIE: ELEKTRISCHES FELD / KONDENSATOR
 Kernidee:
 Ein elektrisches Feld beschreibt, welche Kraft auf eine Ladung wirkt.
@@ -426,6 +609,139 @@ Blindwiderstaende speichern Energie nur zwischen und geben sie wieder zurueck.
 
 Im Rechner findest du das hier:
 Hauptmenue -> 2 Rechnen -> 4 Wechselstrom / RLC -> 13 Wirk-/Blindwiderstand Energie-Check
+THEORIE: ELEKTRISCHER LC-SCHWINGKREIS
+Ein idealer LC-Schwingkreis besteht aus Kondensator C und Spule L.
+Er kann elektrische Energie zwischen Kondensatorfeld und Magnetfeld der Spule hin und her tauschen.
+
+Ablauf:
+1 Der Kondensator ist geladen: viel elektrische Feldenergie.
+2 Er entlaedt sich durch die Spule: Strom steigt an.
+3 Die Spule baut ein Magnetfeld auf: viel magnetische Energie.
+4 Wegen Selbstinduktion fliesst der Strom weiter und laedt den Kondensator umgekehrt auf.
+5 Der Vorgang wiederholt sich.
+
+Formeln:
+omega0 = 1/sqrt(L*C)
+f0 = 1/(2*pi*sqrt(L*C))
+T = 2*pi*sqrt(L*C)
+
+Wichtig:
+Ideal heisst ohne Widerstand. Dann bleibt die Gesamtenergie erhalten. Real gibt es Verluste, also Daempfung.
+THEORIE: Q, I UND U IM SCHWINGKREIS
+Im LC-Schwingkreis schwingen Ladung q, Kondensatorspannung U_C und Strom I sinusfoermig.
+
+Moegliche Schreibweise:
+q(t) = Q_max*cos(omega0*t + phi0)
+I(t) = -omega0*Q_max*sin(omega0*t + phi0)
+U_C(t) = q(t)/C
+
+Zusammenhaenge:
+I = dq/dt
+I_max = omega0*Q_max
+U_C,max = Q_max/C
+
+Phasenlage:
+- Strom ist gegenueber Ladung um 90 Grad phasenverschoben
+- Wenn q maximal ist, ist I null
+- Wenn I maximal ist, ist q null
+
+Merksatz:
+Der Kondensator zeigt, wie viel Ladung gespeichert ist. Die Spule zeigt, wie stark der Strom gerade ist.
+THEORIE: ENERGIE IM LC-SCHWINGKREIS
+Die Energie pendelt zwischen Kondensator und Spule.
+
+Kondensatorenergie:
+E_cap = 0.5*C*U_C^2 = Q^2/(2*C)
+
+Magnetische Energie der Spule:
+E_mag = 0.5*L*I^2
+
+Gesamtenergie im idealen Kreis:
+E_ges = E_cap + E_mag = konstant
+
+Bei maximaler Kondensatorladung:
+- Q = Q_max
+- I = 0
+- Energie steckt im Kondensator
+
+Bei maximalem Strom:
+- Q = 0
+- I = I_max
+- Energie steckt in der Spule
+
+Maximalwerte:
+0.5*C*U_max^2 = 0.5*L*I_max^2
+I_max = U_max*sqrt(C/L)
+U_max = I_max*sqrt(L/C)
+
+Typische Aufgabe:
+Aus Anfangsspannung am Kondensator den maximalen Strom berechnen.
+THEORIE: GEDAEMPTER RLC-SCHWINGKREIS
+Ein realer Schwingkreis hat Widerstand R. Dadurch wird elektrische Energie in Waerme umgewandelt und die Amplitude nimmt ab.
+
+Rolle der Bauteile:
+- C speichert elektrische Feldenergie
+- L speichert magnetische Feldenergie
+- R vernichtet Energie als Waerme
+
+Leistung am Widerstand:
+P_R = I_eff^2*R
+
+Qualitativ:
+- kleines R: schwach gedaempfte Schwingung
+- grosses R: stark gedaempfte Schwingung
+- sehr grosses R: kaum Schwingung, eher langsames Einschwingen
+
+Naehere Eigenkreisfrequenz bei kleiner Daempfung:
+omega0 = 1/sqrt(L*C)
+
+Merksatz:
+R ist der Energiedieb im Schwingkreis. L und C speichern, R verheizt.
+THEORIE: RESONANZ IM WECHSELSTROMKREIS
+Bei einer erzwungenen elektrischen Schwingung treibt eine Wechselspannungsquelle den RLC-Kreis an.
+
+Blindwiderstaende:
+X_L = omega*L
+X_C = 1/(omega*C)
+
+Resonanzbedingung:
+X_L = X_C
+omega0 = 1/sqrt(L*C)
+f0 = 1/(2*pi*sqrt(L*C))
+
+RLC-Reihe:
+Bei Resonanz ist die Impedanz minimal:
+Z = R
+Der Strom ist maximal:
+I_eff = U_eff/R
+
+Phasenlage:
+Bei Resonanz sind Strom und Gesamtspannung in Phase. Der Blindanteil hebt sich auf.
+
+Deutung:
+Unterhalb der Resonanz dominiert der Kondensator. Oberhalb der Resonanz dominiert die Spule.
+THEORIE: GUETE UND BANDBREITE
+Die Guete Q beschreibt, wie scharf ein Schwingkreis auf seine Resonanzfrequenz reagiert.
+
+Bei hoher Guete:
+- geringe Daempfung
+- schmale Resonanzkurve
+- starke Ueberhoehung nahe f0
+
+Bei niedriger Guete:
+- starke Daempfung
+- breite Resonanzkurve
+- Resonanz weniger ausgepraegt
+
+Einfache Naeherung fuer Serien-RLC:
+Q = omega0*L/R
+Q = 1/(omega0*R*C)
+
+Bandbreite:
+Delta f = f0/Q
+
+Wichtig:
+Die Guete ist ein dimensionsloser Kennwert. In Schulaufgaben reicht oft die qualitative Deutung: groessere Daempfung bedeutet kleinere Guete.
 THEORIE: KONZEPTE ELEKTROMAGNETISMUS
 Kernidee:
 Elektrische und magnetische Felder haengen zusammen. Bewegte Ladungen erzeugen Magnetfelder und erfahren magnetische Kraefte.
@@ -959,6 +1275,72 @@ Wichtige Formeln:
 
 Typische Fehler:
 - nicht mit I_max verwechseln
+Symbol: q
+Name: momentane Ladung im LC-Kreis
+Einheit: C
+
+Bedeutung:
+Ladung auf dem Kondensator waehrend der elektrischen Schwingung.
+
+Wie bekommt man die Groesse?
+q(t)=Q_max*cos(omega0*t+phi0) oder q=C*U_C.
+
+Wichtige Formeln:
+- I=dq/dt
+- U_C=q/C
+- E_cap=q^2/(2*C)
+
+Typische Fehler:
+- q ist momentane Ladung, Q kann auch Guete bedeuten
+Symbol: I0
+Name: Stromamplitude im Schwingkreis
+Einheit: A
+
+Bedeutung:
+Groesster Strombetrag im LC-Kreis oder Wechselstromkreis.
+
+Wie bekommt man die Groesse?
+Aus Ladungsamplitude oder Energieerhaltung.
+
+Wichtige Formeln:
+- I0=omega0*Q_max
+- I0=U0*sqrt(C/L)
+- I_eff=I0/sqrt(2)
+
+Typische Fehler:
+- Scheitelwert und Effektivwert nicht mischen
+Symbol: U_C
+Name: Spannung am Kondensator
+Einheit: V
+
+Bedeutung:
+Spannung, die zur Ladung auf dem Kondensator gehoert.
+
+Wie bekommt man die Groesse?
+Aus Ladung und Kapazitaet.
+
+Wichtige Formeln:
+- U_C=q/C
+- E_cap=0.5*C*U_C^2
+
+Typische Fehler:
+- C in Farad einsetzen
+Symbol: Q
+Name: Guete eines Schwingkreises
+Einheit: 1
+
+Bedeutung:
+Beschreibt, wie schwach gedaempft und wie scharf die Resonanz ist.
+
+Wie bekommt man die Groesse?
+Bei Serien-RLC naeherungsweise Q=omega0*L/R.
+
+Wichtige Formeln:
+- Q=omega0*L/R
+- Delta f=f0/Q
+
+Typische Fehler:
+- Guete Q nicht mit Ladung Q verwechseln
 Symbol: E_kin
 Name: Bewegungsenergie
 Einheit: J
@@ -1085,6 +1467,90 @@ Wichtige Formeln:
 
 Typische Fehler:
 - Vorzeichen beachten
+Symbol: A_s
+Name: Amplitude
+Einheit: m
+
+Bedeutung:
+Maximale Auslenkung einer Schwingung aus der Ruhelage.
+
+Wie bekommt man die Groesse?
+Aus Diagramm, Messung oder Energie.
+
+Wichtige Formeln:
+- x(t)=A_s*sin(omega*t+phi0)
+- v_max=omega*A_s
+- E_ges=0.5*D*A_s^2
+
+Typische Fehler:
+- Amplitude ist nicht Spitze-Spitze-Wert
+Symbol: D
+Name: Federkonstante / Federhaerte
+Einheit: N/m
+
+Bedeutung:
+Beschreibt, wie stark eine Feder bei Auslenkung zurueckzieht.
+
+Wie bekommt man die Groesse?
+Aus Kraft und Auslenkung oder aus Periodendauer.
+
+Wichtige Formeln:
+- F_D=-D*x
+- T=2*pi*sqrt(m/D)
+- D=4*pi^2*m/T^2
+
+Typische Fehler:
+- D in N/m, nicht N/cm einsetzen
+Symbol: x
+Name: momentane Auslenkung
+Einheit: m
+
+Bedeutung:
+Abstand von der Ruhelage mit Vorzeichen.
+
+Wie bekommt man die Groesse?
+Aus Schwingungsgleichung oder Diagramm.
+
+Wichtige Formeln:
+- x(t)=A_s*sin(omega*t+phi0)
+- a=-omega^2*x
+- F_D=-D*x
+
+Typische Fehler:
+- x ist momentan, A_s ist maximal
+Symbol: omega0
+Name: Eigenkreisfrequenz
+Einheit: rad/s
+
+Bedeutung:
+Natuerliche Kreisfrequenz eines schwingfaehigen Systems.
+
+Wie bekommt man die Groesse?
+Aus Systemparametern.
+
+Wichtige Formeln:
+- Federpendel: omega0=sqrt(D/m)
+- Fadenpendel: omega0=sqrt(g/l)
+- LC-Kreis: omega0=1/sqrt(L*C)
+
+Typische Fehler:
+- omega0 ist Kreisfrequenz, f0 ist Frequenz in Hz
+Symbol: phi0
+Name: Anfangsphase
+Einheit: rad oder Grad
+
+Bedeutung:
+Legt fest, an welcher Stelle der Sinuskurve die Schwingung bei t=0 startet.
+
+Wie bekommt man die Groesse?
+Aus Anfangsauslenkung und Anfangsgeschwindigkeit.
+
+Wichtige Formeln:
+- phi=omega*t+phi0
+- x(t)=A_s*sin(phi)
+
+Typische Fehler:
+- Grad und Radiant nicht mischen
 Symbol: E
 Name: elektrische Feldstaerke
 Einheit: V/m oder N/C
@@ -1642,6 +2108,40 @@ Formelsuche -> Nach Themen -> Spule
 Hinweis:
 Achtung: mm^2 in m^2 umrechnen.
 Groesse:
+A_s - Amplitude aus Maximalgeschwindigkeit
+
+Formel:
+A_s = v_max / omega
+
+Einheiten:
+A_s [m], v_max [m/s], omega [rad/s]
+
+Wofuer:
+Einfachste Umstellung von v_max=omega*A_s.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+omega darf nicht 0 sein.
+Groesse:
+A_s - Amplitude aus Maximalbeschleunigung
+
+Formel:
+A_s = a_max / omega^2
+
+Einheiten:
+A_s [m], a_max [m/s^2], omega [rad/s]
+
+Wofuer:
+Einfachste Umstellung von a_max=omega^2*A_s.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+omega darf nicht 0 sein.
+Groesse:
 B - B aus Feldstaerke und Permeabilitaet
 
 Formel:
@@ -1794,6 +2294,40 @@ Rechnen -> Formel umstellen / Solver
 
 Hinweis:
 microF zuerst in F umrechnen.
+Groesse:
+C - Kapazitaet aus Thomsonformel
+
+Formel:
+C = T^2 / (4*pi^2*L)
+
+Einheiten:
+C [F], T [s], L [H]
+
+Wofuer:
+Einfachste Umstellung der LC-Schwingungsdauer nach C.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+L darf nicht 0 sein.
+Groesse:
+C - Kapazitaet aus Eigenkreisfrequenz
+
+Formel:
+C = 1 / (omega0^2*L)
+
+Einheiten:
+C [F], omega0 [rad/s], L [H]
+
+Wofuer:
+Wenn Eigenkreisfrequenz und Induktivitaet gegeben sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+omega0 und L duerfen nicht 0 sein.
 Groesse:
 C - Kapazitaet Plattenkondensator
 
@@ -2968,6 +3502,40 @@ Formelsuche -> Nach Themen -> Spule
 Hinweis:
 Phi pro Windung einsetzen.
 Groesse:
+L - Induktivitaet aus Thomsonformel
+
+Formel:
+L = T^2 / (4*pi^2*C)
+
+Einheiten:
+L [H], T [s], C [F]
+
+Wofuer:
+Einfachste Umstellung der LC-Schwingungsdauer nach L.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+C darf nicht 0 sein.
+Groesse:
+L - Induktivitaet aus Eigenkreisfrequenz
+
+Formel:
+L = 1 / (omega0^2*C)
+
+Einheiten:
+L [H], omega0 [rad/s], C [F]
+
+Wofuer:
+Wenn Eigenkreisfrequenz und Kapazitaet gegeben sind.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+omega0 und C duerfen nicht 0 sein.
+Groesse:
 N - Windungszahl aus Spulenfeld
 
 Formel:
@@ -3154,6 +3722,23 @@ Formelsuche -> Nach Themen -> Wechselstrom / RLC
 
 Hinweis:
 Bei reinem R: cos_phi=1.
+Groesse:
+P - Wirkleistung aus Scheinleistung
+
+Formel:
+P = S * cos_phi
+
+Einheiten:
+P [W], S [VA], cos_phi [1]
+
+Wofuer:
+Einfachste Formel fuer Wirkleistung aus dem Leistungsdreieck.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+cos_phi ist der Leistungsfaktor.
 Groesse:
 P_V - Verlustleistung in Leitung
 
@@ -3376,6 +3961,57 @@ Formelsuche -> Nach Themen -> Wechselstrom / RLC
 Hinweis:
 Leistungsdreieck.
 Groesse:
+Q_blind - Blindleistung aus Scheinleistung
+
+Formel:
+Q_blind = S * sin_phi
+
+Einheiten:
+Q_blind [var], S [VA], sin_phi [1]
+
+Wofuer:
+Einfachste Formel fuer Blindleistung aus dem Leistungsdreieck.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Das Vorzeichen unterscheidet induktiv und kapazitiv.
+Groesse:
+Q_blind - Blindleistung der Spule
+
+Formel:
+Q_L = I_eff^2 * X_L
+
+Einheiten:
+Q_L [var], I_eff [A], X_L [Ohm]
+
+Wofuer:
+Blindleistung einer idealen Spule.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Induktive Blindleistung wird ueblich positiv gezaehlt.
+Groesse:
+Q_blind - Blindleistungsbetrag des Kondensators
+
+Formel:
+Q_C = I_eff^2 * X_C
+
+Einheiten:
+Q_C [var], I_eff [A], X_C [Ohm]
+
+Wofuer:
+Betrag der Blindleistung eines idealen Kondensators.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Mit Vorzeichenkonvention ist kapazitive Blindleistung negativ.
+Groesse:
 R - Ohmscher Widerstand
 
 Formel:
@@ -3461,6 +4097,23 @@ Formelsuche -> Nach Themen -> Spule
 Hinweis:
 A in m^2.
 Groesse:
+R - Wirkwiderstand aus Leistungsfaktor
+
+Formel:
+R = Z * cos_phi
+
+Einheiten:
+R [Ohm], Z [Ohm], cos_phi [1]
+
+Wofuer:
+Direkte Umstellung von cos_phi=R/Z.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Gilt fuer die RLC-Reihenschaltung.
+Groesse:
 S - Scheinleistung
 
 Formel:
@@ -3528,6 +4181,57 @@ Rechnen -> Wechselstrom / RLC / WSK -> Thomson / Resonanz
 
 Hinweis:
 Dazu gehoert f0 = 1/T.
+Groesse:
+T - Periodendauer aus Kreisfrequenz
+
+Formel:
+T = 2*pi / omega
+
+Einheiten:
+T [s], omega [rad/s]
+
+Wofuer:
+Direkte Umstellung von omega=2*pi/T.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+omega darf nicht 0 sein.
+Groesse:
+T - Periodendauer Federpendel
+
+Formel:
+T = 2*pi*sqrt(m/D)
+
+Einheiten:
+T [s], m [kg], D [N/m]
+
+Wofuer:
+Schwingungsdauer einer Masse an einer idealen Feder.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+D muss positiv sein.
+Groesse:
+T - Periodendauer Fadenpendel
+
+Formel:
+T = 2*pi*sqrt(l/g)
+
+Einheiten:
+T [s], l [m], g [m/s^2]
+
+Wofuer:
+Schwingungsdauer eines Fadenpendels bei kleinen Winkeln.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+g muss positiv sein.
 Groesse:
 U - Spannung am Widerstand
 
@@ -3698,6 +4402,23 @@ Formelsuche -> Nach Themen -> Wechselstrom / RLC
 
 Hinweis:
 Mit Effektivwerten.
+Groesse:
+U_eff - Effektivspannung aus Strom und Impedanz
+
+Formel:
+U_eff = I_eff * Z
+
+Einheiten:
+U_eff [V], I_eff [A], Z [Ohm]
+
+Wofuer:
+Einfachste Umstellung des Wechselstrom-Ohmschen Gesetzes.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+Effektivwerte verwenden.
 Groesse:
 U_ind - Induktionsspannung nach Faraday
 
@@ -4141,6 +4862,23 @@ Formelsuche -> Nach Themen -> Mechanik
 Hinweis:
 t darf nicht 0 sein.
 Groesse:
+a_max - Maximalbeschleunigung der Schwingung
+
+Formel:
+a_max = omega^2 * A_s
+
+Einheiten:
+a_max [m/s^2], omega [rad/s], A_s [m]
+
+Wofuer:
+Groesster Beschleunigungsbetrag einer harmonischen Schwingung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Tritt an den Umkehrpunkten auf.
+Groesse:
 a_r - Radialbeschleunigung
 
 Formel:
@@ -4242,6 +4980,23 @@ Formelsuche -> Nach Themen -> Wechselstrom / RLC
 
 Hinweis:
 Zwischen 0 und 1 bei passiven Lasten.
+Groesse:
+cos_phi - Leistungsfaktor aus P und S
+
+Formel:
+cos_phi = P / S
+
+Einheiten:
+cos_phi [1], P [W], S [VA]
+
+Wofuer:
+Einfachste Formel aus dem Leistungsdreieck.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+S darf nicht 0 sein.
 Groesse:
 d - Durchmesser aus Flaeche
 
@@ -4413,6 +5168,57 @@ Rechnen -> Wechselstrom / RLC / WSK
 Hinweis:
 T nicht mit Tesla verwechseln.
 Groesse:
+f - Frequenz aus Kreisfrequenz
+
+Formel:
+f = omega / (2*pi)
+
+Einheiten:
+f [Hz], omega [rad/s]
+
+Wofuer:
+Einfachste Umstellung von omega=2*pi*f.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+omega in rad/s einsetzen.
+Groesse:
+f - Frequenz aus induktivem Blindwiderstand
+
+Formel:
+f = X_L / (2*pi*L)
+
+Einheiten:
+f [Hz], X_L [Ohm], L [H]
+
+Wofuer:
+Umstellung von X_L=2*pi*f*L nach f.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+L darf nicht 0 sein.
+Groesse:
+f - Frequenz aus kapazitivem Blindwiderstand
+
+Formel:
+f = 1 / (2*pi*C*X_C)
+
+Einheiten:
+f [Hz], C [F], X_C [Ohm]
+
+Wofuer:
+Umstellung von X_C=1/(2*pi*f*C) nach f.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+C und X_C duerfen nicht 0 sein.
+Groesse:
 f - Frequenz aus Sinus-Induktion
 
 Formel:
@@ -4480,6 +5286,23 @@ Formelsuche -> Nach Themen -> Wechselstrom / RLC
 
 Hinweis:
 T=2*pi*sqrt(L*C).
+Groesse:
+g - Fallbeschleunigung aus Fadenpendel
+
+Formel:
+g = 4*pi^2*l / T^2
+
+Einheiten:
+g [m/s^2], l [m], T [s]
+
+Wofuer:
+Einfachste Umstellung der Fadenpendel-Formel nach g.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+T darf nicht 0 sein.
 Groesse:
 gamma - Lorentzfaktor
 
@@ -4923,6 +5746,40 @@ Formelsuche -> Nach Themen -> Wechselstrom / RLC
 Hinweis:
 C in Farad.
 Groesse:
+omega - Kreisfrequenz aus Maximalgeschwindigkeit
+
+Formel:
+omega = v_max / A_s
+
+Einheiten:
+omega [rad/s], v_max [m/s], A_s [m]
+
+Wofuer:
+Einfachste Umstellung von v_max=omega*A_s.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+A_s darf nicht 0 sein.
+Groesse:
+omega - Kreisfrequenz aus Maximalbeschleunigung
+
+Formel:
+omega = sqrt(a_max / A_s)
+
+Einheiten:
+omega [rad/s], a_max [m/s^2], A_s [m]
+
+Wofuer:
+Einfachste Umstellung von a_max=omega^2*A_s.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+a_max/A_s muss nichtnegativ sein.
+Groesse:
 p - Impuls
 
 Formel:
@@ -5076,6 +5933,23 @@ Formelsuche -> Nach Themen -> Spule
 Hinweis:
 Aus R=U/I und R=rho*l/A.
 Groesse:
+sin_phi - Blindleistungsfaktor aus Q und S
+
+Formel:
+sin_phi = Q_blind / S
+
+Einheiten:
+sin_phi [1], Q_blind [var], S [VA]
+
+Wofuer:
+Einfachste Umstellung der Blindleistung Q_blind=S*sin_phi.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Wechselstrom / RLC
+
+Hinweis:
+S darf nicht 0 sein.
+Groesse:
 tau - Zeitkonstante RL-Kreis
 
 Formel:
@@ -5178,6 +6052,23 @@ Formelsuche -> Nach Themen -> Induktion
 Hinweis:
 Bei 90 Grad: v=U/(B*l).
 Groesse:
+v_max - Maximalgeschwindigkeit der Schwingung
+
+Formel:
+v_max = omega * A_s
+
+Einheiten:
+v_max [m/s], omega [rad/s], A_s [m]
+
+Wofuer:
+Groesste Geschwindigkeit einer harmonischen Schwingung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Tritt beim Durchgang durch die Ruhelage auf.
+Groesse:
 v_filter - Geschwindigkeit im Wien-Filter
 
 Formel:
@@ -5211,3 +6102,649 @@ Formelsuche -> Nach Themen -> Magnetfeld / Teilchen
 
 Hinweis:
 B und d duerfen nicht 0 sein.
+Groesse:
+omega - Eigenkreisfrequenz LC
+
+Formel:
+omega0 = 1 / sqrt(L*C)
+
+Einheiten:
+omega0 [rad/s], L [H], C [F]
+
+Wofuer:
+Eigenfrequenz eines idealen LC-Schwingkreises.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+omega0 = 2*pi*f0.
+Groesse:
+f0 - Resonanzfrequenz LC
+
+Formel:
+f0 = 1 / (2*pi*sqrt(L*C))
+
+Einheiten:
+f0 [Hz], L [H], C [F]
+
+Wofuer:
+Frequenz, bei der der LC-Kreis frei schwingt.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Gleiche Formel wie Resonanzbedingung im RLC-Kreis.
+Groesse:
+T - Thomsonsche Schwingungsdauer
+
+Formel:
+T = 2*pi*sqrt(L*C)
+
+Einheiten:
+T [s], L [H], C [F]
+
+Wofuer:
+Periodendauer des idealen LC-Schwingkreises.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Dazu gehoert f0 = 1/T.
+Groesse:
+L - Induktivitaet aus Thomsonformel
+
+Formel:
+L = T^2/(4*pi^2*C)
+
+Einheiten:
+L [H], T [s], C [F]
+
+Wofuer:
+Umstellung der Thomsonformel nach L.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+C muss in Farad eingesetzt werden.
+Groesse:
+C - Kapazitaet aus Thomsonformel
+
+Formel:
+C = T^2/(4*pi^2*L)
+
+Einheiten:
+C [F], T [s], L [H]
+
+Wofuer:
+Umstellung der Thomsonformel nach C.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+L muss in Henry eingesetzt werden.
+Groesse:
+q - Ladung im LC-Kreis
+
+Formel:
+q(t) = Q_max*cos(omega0*t + phi0)
+
+Einheiten:
+q [C], Q_max [C], omega0 [rad/s], t [s]
+
+Wofuer:
+Zeitlicher Verlauf der Kondensatorladung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+q ist maximal, wenn der Strom null ist.
+Groesse:
+I - Strom im LC-Kreis
+
+Formel:
+I(t) = -omega0*Q_max*sin(omega0*t + phi0)
+
+Einheiten:
+I [A], Q_max [C], omega0 [rad/s], t [s]
+
+Wofuer:
+Strom als Ableitung der Ladung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Strom und Ladung sind um 90 Grad phasenverschoben.
+Groesse:
+I0 - Maximalstrom aus Ladungsamplitude
+
+Formel:
+I0 = omega0 * Q_max
+
+Einheiten:
+I0 [A], omega0 [rad/s], Q_max [C]
+
+Wofuer:
+Maximaler Strom im idealen LC-Kreis.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Tritt auf, wenn q=0 ist.
+Groesse:
+U - Kondensatorspannung
+
+Formel:
+U_C = q / C
+
+Einheiten:
+U_C [V], q [C], C [F]
+
+Wofuer:
+Spannung am Kondensator aus seiner Ladung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Bei q=Q_max ist U_C maximal.
+Groesse:
+Q - Ladung aus Kondensatorspannung
+
+Formel:
+Q = C * U_C
+
+Einheiten:
+Q [C], C [F], U_C [V]
+
+Wofuer:
+Ladung auf dem Kondensator.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Nicht mit Guete Q verwechseln.
+Groesse:
+E_cap - Energie im Kondensator
+
+Formel:
+E_cap = 0.5*C*U_C^2 = Q^2/(2*C)
+
+Einheiten:
+E_cap [J], C [F], U_C [V], Q [C]
+
+Wofuer:
+Elektrische Feldenergie des Kondensators.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Bei maximaler Ladung maximal.
+Groesse:
+E_mag - Energie in der Spule
+
+Formel:
+E_mag = 0.5*L*I^2
+
+Einheiten:
+E_mag [J], L [H], I [A]
+
+Wofuer:
+Magnetische Feldenergie der Spule.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Bei maximalem Strom maximal.
+Groesse:
+E - Gesamtenergie LC-Kreis
+
+Formel:
+E_ges = E_cap + E_mag
+
+Einheiten:
+E_ges [J], E_cap [J], E_mag [J]
+
+Wofuer:
+Energieerhaltung im idealen Schwingkreis.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Real sinkt E_ges wegen Widerstand R.
+Groesse:
+I0 - Maximalstrom aus Anfangsspannung
+
+Formel:
+I0 = U_max * sqrt(C/L)
+
+Einheiten:
+I0 [A], U_max [V], C [F], L [H]
+
+Wofuer:
+Maximalstrom aus Energiegleichheit von C und L.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+0.5*C*U^2 = 0.5*L*I^2.
+Groesse:
+U0 - Spannungsmaximum aus Maximalstrom
+
+Formel:
+U0 = I0 * sqrt(L/C)
+
+Einheiten:
+U0 [V], I0 [A], L [H], C [F]
+
+Wofuer:
+Umstellung der Energiegleichheit nach Spannung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+C darf nicht 0 sein.
+Groesse:
+R - Verlustleistung im RLC-Kreis
+
+Formel:
+P_R = I_eff^2 * R
+
+Einheiten:
+P_R [W], I_eff [A], R [Ohm]
+
+Wofuer:
+Energieverlust am Widerstand eines realen Schwingkreises.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+R sorgt fuer Daempfung.
+Groesse:
+Q_guete - Guete Serien-RLC
+
+Formel:
+Q = omega0*L/R
+
+Einheiten:
+Q [1], omega0 [rad/s], L [H], R [Ohm]
+
+Wofuer:
+Kennwert fuer die Schaerfe der Resonanz.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Hohe Guete bedeutet geringe Daempfung.
+Groesse:
+Delta f - Bandbreite aus Guete
+
+Formel:
+Delta f = f0 / Q
+
+Einheiten:
+Delta f [Hz], f0 [Hz], Q [1]
+
+Wofuer:
+Breite der Resonanzkurve bei gegebener Guete.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Elektrisch
+
+Hinweis:
+Kleine Bandbreite bedeutet scharfe Resonanz.
+Groesse:
+T - Periodendauer aus Frequenz
+
+Formel:
+T = 1 / f
+
+Einheiten:
+T [s], f [Hz]
+
+Wofuer:
+Grundzusammenhang jeder periodischen Bewegung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+f ist die Anzahl der Schwingungen pro Sekunde.
+Groesse:
+f - Frequenz aus Periodendauer
+
+Formel:
+f = 1 / T
+
+Einheiten:
+f [Hz], T [s]
+
+Wofuer:
+Wenn die Dauer einer vollen Schwingung gegeben ist.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+1 Hz bedeutet eine Schwingung pro Sekunde.
+Groesse:
+omega - Kreisfrequenz
+
+Formel:
+omega = 2*pi*f = 2*pi/T
+
+Einheiten:
+omega [rad/s], f [Hz], T [s]
+
+Wofuer:
+Winkelgeschwindigkeit der Sinusfunktion.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+omega ist nicht dasselbe wie f.
+Groesse:
+x - Auslenkung harmonische Schwingung
+
+Formel:
+x(t) = A_s * sin(omega*t + phi0)
+
+Einheiten:
+x [m], A_s [m], omega [rad/s], t [s], phi0 [rad]
+
+Wofuer:
+Ort-Zeit-Gesetz einer ideal harmonischen Schwingung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Mit cos statt sin ist nur der Startpunkt anders gewaehlt.
+Groesse:
+v - Momentangeschwindigkeit
+
+Formel:
+v(t) = omega*A_s*cos(omega*t + phi0)
+
+Einheiten:
+v [m/s], A_s [m], omega [rad/s]
+
+Wofuer:
+Geschwindigkeit als Ableitung der Auslenkung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+v ist in der Ruhelage betragsmaessig maximal.
+Groesse:
+v - Maximalgeschwindigkeit
+
+Formel:
+v_max = omega * A_s
+
+Einheiten:
+v_max [m/s], omega [rad/s], A_s [m]
+
+Wofuer:
+Groesste Geschwindigkeit einer harmonischen Schwingung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Am Umkehrpunkt ist v = 0.
+Groesse:
+a - Beschleunigung harmonisch
+
+Formel:
+a(t) = -omega^2 * x(t)
+
+Einheiten:
+a [m/s^2], omega [rad/s], x [m]
+
+Wofuer:
+Beschleunigung zeigt immer zur Ruhelage.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Minuszeichen bedeutet Rueckrichtung.
+Groesse:
+a - Maximalbeschleunigung
+
+Formel:
+a_max = omega^2 * A_s
+
+Einheiten:
+a_max [m/s^2], omega [rad/s], A_s [m]
+
+Wofuer:
+Groesster Betrag der Beschleunigung am Umkehrpunkt.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Bei x=0 ist a=0.
+Groesse:
+F - Rueckstellkraft Feder
+
+Formel:
+F_D = -D * x
+
+Einheiten:
+F_D [N], D [N/m], x [m]
+
+Wofuer:
+Hookesches Gesetz fuer eine ideale Feder.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Minuszeichen: Kraft zeigt zur Ruhelage.
+Groesse:
+T - Periodendauer Federpendel
+
+Formel:
+T = 2*pi*sqrt(m/D)
+
+Einheiten:
+T [s], m [kg], D [N/m]
+
+Wofuer:
+Schwingungsdauer einer Masse an einer Feder.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Ideal unabhaengig von der Amplitude.
+Groesse:
+D - Federkonstante aus Periodendauer
+
+Formel:
+D = 4*pi^2*m/T^2
+
+Einheiten:
+D [N/m], m [kg], T [s]
+
+Wofuer:
+Umstellung der Federpendel-Formel nach D.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+T muss in Sekunden eingesetzt werden.
+Groesse:
+m - Masse aus Federpendel
+
+Formel:
+m = D*T^2/(4*pi^2)
+
+Einheiten:
+m [kg], D [N/m], T [s]
+
+Wofuer:
+Umstellung der Federpendel-Formel nach m.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Nur fuer ideales Federpendel.
+Groesse:
+T - Periodendauer Fadenpendel
+
+Formel:
+T = 2*pi*sqrt(l/g)
+
+Einheiten:
+T [s], l [m], g [m/s^2]
+
+Wofuer:
+Schwingungsdauer eines Fadenpendels bei kleinen Winkeln.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Gilt nur naeherungsweise fuer kleine Auslenkungen.
+Groesse:
+l - Pendellaenge aus Periodendauer
+
+Formel:
+l = g*T^2/(4*pi^2)
+
+Einheiten:
+l [m], g [m/s^2], T [s]
+
+Wofuer:
+Umstellung der Fadenpendel-Formel nach l.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+l ist bis zum Schwerpunkt gemessen.
+Groesse:
+g - Fallbeschleunigung aus Pendel
+
+Formel:
+g = 4*pi^2*l/T^2
+
+Einheiten:
+g [m/s^2], l [m], T [s]
+
+Wofuer:
+Bestimmung von g mit einem Fadenpendel.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Mehrere Perioden messen reduziert Messfehler.
+Groesse:
+E - Gesamtenergie Federpendel
+
+Formel:
+E_ges = 0.5 * D * A_s^2
+
+Einheiten:
+E_ges [J], D [N/m], A_s [m]
+
+Wofuer:
+Gesamtenergie der ungedaempften Feder-Schwingung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+Am Umkehrpunkt steckt alles in Spannenergie.
+Groesse:
+E_sp - Spannenergie bei Auslenkung
+
+Formel:
+E_sp = 0.5 * D * x^2
+
+Einheiten:
+E_sp [J], D [N/m], x [m]
+
+Wofuer:
+Energie in der Feder bei momentaner Auslenkung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+x wird quadriert, Vorzeichen egal.
+Groesse:
+E_kin - Bewegungsenergie in Schwingung
+
+Formel:
+E_kin = E_ges - 0.5*D*x^2
+
+Einheiten:
+E_kin [J], E_ges [J], D [N/m], x [m]
+
+Wofuer:
+Momentane kinetische Energie beim Federpendel.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+In der Ruhelage maximal.
+Groesse:
+A_s - Amplitude aus Gesamtenergie
+
+Formel:
+A_s = sqrt(2*E_ges/D)
+
+Einheiten:
+A_s [m], E_ges [J], D [N/m]
+
+Wofuer:
+Maximale Auslenkung aus Schwingungsenergie.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+D darf nicht 0 sein.
+Groesse:
+phi - Phase
+
+Formel:
+phi = omega*t + phi0
+
+Einheiten:
+phi [rad], omega [rad/s], t [s], phi0 [rad]
+
+Wofuer:
+Momentaner Winkelzustand der Schwingung.
+
+Rechnen:
+Formelsuche -> Nach Themen -> Schwingungen Mechanik
+
+Hinweis:
+2*pi rad entsprechen einer vollen Periode.
