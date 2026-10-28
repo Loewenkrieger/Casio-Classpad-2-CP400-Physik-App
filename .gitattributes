@@ -1,0 +1,6 @@
+# Byte-indexed data must never undergo line-ending conversion.
+wissen.txt -text -whitespace
+bilder.dat binary
+*.py text eol=lf
+*.md text eol=lf
+.gitattributes text eol=lf

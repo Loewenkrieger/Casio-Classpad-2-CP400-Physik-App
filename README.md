@@ -1,157 +1,116 @@
-# Physik LK On-Demand für den Casio ClassPad II
+# Physik LK v1.0.0 fuer Casio ClassPad II
 
-Eine kompakte Physik-Lernapp für den Casio ClassPad II. Sie enthält
-Theorieartikel und Formelsammlungen für den Physik-Leistungskurs.
+Produktionsversion der Physik-Lernapp fuer PythonExtra unter Hollyhock 2.
+146 Theorieartikel, 368 eindeutige Formeln, 514 einzeln ladbare Wissenskapitel
+und 167 Rechner-/Messreihenfunktionen. Quanten- und Atomphysik ergaenzen
+Mechanik, Schwingungen, Elektrizitaet und Wechselstrom.
 
-(Nutzung im Prüfunsmodus nicht möglich. Wenn ihr es ohne Prüfungsmodus doch in der Klausur nutzt ist es euer Problem wenn ihr erwischt werdet)
+## Download
 
-Die App läuft mit **PythonExtra** über den Community-Launcher
-**Hollyhock 2**.
+Die fertigen oeffentlichen Pakete stehen im
+[GitHub-Release v1.0.0](https://github.com/Loewenkrieger/Casio-Classpad-2-CP400-Physik-App/releases/tag/v1.0.0):
 
-> [!WARNING]
-> Hollyhock 2 verändert die Firmware des ClassPads. Die Installation erfolgt
-> auf eigene Gefahr und kann bei inkompatiblen Geräten zu einem schwarzen
-> Bildschirm führen. Prüfe unbedingt zuerst die Kompatibilität deines Geräts
-> in der offiziellen Hollyhock-2-Anleitung.
+- `physik_classpad_v1_0_0.zip`: fuer den Taschenrechner.
+- `physik_pc_v1_0_0.zip`: Vorschau fuer Windows mit installiertem Python 3
+  einschliesslich Tkinter. `start_pc_preview.bat` startet die Vorschau.
 
-## Funktionen
+Fuer den ClassPad das benannte ClassPad-Paket verwenden, nicht GitHubs
+automatisches `Source code (zip)`: Dessen Entpackordner enthaelt Bindestriche
+und eignet sich deshalb nicht als PythonExtra-Startpfad.
 
-- Theorie nach Themengebieten
-- Formeln nach physikalischen Größen
-- Formeln nach Themengebieten
-- 92 Theorieartikel und 215 eindeutige Formeln
-- 307 Wissenskapitel mit 522 Navigationseinträgen
-- Lädt nur das aktuell geöffnete Kapitel aus `wissen.txt`
-- Für den begrenzten Arbeitsspeicher des ClassPads optimiert
+Das oeffentliche Paket enthaelt 39 eigene fachliche Abbildungen. Eine nur
+lokal bereitgestellte private Variante ergaenzt acht Unterrichtsausschnitte
+aus PDFs. Diese privaten Medien und Pakete werden nicht veroeffentlicht.
 
-## Benötigte Dateien
+## Hollyhock 2 Und PythonExtra
 
-Für die App werden nur diese beiden Dateien benötigt:
+Hollyhock 2 ist ein Community-Launcher und kein offizielles Casio-Produkt.
+Eine Installation veraendert das Geraet und kann bei inkompatibler Hardware
+zu Problemen fuehren. Zuerst die Kompatibilitaet in der
+[Originalanleitung von Hollyhock 2](https://github.com/SnailMath/hollyhock-2#compatibility)
+pruefen. Die dortigen Warnungen und Installationsschritte sind massgeblich.
+
+1. Bei kompatiblem Geraet den vorbereiteten
+   [Hollyhock-2-Release](https://github.com/SnailMath/hollyhock-2/releases)
+   nach dessen Anleitung installieren. Updates nicht unterbrechen.
+2. PythonExtra in der fuer Hollyhock 2 vorgesehenen Variante herunterladen:
+   [offizielle PythonExtra-Installation](https://classpaddev.github.io/wiki/python/installation-guide/).
+3. `PythonExtra-hh2.bin` nach dieser Anleitung in den USB-Speicher neben den
+   Hollyhock-Launcher kopieren, sicher auswerfen und im Launcher starten.
+
+Hollyhock/PythonExtra werden nicht mit dieser App mitgeliefert. Falls beide
+bereits funktionieren, ist keine Neuinstallation erforderlich.
+
+## App Installieren Oder Aktualisieren
+
+Alle drei Dateien aus dem ClassPad-ZIP gemeinsam in denselben Ordner kopieren:
 
 ```text
 physchem_final.py
 wissen.txt
+bilder.dat
 ```
 
-Beide Dateien müssen auf dem ClassPad direkt nebeneinander liegen.
+Zum Beispiel den Ordner `Python` oder `physik_classpad_v1_0_0` verwenden.
+Im gesamten Startpfad keine Leerzeichen, Bindestriche oder Klammern benutzen.
+Dateien nicht in `physchem_final (1).py` umbenennen: Die Dateiliste startet
+ueber Python-Importnamen. Unterstriche sind geeignet.
 
-Benötigte Community Add-On's die ihr auf classpad.dev findet:
-- Cinput welches ein Python Skript ist was auch im selben Ordner sitzt neben pyschem_final.py und wissen.txt
+Beim Update alle drei Dateien ersetzen und keine Versionen oder privaten und
+oeffentlichen Pakete mischen. Die Bilddatei wurde fuer den Release um
+Testbilder bereinigt und hat deshalb einen neuen Byteindex/Paketheader.
+Anschliessend PythonExtra neu starten und `physchem_final.py` in der
+Dateiliste auswaehlen.
 
-## 1. Hollyhock 2 installieren
-
-Hollyhock 2 ist ein Community-Launcher für native Programme auf dem
-ClassPad II.
-
-
-### Kompatibilität prüfen
-
-Hollyhock 2 unterstützt laut Projektseite den `fx-CP400`, `fx-CP400+E` und
-`fx-CG500`, aber nicht jede Hardware-Revision.
-
-Neuere Geräte mit `ABS_Date 2022/10/28 13:16` sind nicht mit Hollyhock 2
-kompatibel. Auf diesen Geräten können ältere Betriebssystemversionen zu einem
-schwarzen Bildschirm führen. Verwende Hollyhock 2 nicht, wenn dein Gerät laut
-Projektseite inkompatibel oder unbekannt ist.
-
-Die vollständige Kompatibilitätsprüfung und Warnhinweise stehen hier:
-
-- [Hollyhock-2-Projekt und Installationsanleitung](https://github.com/SnailMath/hollyhock-2#compatibility)
-- [Hollyhock-2-Releases](https://github.com/SnailMath/hollyhock-2/releases)
-
-### Installation zusammengefasst
-
-1. Prüfe zuerst die Kompatibilität deines ClassPads.
-2. Lade den neuesten vorbereiteten Hollyhock-2-Release herunter.
-3. Entpacke den enthaltenen Ordner `Snail2021` auf dem Windows-Desktop.
-4. Starte `Snail2021.exe` und folge exakt den angezeigten Anweisungen.
-5. Schließe den ClassPad erst an, wenn das Installationsprogramm dazu
-   auffordert.
-6. Berühre oder trenne den ClassPad während des Firmware-Updates nicht.
-7. Kopiere anschließend `run.bin` und die benötigten Hollyhock-Programme in
-   das Hauptverzeichnis des ClassPad-Speichers.
-8. Wirf den ClassPad sicher aus.
-
-Die ausführliche Originalanleitung ist maßgeblich. Bei Unsicherheit sollte die
-Installation nicht durchgeführt werden.
-
-
-## 2. PythonExtra installieren
-
-PythonExtra stellt die Python-Umgebung bereit, in der diese App läuft.
-
-1. Lade für Hollyhock 2 die Datei `PythonExtra-hh2.bin` herunter:
-   [PythonExtra für ClassPad II](https://classpaddev.github.io/python/#download)
-2. Verbinde den ClassPad per USB mit dem Computer.
-3. Wähle am ClassPad den USB-Massenspeicher, falls danach gefragt wird.
-4. Kopiere `PythonExtra-hh2.bin` in das Hauptverzeichnis des
-   ClassPad-Speichers, direkt neben `run.bin`.
-5. Wirf den ClassPad sicher aus.
-6. Öffne auf dem ClassPad das Systemmenü und anschließend den
-   Hollyhock-Launcher.
-7. Wähle `PythonExtra` aus und starte es mit `Run`.
-
-Weitere Informationen:
-
-- [Offizielle PythonExtra-Installationsanleitung](https://classpaddev.github.io/wiki/python/installation-guide/)
-- [PythonExtra-Quellcode](https://github.com/TheRainbowPhoenix/PythonExtra)
-
-## 3. Physik-App installieren
-
-1. Verbinde den ClassPad erneut per USB mit dem Computer.
-2. Kopiere `physchem_final.py` und `wissen.txt` in denselben Ordner auf dem
-   ClassPad, beispielsweise in den Ordner `Python`.
-3. Wirf den ClassPad sicher aus.
-4. Starte PythonExtra über den Hollyhock-Launcher.
-5. Öffne und starte `physchem_final.py`.
-
-Es werden keine zusätzliche `cinput.py`, `gint.py` oder
-`knowledge_index.py` benötigt.
-
-## 4. Cinput installieren
-
-1. Ladet von classpad.dev das Cinput Skript herunter und packt es neben die anderen Dateien.
+Auf dem ClassPad werden **weder `cinput.py`, `gint.py` noch ein separater
+Index** benoetigt. Die PC-Datei `gint.py` darf nicht auf das Geraet kopiert
+werden, da sie dort das native Grafikmodul ueberschatten wuerde.
 
 ## Bedienung
 
-- Ein Thema antippen oder auswählen, um es zu öffnen.
-- Mit den Pfeiltasten beziehungsweise dem Touchscreen scrollen.
-- Mit der Zurück-Taste zur vorherigen Auswahl zurückkehren.
+Das Hauptmenue besteht aus Theorie, Formeln nach Groessen, Formeln nach
+Themen, Physik-Rechner und Beenden. Touch und Pfeiltasten dienen der Auswahl
+und Navigation; DEL/Zurueck fuehrt zur vorherigen Ansicht.
 
-Nach dem Schließen eines Artikels zeigt die App Messwerte zum freien
-Arbeitsspeicher an. Diese dienen der Entwicklung und Optimierung.
+Artikel mit Bildern haben `Abbildungen (EXE)`. EXE oder der Touch-Button
+oeffnet die Ansicht, links/rechts wechselt die Bilder, Zurueck stellt die
+bisherige Textposition wieder her. Eigene Modelle und synthetische
+Nachweismuster sind als solche gekennzeichnet.
 
-## Wie das On-Demand-Wissen funktioniert
+Der Rechner nutzt fest programmierte Formeln statt `eval()` oder eines
+freien Symbol-Solvers. Passende Einheiten wie nm/pm/m und eV/keV/J lassen
+sich mit `Einheit` umschalten. Ein Messreihen-Assistent bestimmt unter
+anderem h und die Austrittsarbeit aus zwei oder 3-10 Messpunkten.
+Geltungsbedingungen und Hinweise stehen in den zugehoerigen Artikeln.
 
-Der Byteindex ist direkt in `physchem_final.py` eingebettet. Für jedes Kapitel
-kennt die App dessen Startposition und Länge in `wissen.txt`.
+## Speicher Und Kompatibilitaet
 
-Beim Öffnen eines Themas wird nur der zugehörige Textabschnitt eingelesen.
-Die gesamte Wissensdatei muss dadurch nicht gleichzeitig im Arbeitsspeicher
-liegen. Der Loader vermeidet außerdem große `seek()`-Sprünge, da diese bei
-PythonExtra auf dem ClassPad Fehler verursachen können.
+Wissen und Verzeichnisse werden nach Bedarf aus den Begleitdateien gelesen,
+nicht vollstaendig beim Start geladen. Bilder verwenden bytegenaues
+`readinto()` und rohe RGB565-Paletten. Rasterbilder werden ohne
+Verkleinerung in maximal 128 Zeilen hohen Abschnitten gezeichnet, um den
+8-Bit-Zeilenueberlauf aelterer gint-Versionen zu umgehen.
 
-## Fehlerbehebung
+Ein grosses Rasterbild benoetigt weiterhin rund 95 KiB Puffer. Zu wenig
+Speicher oder fehlende/beschaedigte Dateien ergeben eine Fehlermeldung;
+Theorie und Rechner bleiben bei einem reinen Medienfehler benutzbar.
+Nach einem Fehler PythonExtra bei Bedarf neu starten und das komplette
+zusammengehoerige Paket erneut uebertragen.
 
-### `wissen.txt fehlt neben physchem_final.py`
+## Pruefstatus Und Hinweise
 
-Prüfe, ob `physchem_final.py` und `wissen.txt` wirklich im selben Ordner
-liegen und exakt so benannt sind.
+Der Nutzer hat Start, Skizzen, Rasterbilder und Bildnavigation des
+zugrundeliegenden RAM-Builds auf seinem ClassPad bestaetigt. Gemeldet wurde
+MicroPython `v1.25.0-preview.589.gd5d03e81b`, sh7305/sh-4a, vom 18.04.2025.
+Die Produktionsbereinigung wird zusaetzlich am PC geprueft. Dies ist keine
+Behauptung eines vollstaendigen Hardwaretests aller Funktionen oder einer
+Freigabe fuer jede PythonExtra-/Geraeteversion. PC-RAM-Messungen sind keine
+ClassPad-RAM-Werte.
 
-### PythonExtra erscheint nicht im Hollyhock-Launcher
+Grafiktests, RAM-Messfenster nach Artikeln und Debug-Ausgaben sind nicht
+Bestandteil des Produktionsprogramms. Die Entwicklungsfassung bleibt lokal
+mit ihren Diagnosewerkzeugen erhalten.
 
-Prüfe, ob `PythonExtra-hh2.bin` im Hauptverzeichnis direkt neben `run.bin`
-liegt und ob Hollyhock 2 korrekt installiert wurde.
-
-### Der ClassPad friert beim Start von PythonExtra ein
-
-Setze das Gerät zurück und prüfe Dateiname, Hollyhock-Version und
-Kompatibilität. Nutze bei Unsicherheit die
-[ClassPadDev-Community](https://discord.gg/knpcNJTzpd).
-
-## Hinweise
-
-- Dieses Projekt ist ein Community-Projekt und nicht mit Casio verbunden.
-- Hollyhock und PythonExtra stammen von ihren jeweiligen Community-Projekten.
-- Beachte die Regeln deiner Schule und Prüfungsordnung.
-- Die Installationslinks wurden zuletzt am **11. Juni 2026** geprüft.
+Dieses Community-Projekt ist nicht mit Casio verbunden. Schul- und
+Pruefungsregeln beachten; keine Zusicherung fuer den Pruefungsmodus.
+Installationsquellen zuletzt am 27.10.2026 geprueft.

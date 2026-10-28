@@ -1,1158 +1,201 @@
 """Physik-LK-App mit Wissen, das per Byteindex aus wissen.txt geladen wird."""
 
 from gint import *
-# Automatisch aus physchem-final.py erzeugter Byteindex.
+"""Small indexed records, loaded on demand without seek or eval."""
 
-MODES = [
-    ('Theorie', 0, 21),
-    ('Formeln nach Groessen', 21, 82),
-    ('Formeln nach Themen', 103, 12),
-]
 
-SECTIONS = [
-    ('Ueberblick', 0, 1),
-    ('Mechanik', 1, 1),
-    ('Mechanische Schwingungen', 2, 7),
-    ('Elektrisches Feld', 9, 1),
-    ('Magnetfeld / Teilchen', 10, 4),
-    ('Induktion', 14, 3),
-    ('Lenz / Wirbelstroeme', 17, 2),
-    ('Spule / Trafo', 19, 3),
-    ('Wechselstrom / RLC', 22, 8),
-    ('Elektrische Schwingungen', 30, 6),
-    ('Konzepte / Relativitaet', 36, 1),
-    ('Praktikum / Einheiten', 37, 2),
-    ('Lehrer-Material', 39, 1),
-    ('Lexikon: Konstanten / Material', 40, 10),
-    ('Lexikon: Induktion / Spule', 50, 8),
-    ('Lexikon: Wechselstrom / RLC', 58, 14),
-    ('Lexikon: Mechanik', 72, 13),
-    ('Lexikon: Felder Basis', 85, 5),
-    ('Lexikon: Teilchen erweitert', 90, 8),
-    ('Lexikon: Lehrer-Material', 98, 8),
-    ('Lexikon: WSK-Folien', 106, 8),
-    ('A', 114, 5),
-    ('A_s', 119, 2),
-    ('B', 121, 6),
-    ('B_max', 127, 2),
-    ('C', 129, 4),
-    ('DeltaA', 133, 2),
-    ('DeltaB', 135, 2),
-    ('DeltaI', 137, 2),
-    ('DeltaPhi', 139, 2),
-    ('DeltaPhi_phase', 141, 3),
-    ('E', 144, 2),
-    ('E0', 146, 2),
-    ('E_cap', 148, 3),
-    ('E_kin', 151, 4),
-    ('E_mag', 155, 3),
-    ('E_pot', 158, 2),
-    ('F', 160, 3),
-    ('F_G', 163, 2),
-    ('F_L', 165, 2),
-    ('F_R', 167, 2),
-    ('F_el', 169, 2),
-    ('F_r', 171, 2),
-    ('H', 173, 3),
-    ('I', 176, 10),
-    ('I0', 186, 3),
-    ('I1', 189, 2),
-    ('I2', 191, 3),
-    ('I_eff', 194, 3),
-    ('L', 197, 6),
-    ('N', 203, 4),
-    ('N1', 207, 2),
-    ('N2', 209, 2),
-    ('P', 211, 4),
-    ('P_V', 215, 3),
-    ('Phi', 218, 3),
-    ('Phi_E', 221, 2),
-    ('Q', 223, 3),
-    ('Q_blind', 226, 5),
-    ('R', 231, 6),
-    ('S', 237, 2),
-    ('T', 239, 5),
-    ('U', 244, 2),
-    ('U0', 246, 2),
-    ('U1', 248, 2),
-    ('U2', 250, 2),
-    ('U_eff', 252, 3),
-    ('U_ind', 255, 10),
-    ('U_max', 265, 2),
-    ('W', 267, 2),
-    ('W_el', 269, 2),
-    ('X_C', 271, 2),
-    ('X_L', 273, 2),
-    ('Z', 275, 3),
-    ('a', 278, 3),
-    ('a_max', 281, 1),
-    ('a_r', 282, 2),
-    ('beta', 284, 2),
-    ('cos_phi', 286, 3),
-    ('d', 289, 3),
-    ('eps0', 292, 1),
-    ('eps_r', 293, 2),
-    ('eta', 295, 3),
-    ('f', 298, 6),
-    ('f0', 304, 2),
-    ('g', 306, 1),
-    ('gamma', 307, 2),
-    ('h', 309, 3),
-    ('l', 312, 8),
-    ('l_Draht', 320, 2),
-    ('m', 322, 2),
-    ('mu0', 324, 1),
-    ('mu_r', 325, 3),
-    ('omega', 328, 7),
-    ('p', 335, 2),
-    ('q_m', 337, 2),
-    ('r', 339, 3),
-    ('rho', 342, 2),
-    ('sin_phi', 344, 1),
-    ('tau', 345, 2),
-    ('v', 347, 4),
-    ('v_max', 351, 1),
-    ('v_filter', 352, 2),
-    ('Induktion / Fluss', 354, 31),
-    ('Spule / Selbstinduktion', 385, 46),
-    ('Kondensator', 431, 22),
-    ('Wechselstrom / RLC', 453, 57),
-    ('Schwingungen Elektrisch', 510, 20),
-    ('Transformator', 530, 16),
-    ('Elektrisches Feld', 546, 11),
-    ('Magnetfeld / Teilchen', 557, 19),
-    ('Schwingungen Mechanik', 576, 26),
-    ('Mechanik', 602, 21),
-    ('Relativitaet', 623, 3),
-    ('Sonstige', 626, 2),
-]
+def store_text(block):
+    return block if isinstance(block, str) else block.decode("ascii")
 
-ENTRIES = [
-    ('Sachsen LK 11 Ueberblick', 0),
-    ('Mechanik komplett', 1),
-    ('Schwingung Grundidee', 2),
-    ('Harmonische Schwingung', 3),
-    ('Federpendel', 4),
-    ('Fadenpendel', 5),
-    ('Energie der Schwingung', 6),
-    ('Daempfung und Resonanz', 7),
-    ('Mechanisch-elektrische Analogie', 8),
-    ('Elektrisches Feld / Kondensator', 9),
-    ('Magnetfeld / geladene Teilchen', 10),
-    ('Teilchenbeschleuniger', 11),
-    ('Elektron im B-Feld', 12),
-    ('Massenspektrometer / Filter', 13),
-    ('Induktion / magnetischer Fluss', 14),
-    ('IQB Parameter A-F', 15),
-    ('Induktion mit Ableitungen', 16),
-    ('Lenzsche Regel / Wirbelstroeme', 17),
-    ('Wirbelstroeme Anwendungen', 18),
-    ('Selbstinduktion / Spule', 19),
-    ('Transformator', 20),
-    ('Transformator erweitert', 21),
-    ('Ohmsches Bauelement im WSK', 22),
-    ('Kondensator im WSK', 23),
-    ('Spule im WSK', 24),
-    ('Wirk- und Blindwiderstand', 25),
-    ('Zeigerdiagramm', 26),
-    ('RLC-Reihenschaltung / Siebkreis', 27),
-    ('Resonanz / Thomson', 28),
-    ('Energieumwandlung im RLC', 29),
-    ('LC-Schwingkreis Grundidee', 30),
-    ('Ladung Strom Spannung', 31),
-    ('Energie im LC-Kreis', 32),
-    ('RLC und Daempfung', 33),
-    ('Resonanz im Stromkreis', 34),
-    ('Guete und Bandbreite', 35),
-    ('Elektromagnetismus-Konzepte', 36),
-    ('Praktikum / Messunsicherheiten', 37),
-    ('Einheitenwissen / typische Fehler', 38),
-    ('Lehrer-Material Ueberblick', 39),
-    ('mu0 - magnetische Feldkonstante', 40),
-    ('mu_r - relative Permeabilitaet', 41),
-    ('H - magnetische Feldstaerke', 42),
-    ('B - magnetische Flussdichte', 43),
-    ('Phi - magnetischer Fluss', 44),
-    ('eps0 - elektrische Feldkonstante', 45),
-    ('eps_r - relative Permittivitaet', 46),
-    ('rho - spezifischer elektrischer Widerstand', 47),
-    ('e - Elementarladung', 48),
-    ('c - Lichtgeschwindigkeit', 49),
-    ('U_ind - Induktionsspannung', 50),
-    ('N - Windungszahl', 51),
-    ('A - wirksame Flaeche', 52),
-    ('alpha - Winkel', 53),
-    ('Delta Phi - Flussaenderung', 54),
-    ('dPhi/dt - momentane Flussaenderungsrate', 55),
-    ('L - Induktivitaet', 56),
-    ('E_mag - magnetische Energie', 57),
-    ('R - ohmscher Wirkwiderstand', 58),
-    ('X_L - induktiver Blindwiderstand', 59),
-    ('X_C - kapazitiver Blindwiderstand', 60),
-    ('Z - Impedanz / Scheinwiderstand', 61),
-    ('Delta phi - Phasenverschiebung', 62),
-    ('omega - Kreisfrequenz', 63),
-    ('f0 - Resonanzfrequenz', 64),
-    ('T - Periodendauer / Schwingungsdauer', 65),
-    ('U_eff - Effektivspannung', 66),
-    ('I_eff - Effektivstrom', 67),
-    ('q - Schwingkreisladung', 68),
-    ('I0 - Stromamplitude', 69),
-    ('U_C - Kondensatorspannung', 70),
-    ('Q - Guete', 71),
-    ('E_kin - Bewegungsenergie', 72),
-    ('E_pot - Lageenergie', 73),
-    ('E_sp - Spannenergie', 74),
-    ('W - Arbeit', 75),
-    ('P - Leistung', 76),
-    ('p - Impuls', 77),
-    ('F - Kraft', 78),
-    ('a - Beschleunigung', 79),
-    ('A_s - Amplitude', 80),
-    ('D - Federkonstante', 81),
-    ('x - Auslenkung', 82),
-    ('omega0 - Eigenkreisfrequenz', 83),
-    ('phi0 - Anfangsphase', 84),
-    ('E - elektrische Feldstaerke', 85),
-    ('q - elektrische Ladung', 86),
-    ('C - Kapazitaet', 87),
-    ('F_L - Lorentzkraft', 88),
-    ('r - Kreisbahnradius', 89),
-    ('q - Ladung', 90),
-    ('m - Masse', 91),
-    ('q/m - spezifische Ladung', 92),
-    ('r - Kreisbahnradius', 93),
-    ('v - Teilchengeschwindigkeit', 94),
-    ('E_kin - kinetische Energie', 95),
-    ('gamma - Lorentzfaktor', 96),
-    ('U_B - Beschleunigungsspannung', 97),
-    ('q/m - spezifische Ladung', 98),
-    ('v_filter - Filtergeschwindigkeit', 99),
-    ('rho - spezifischer Widerstand', 100),
-    ('H - magnetische Feldstaerke', 101),
-    ('mu_r - relative Permeabilitaet', 102),
-    ('P_V - Verlustleistung', 103),
-    ('gamma - Lorentzfaktor', 104),
-    ('E_kin - kinetische Energie geladener Teilchen', 105),
-    ('R - ohmscher Wirkwiderstand', 106),
-    ('X_L - induktiver Blindwiderstand', 107),
-    ('X_C - kapazitiver Blindwiderstand', 108),
-    ('Z - Impedanz / Scheinwiderstand', 109),
-    ('Delta phi - Phasenverschiebung', 110),
-    ('f0 - Resonanzfrequenz', 111),
-    ('T - Schwingungsdauer', 112),
-    ('omega - Kreisfrequenz', 113),
-    ('A - Flaeche aus Induktivitaet', 114),
-    ('A - Kreisflaeche aus Radius', 115),
-    ('A - Kreisflaeche aus Durchmesser', 116),
-    ('A - Rechteckflaeche', 117),
-    ('A - Drahtquerschnitt aus Widerstand', 118),
-    ('A_s - Amplitude aus Maximalgeschwindigkeit', 119),
-    ('A_s - Amplitude aus Maximalbeschleunigung', 120),
-    ('B - B aus Feldstaerke und Permeabilitaet', 121),
-    ('B - magnetische Flussdichte aus Fluss', 122),
-    ('B - Magnetfeld einer langen Spule', 123),
-    ('B - B aus Lorentzkraft auf Ladung', 124),
-    ('B - B aus Kraft auf stromdurchflossenen Leiter', 125),
-    ('B - B aus Bewegungsinduktion', 126),
-    ('B_max - B-Amplitude aus Generator', 127),
-    ('B_max - B-Amplitude aus Dreiecksignal', 128),
-    ('C - Kapazitaet aus X_C', 129),
-    ('C - Kapazitaet aus Thomsonformel', 130),
-    ('C - Kapazitaet aus Eigenkreisfrequenz', 131),
-    ('C - Kapazitaet Plattenkondensator', 132),
-    ('DeltaA - Flaechenaenderung aus Induktion', 133),
-    ('DeltaA - Flaechenaenderung', 134),
-    ('DeltaB - B-Aenderung aus Induktion', 135),
-    ('DeltaB - Magnetfeldaenderung', 136),
-    ('DeltaI - Stromaenderung bei Selbstinduktion', 137),
-    ('DeltaI - Stromaenderung', 138),
-    ('DeltaPhi - Aenderung des magnetischen Flusses', 139),
-    ('DeltaPhi - Flussaenderung aus Induktionsspannung', 140),
-    ('DeltaPhi_phase - Phasenverschiebung im RLC-Kreis', 141),
-    ('DeltaPhi_phase - Phasenwinkel aus Zeigerdiagramm', 142),
-    ('DeltaPhi_phase - Phasenwinkel aus Leistungsfaktor', 143),
-    ('E - elektrische Feldstaerke aus Kraft', 144),
-    ('E - homogenes elektrisches Feld', 145),
-    ('E0 - Ruheenergie', 146),
-    ('E0 - Ruheenergie in eV', 147),
-    ('E_cap - Energie im Kondensator', 148),
-    ('E_cap - Kondensatorenergie aus Q und U', 149),
-    ('E_cap - Kondensatorenergie aus Ladung', 150),
-    ('E_kin - kinetische Energie klassisch', 151),
-    ('E_kin - kinetische Energie aus Beschleunigungsspannung', 152),
-    ('E_kin - kinetische Energie relativistisch', 153),
-    ('E_kin - kinetische Energie Mechanik', 154),
-    ('E_mag - Energie im Magnetfeld der Spule', 155),
-    ('E_mag - Energie im Magnetfeld ueber B,H,V', 156),
-    ('E_mag - Energie ueber Leistung-Zeit-Flaeche', 157),
-    ('E_pot - potentielle Energie', 158),
-    ('E_pot - potentielle Energie aus Energieerhaltung', 159),
-    ('F - Newtonsche Kraft', 160),
-    ('F - Kraft auf Leiter im Magnetfeld', 161),
-    ('F - Kraft zwischen parallelen Leitern', 162),
-    ('F_G - Gewichtskraft', 163),
-    ('F_G - Gravitationskraft allgemein', 164),
-    ('F_L - Lorentzkraft auf Ladung', 165),
-    ('F_L - Kraft auf stromdurchflossenen Leiter', 166),
-    ('F_R - Reibungskraft', 167),
-    ('F_R - Reibungskraft aus Arbeit', 168),
-    ('F_el - elektrische Kraft', 169),
-    ('F_el - Coulomb-Kraft', 170),
-    ('F_r - Radialkraft', 171),
-    ('F_r - Radialkraft aus Winkelgeschwindigkeit', 172),
-    ('H - Feldstaerke aus B', 173),
-    ('H - magnetische Feldstaerke einer Spule', 174),
-    ('H - Feldstaerke Ringkern', 175),
-    ('I - Strom aus magnetischer Flussdichte einer Spule', 176),
-    ('I - Strom aus magnetischer Feldstaerke', 177),
-    ('I - Strom aus magnetischem Fluss und Induktivitaet', 178),
-    ('I - Strom aus Kraft auf Leiter im Magnetfeld', 179),
-    ('I - Strom aus elektrischer Leistung', 180),
-    ('I - Strom aus Leistung am Widerstand', 181),
-    ('I - Strom aus Wechselstromkreis', 182),
-    ('I - Strom aus magnetischer Energie', 183),
-    ('I - Stromstaerke nach Ohm', 184),
-    ('I - Strom im Ringkern aus Feldstaerke', 185),
-    ('I0 - Stromamplitude am Kondensator', 186),
-    ('I0 - Stromamplitude aus XL', 187),
-    ('I0 - Stromamplitude aus XC', 188),
-    ('I1 - Primaerstrom am Transformator', 189),
-    ('I1 - Strom paralleler Leiter', 190),
-    ('I2 - Sekundaerstrom am Transformator', 191),
-    ('I2 - Sekundaerstrom idealer Transformator', 192),
-    ('I2 - Strom paralleler Leiter', 193),
-    ('I_eff - Effektivstrom', 194),
-    ('I_eff - Effektivstrom aus Scheitelwert', 195),
-    ('I_eff - Effektivstrom aus Wirkleistung', 196),
-    ('L - Induktivitaet aus Spulengeometrie', 197),
-    ('L - Induktivitaet aus Selbstinduktion', 198),
-    ('L - Induktivitaet aus X_L', 199),
-    ('L - Induktivitaet aus Fluss', 200),
-    ('L - Induktivitaet aus Thomsonformel', 201),
-    ('L - Induktivitaet aus Eigenkreisfrequenz', 202),
-    ('N - Windungszahl aus Spulenfeld', 203),
-    ('N - Windungszahl aus Feldstaerke', 204),
-    ('N - Windungszahl aus Drahtdurchmesser', 205),
-    ('N - Windungszahl aus Flussverkettung', 206),
-    ('N1 - Primaerwindungen aus Spannung', 207),
-    ('N1 - Primaerwindungen aus Stromverhaeltnis', 208),
-    ('N2 - Sekundaerwindungszahl', 209),
-    ('N2 - Sekundaerwindungen aus Stromverhaeltnis', 210),
-    ('P - elektrische Leistung', 211),
-    ('P - Leistung am Widerstand', 212),
-    ('P - Wirkleistung Wechselstrom', 213),
-    ('P - Wirkleistung aus Scheinleistung', 214),
-    ('P_V - Verlustleistung in Leitung', 215),
-    ('P_V - Verlustleistung aus Spannung', 216),
-    ('P_V - Verlustleistung als Differenz', 217),
-    ('Phi - magnetischer Fluss', 218),
-    ('Phi - magnetischer Fluss aus Induktivitaet', 219),
-    ('Phi - magnetischer Fluss aus B und Flaeche', 220),
-    ('Phi_E - elektrischer Fluss', 221),
-    ('Phi_E - elektrischer Fluss aus Ladung', 222),
-    ('Q - Kondensatorladung', 223),
-    ('Q - Ladung aus Strom und Zeit', 224),
-    ('Q - Ladung aus Feldfluss', 225),
-    ('Q_blind - Blindleistung', 226),
-    ('Q_blind - Blindleistung aus S und P', 227),
-    ('Q_blind - Blindleistung aus Scheinleistung', 228),
-    ('Q_blind - Blindleistung der Spule', 229),
-    ('Q_blind - Blindleistungsbetrag des Kondensators', 230),
-    ('R - Ohmscher Widerstand', 231),
-    ('R - Wirkwiderstand aus Impedanz', 232),
-    ('R - Widerstand aus Leistung', 233),
-    ('R - Widerstand aus Leistung und Spannung', 234),
-    ('R - Drahtwiderstand', 235),
-    ('R - Wirkwiderstand aus Leistungsfaktor', 236),
-    ('S - Scheinleistung', 237),
-    ('S - Scheinleistung aus P und Q', 238),
-    ('T - Periodendauer', 239),
-    ('T - Thomsonsche Schwingungsdauer', 240),
-    ('T - Periodendauer aus Kreisfrequenz', 241),
-    ('T - Periodendauer Federpendel', 242),
-    ('T - Periodendauer Fadenpendel', 243),
-    ('U - Spannung am Widerstand', 244),
-    ('U - Spannung im homogenen E-Feld', 245),
-    ('U0 - Spannungsamplitude Kondensator', 246),
-    ('U0 - Scheitelspannung aus Effektivwert', 247),
-    ('U1 - Primaerspannung Transformator', 248),
-    ('U1 - Primaerspannung aus Stromverhaeltnis', 249),
-    ('U2 - Sekundaerspannung Transformator', 250),
-    ('U2 - Sekundaerspannung aus Stromverhaeltnis', 251),
-    ('U_eff - Effektivspannung', 252),
-    ('U_eff - Effektivspannung aus Leistung', 253),
-    ('U_eff - Effektivspannung aus Strom und Impedanz', 254),
-    ('U_ind - Induktionsspannung nach Faraday', 255),
-    ('U_ind - Induktion durch Feldaenderung', 256),
-    ('U_ind - Induktion durch Flaechenaenderung', 257),
-    ('U_ind - Bewegungsinduktion am Leiter', 258),
-    ('U_ind - Rahmen tritt in Magnetfeld ein/aus', 259),
-    ('U_ind - Generator mit sinusfoermigem Feld', 260),
-    ('U_ind - Dreieckgenerator / Dreiecksignal', 261),
-    ('U_ind - Selbstinduktionsspannung', 262),
-    ('U_ind - Bewegungsinduktion mit Winkel', 263),
-    ('U_ind - Dreiecksignal Induktion', 264),
-    ('U_max - Scheitelspannung', 265),
-    ('U_max - Generator Sinus-Spannung', 266),
-    ('W - mechanische Arbeit', 267),
-    ('W - Arbeit aus Energiedifferenz', 268),
-    ('W_el - elektrische Arbeit/Energie', 269),
-    ('W_el - elektrische Arbeit aus Leistung', 270),
-    ('X_C - kapazitiver Blindwiderstand', 271),
-    ('X_C - kapazitiver Widerstand aus Amplituden', 272),
-    ('X_L - induktiver Blindwiderstand', 273),
-    ('X_L - induktiver Widerstand aus Amplituden', 274),
-    ('Z - Impedanz RLC-Reihenschaltung', 275),
-    ('Z - Impedanz RL-Reihe', 276),
-    ('Z - Impedanz RC-Reihe', 277),
-    ('a - Abstand paralleler Leiter', 278),
-    ('a - Beschleunigung nach Newton', 279),
-    ('a - Beschleunigung aus Geschwindigkeit', 280),
-    ('a_max - Maximalbeschleunigung der Schwingung', 281),
-    ('a_r - Radialbeschleunigung', 282),
-    ('a_r - Radialbeschleunigung aus T', 283),
-    ('beta - Geschwindigkeit relativ zu c', 284),
-    ('beta - beta aus gamma', 285),
-    ('cos_phi - Leistungsfaktor', 286),
-    ('cos_phi - Leistungsfaktor aus Leistung', 287),
-    ('cos_phi - Leistungsfaktor aus P und S', 288),
-    ('d - Durchmesser aus Flaeche', 289),
-    ('d - Durchmesser aus Radius', 290),
-    ('d - Plattenabstand aus E-Feld', 291),
-    ('eps0 - elektrische Feldkonstante', 292),
-    ('eps_r - relative Permittivitaet', 293),
-    ('eps_r - relative Permittivitaet aus Feldstaerken', 294),
-    ('eta - Wirkungsgrad', 295),
-    ('eta - Trafo-Wirkungsgrad', 296),
-    ('eta - Wirkungsgrad aus Verlustleistung', 297),
-    ('f - Frequenz aus Periodendauer', 298),
-    ('f - Frequenz aus Kreisfrequenz', 299),
-    ('f - Frequenz aus induktivem Blindwiderstand', 300),
-    ('f - Frequenz aus kapazitivem Blindwiderstand', 301),
-    ('f - Frequenz aus Sinus-Induktion', 302),
-    ('f - Frequenz aus Dreiecksignal', 303),
-    ('f0 - Resonanzfrequenz / Eigenfrequenz', 304),
-    ('f0 - Resonanzfrequenz aus Periodendauer', 305),
-    ('g - Fallbeschleunigung aus Fadenpendel', 306),
-    ('gamma - Lorentzfaktor', 307),
-    ('gamma - gamma aus Zeitdilatation', 308),
-    ('h - Fallhoehe aus Geschwindigkeit', 309),
-    ('h - Hoehe aus Lageenergie', 310),
-    ('h - Fallhoehe aus Zeit', 311),
-    ('l - Laenge eines Leiters im Magnetfeld', 312),
-    ('l - Laenge aus Kraft auf stromdurchflossenen Leiter', 313),
-    ('l - Spulenlaenge aus magnetischer Feldstaerke', 314),
-    ('l - Spulenlaenge aus magnetischer Flussdichte', 315),
-    ('l - Spulenlaenge aus Induktivitaet', 316),
-    ('l - Drahtlaenge aus Widerstandsgesetz', 317),
-    ('l - Wellenlaenge aus Wellengeschwindigkeit', 318),
-    ('l - magnetische Weglaenge im Ringkern', 319),
-    ('l_Draht - Drahtlaenge aus Windungszahl und Umfang', 320),
-    ('l_Draht - Drahtlaenge aus Widerstandsgesetz', 321),
-    ('m - Masse im Massenspektrometer', 322),
-    ('m - Masse aus Beschleunigung und Kreisbahn', 323),
-    ('mu0 - magnetische Feldkonstante', 324),
-    ('mu_r - relative Permeabilitaet aus B', 325),
-    ('mu_r - relative Permeabilitaet aus Induktivitaet', 326),
-    ('mu_r - relative Permeabilitaet', 327),
-    ('omega - Kreisfrequenz', 328),
-    ('omega - Kreisfrequenz aus Periodendauer', 329),
-    ('omega - Eigenkreisfrequenz LC', 330),
-    ('omega - omega aus XL', 331),
-    ('omega - omega aus XC', 332),
-    ('omega - Kreisfrequenz aus Maximalgeschwindigkeit', 333),
-    ('omega - Kreisfrequenz aus Maximalbeschleunigung', 334),
-    ('p - Impuls', 335),
-    ('p - Impulsaenderung', 336),
-    ('q_m - spezifische Ladung q/m', 337),
-    ('q_m - spezifische Ladung aus Kreisbahn', 338),
-    ('r - Radius der Kreisbahn im B-Feld', 339),
-    ('r - Radius aus Flaeche', 340),
-    ('r - mittlerer Radius Ringkern', 341),
-    ('rho - spezifischer Widerstand', 342),
-    ('rho - spezifischer Widerstand aus U,I', 343),
-    ('sin_phi - Blindleistungsfaktor aus Q und S', 344),
-    ('tau - Zeitkonstante RL-Kreis', 345),
-    ('tau - Zeitkonstante RC-Kreis', 346),
-    ('v - Teilchengeschwindigkeit aus Kreisbahn', 347),
-    ('v - Geschwindigkeit nach Beschleunigungsspannung', 348),
-    ('v - Geschwindigkeit aus Fallhoehe', 349),
-    ('v - Geschwindigkeit aus Bewegungsinduktion', 350),
-    ('v_max - Maximalgeschwindigkeit der Schwingung', 351),
-    ('v_filter - Geschwindigkeit im Wien-Filter', 352),
-    ('v_filter - Filtergeschwindigkeit mit Plattenfeld', 353),
-    ('l - Laenge eines Leiters im Magnetfeld', 312),
-    ('DeltaPhi - Aenderung des magnetischen Flusses', 139),
-    ('DeltaPhi - Flussaenderung aus Induktionsspannung', 140),
-    ('U_ind - Induktionsspannung nach Faraday', 255),
-    ('U_ind - Induktion durch Feldaenderung', 256),
-    ('U_ind - Induktion durch Flaechenaenderung', 257),
-    ('U_ind - Bewegungsinduktion am Leiter', 258),
-    ('U_ind - Generator mit sinusfoermigem Feld', 260),
-    ('U_ind - Dreieckgenerator / Dreiecksignal', 261),
-    ('B - magnetische Flussdichte aus Fluss', 122),
-    ('P - Leistung am Widerstand', 212),
-    ('rho - spezifischer Widerstand', 342),
-    ('E0 - Ruheenergie', 146),
-    ('A - Kreisflaeche aus Durchmesser', 116),
-    ('A - Rechteckflaeche', 117),
-    ('Phi - magnetischer Fluss aus B und Flaeche', 220),
-    ('U_ind - Bewegungsinduktion mit Winkel', 263),
-    ('v - Geschwindigkeit aus Bewegungsinduktion', 350),
-    ('B - B aus Bewegungsinduktion', 126),
-    ('DeltaB - B-Aenderung aus Induktion', 135),
-    ('DeltaA - Flaechenaenderung aus Induktion', 133),
-    ('U_max - Generator Sinus-Spannung', 266),
-    ('B_max - B-Amplitude aus Generator', 127),
-    ('f - Frequenz aus Sinus-Induktion', 302),
-    ('U_ind - Dreiecksignal Induktion', 264),
-    ('f - Frequenz aus Dreiecksignal', 303),
-    ('B_max - B-Amplitude aus Dreiecksignal', 128),
-    ('Q - Ladung aus Feldfluss', 225),
-    ('Phi_E - elektrischer Fluss aus Ladung', 222),
-    ('DeltaA - Flaechenaenderung', 134),
-    ('DeltaB - Magnetfeldaenderung', 136),
-    ('I - Strom aus magnetischer Flussdichte einer Spule', 176),
-    ('I - Strom aus magnetischer Feldstaerke', 177),
-    ('I - Strom aus magnetischem Fluss und Induktivitaet', 178),
-    ('N - Windungszahl aus Spulenfeld', 203),
-    ('N - Windungszahl aus Feldstaerke', 204),
-    ('mu_r - relative Permeabilitaet aus B', 325),
-    ('mu_r - relative Permeabilitaet aus Induktivitaet', 326),
-    ('A - Flaeche aus Induktivitaet', 114),
-    ('B - B aus Feldstaerke und Permeabilitaet', 121),
-    ('H - Feldstaerke aus B', 173),
-    ('l - Spulenlaenge aus magnetischer Feldstaerke', 314),
-    ('l - Spulenlaenge aus magnetischer Flussdichte', 315),
-    ('l - Spulenlaenge aus Induktivitaet', 316),
-    ('l - Drahtlaenge aus Widerstandsgesetz', 317),
-    ('Phi - magnetischer Fluss', 218),
-    ('Phi - magnetischer Fluss aus Induktivitaet', 219),
-    ('B - Magnetfeld einer langen Spule', 123),
-    ('H - magnetische Feldstaerke einer Spule', 174),
-    ('mu0 - magnetische Feldkonstante', 324),
-    ('mu_r - relative Permeabilitaet', 327),
-    ('L - Induktivitaet aus Spulengeometrie', 197),
-    ('L - Induktivitaet aus Selbstinduktion', 198),
-    ('U_ind - Selbstinduktionsspannung', 262),
-    ('DeltaI - Stromaenderung bei Selbstinduktion', 137),
-    ('E_mag - Energie im Magnetfeld der Spule', 155),
-    ('I - Strom aus magnetischer Energie', 183),
-    ('tau - Zeitkonstante RL-Kreis', 345),
-    ('v - Geschwindigkeit aus Fallhoehe', 349),
-    ('A - Kreisflaeche aus Radius', 115),
-    ('A - Drahtquerschnitt aus Widerstand', 118),
-    ('d - Durchmesser aus Flaeche', 289),
-    ('l - magnetische Weglaenge im Ringkern', 319),
-    ('r - mittlerer Radius Ringkern', 341),
-    ('l_Draht - Drahtlaenge aus Windungszahl und Umfang', 320),
-    ('N - Windungszahl aus Drahtdurchmesser', 205),
-    ('H - Feldstaerke Ringkern', 175),
-    ('I - Strom im Ringkern aus Feldstaerke', 185),
-    ('L - Induktivitaet aus Fluss', 200),
-    ('N - Windungszahl aus Flussverkettung', 206),
-    ('R - Drahtwiderstand', 235),
-    ('rho - spezifischer Widerstand aus U,I', 343),
-    ('E_mag - Energie im Magnetfeld ueber B,H,V', 156),
-    ('E_mag - Energie ueber Leistung-Zeit-Flaeche', 157),
-    ('DeltaI - Stromaenderung', 138),
-    ('d - Durchmesser aus Radius', 290),
-    ('l_Draht - Drahtlaenge aus Widerstandsgesetz', 321),
-    ('Phi_E - elektrischer Fluss', 221),
-    ('X_C - kapazitiver Blindwiderstand', 271),
-    ('C - Kapazitaet aus X_C', 129),
-    ('E - elektrische Feldstaerke aus Kraft', 144),
-    ('E - homogenes elektrisches Feld', 145),
-    ('U - Spannung im homogenen E-Feld', 245),
-    ('F_el - elektrische Kraft', 169),
-    ('F_el - Coulomb-Kraft', 170),
-    ('W_el - elektrische Arbeit/Energie', 269),
-    ('C - Kapazitaet Plattenkondensator', 132),
-    ('Q - Kondensatorladung', 223),
-    ('E_cap - Energie im Kondensator', 148),
-    ('eps0 - elektrische Feldkonstante', 292),
-    ('eps_r - relative Permittivitaet', 293),
-    ('I0 - Stromamplitude am Kondensator', 186),
-    ('U0 - Spannungsamplitude Kondensator', 246),
-    ('I0 - Stromamplitude aus XC', 188),
-    ('Q_blind - Blindleistung', 226),
-    ('E_cap - Kondensatorenergie aus Q und U', 149),
-    ('E_cap - Kondensatorenergie aus Ladung', 150),
-    ('eps_r - relative Permittivitaet aus Feldstaerken', 294),
-    ('tau - Zeitkonstante RC-Kreis', 346),
-    ('I - Strom aus elektrischer Leistung', 180),
-    ('I - Strom aus Wechselstromkreis', 182),
-    ('l - Wellenlaenge aus Wellengeschwindigkeit', 318),
-    ('R - Ohmscher Widerstand', 231),
-    ('U - Spannung am Widerstand', 244),
-    ('P - elektrische Leistung', 211),
-    ('f - Frequenz aus Periodendauer', 298),
-    ('T - Periodendauer', 239),
-    ('omega - Kreisfrequenz', 328),
-    ('U_eff - Effektivspannung', 252),
-    ('U_max - Scheitelspannung', 265),
-    ('I_eff - Effektivstrom', 194),
-    ('X_L - induktiver Blindwiderstand', 273),
-    ('L - Induktivitaet aus X_L', 199),
-    ('Z - Impedanz RLC-Reihenschaltung', 275),
-    ('DeltaPhi_phase - Phasenverschiebung im RLC-Kreis', 141),
-    ('f0 - Resonanzfrequenz / Eigenfrequenz', 304),
-    ('T - Thomsonsche Schwingungsdauer', 240),
-    ('X_C - kapazitiver Widerstand aus Amplituden', 272),
-    ('X_L - induktiver Widerstand aus Amplituden', 274),
-    ('I0 - Stromamplitude aus XL', 187),
-    ('omega - Kreisfrequenz aus Periodendauer', 329),
-    ('omega - Eigenkreisfrequenz LC', 330),
-    ('omega - omega aus XL', 331),
-    ('omega - omega aus XC', 332),
-    ('Z - Impedanz RL-Reihe', 276),
-    ('Z - Impedanz RC-Reihe', 277),
-    ('R - Wirkwiderstand aus Impedanz', 232),
-    ('DeltaPhi_phase - Phasenwinkel aus Zeigerdiagramm', 142),
-    ('DeltaPhi_phase - Phasenwinkel aus Leistungsfaktor', 143),
-    ('cos_phi - Leistungsfaktor', 286),
-    ('P - Wirkleistung Wechselstrom', 213),
-    ('S - Scheinleistung', 237),
-    ('I_eff - Effektivstrom aus Scheitelwert', 195),
-    ('U_eff - Effektivspannung aus Leistung', 253),
-    ('I_eff - Effektivstrom aus Wirkleistung', 196),
-    ('f0 - Resonanzfrequenz aus Periodendauer', 305),
-    ('P_V - Verlustleistung aus Spannung', 216),
-    ('R - Widerstand aus Leistung', 233),
-    ('R - Widerstand aus Leistung und Spannung', 234),
-    ('Q_blind - Blindleistung aus S und P', 227),
-    ('S - Scheinleistung aus P und Q', 238),
-    ('U0 - Scheitelspannung aus Effektivwert', 247),
-    ('cos_phi - Leistungsfaktor aus Leistung', 287),
-    ('X_C - kapazitiver Blindwiderstand', 271),
-    ('C - Kapazitaet aus X_C', 129),
-    ('f - Frequenz aus induktivem Blindwiderstand', 300),
-    ('f - Frequenz aus kapazitivem Blindwiderstand', 301),
-    ('U_eff - Effektivspannung aus Strom und Impedanz', 254),
-    ('R - Wirkwiderstand aus Leistungsfaktor', 236),
-    ('Q_blind - Blindleistung', 226),
-    ('P - Wirkleistung aus Scheinleistung', 214),
-    ('Q_blind - Blindleistung aus Scheinleistung', 228),
-    ('cos_phi - Leistungsfaktor aus P und S', 288),
-    ('sin_phi - Blindleistungsfaktor aus Q und S', 344),
-    ('Q_blind - Blindleistung der Spule', 229),
-    ('Q_blind - Blindleistungsbetrag des Kondensators', 230),
-    ('omega - Eigenkreisfrequenz LC', 354),
-    ('f0 - Resonanzfrequenz LC', 355),
-    ('T - Thomsonsche Schwingungsdauer', 356),
-    ('L - Induktivitaet aus Thomsonformel', 357),
-    ('C - Kapazitaet aus Thomsonformel', 358),
-    ('q - Ladung im LC-Kreis', 359),
-    ('I - Strom im LC-Kreis', 360),
-    ('I0 - Maximalstrom aus Ladungsamplitude', 361),
-    ('U - Kondensatorspannung', 362),
-    ('Q - Ladung aus Kondensatorspannung', 363),
-    ('E_cap - Energie im Kondensator', 364),
-    ('E_mag - Energie in der Spule', 365),
-    ('E - Gesamtenergie LC-Kreis', 366),
-    ('I0 - Maximalstrom aus Anfangsspannung', 367),
-    ('U0 - Spannungsmaximum aus Maximalstrom', 368),
-    ('R - Verlustleistung im RLC-Kreis', 369),
-    ('Q_guete - Guete Serien-RLC', 370),
-    ('Delta f - Bandbreite aus Guete', 371),
-    ('L - Induktivitaet aus Eigenkreisfrequenz', 202),
-    ('C - Kapazitaet aus Eigenkreisfrequenz', 131),
-    ('I1 - Primaerstrom am Transformator', 189),
-    ('I2 - Sekundaerstrom am Transformator', 191),
-    ('U2 - Sekundaerspannung Transformator', 250),
-    ('U1 - Primaerspannung Transformator', 248),
-    ('N2 - Sekundaerwindungszahl', 209),
-    ('I2 - Sekundaerstrom idealer Transformator', 192),
-    ('eta - Wirkungsgrad', 295),
-    ('P_V - Verlustleistung in Leitung', 215),
-    ('U2 - Sekundaerspannung aus Stromverhaeltnis', 251),
-    ('U1 - Primaerspannung aus Stromverhaeltnis', 249),
-    ('N1 - Primaerwindungen aus Spannung', 207),
-    ('eta - Trafo-Wirkungsgrad', 296),
-    ('eta - Wirkungsgrad aus Verlustleistung', 297),
-    ('P_V - Verlustleistung als Differenz', 217),
-    ('N1 - Primaerwindungen aus Stromverhaeltnis', 208),
-    ('N2 - Sekundaerwindungen aus Stromverhaeltnis', 210),
-    ('B - B aus Lorentzkraft auf Ladung', 124),
-    ('F_L - Lorentzkraft auf Ladung', 165),
-    ('v - Teilchengeschwindigkeit aus Kreisbahn', 347),
-    ('q_m - spezifische Ladung q/m', 337),
-    ('q_m - spezifische Ladung aus Kreisbahn', 338),
-    ('v_filter - Geschwindigkeit im Wien-Filter', 352),
-    ('E_kin - kinetische Energie aus Beschleunigungsspannung', 152),
-    ('Q - Ladung aus Strom und Zeit', 224),
-    ('W_el - elektrische Arbeit aus Leistung', 270),
-    ('d - Plattenabstand aus E-Feld', 291),
-    ('v_filter - Filtergeschwindigkeit mit Plattenfeld', 353),
-    ('I - Strom aus Kraft auf Leiter im Magnetfeld', 179),
-    ('l - Laenge aus Kraft auf stromdurchflossenen Leiter', 313),
-    ('U_ind - Rahmen tritt in Magnetfeld ein/aus', 259),
-    ('B - B aus Kraft auf stromdurchflossenen Leiter', 125),
-    ('F_L - Kraft auf stromdurchflossenen Leiter', 166),
-    ('r - Radius der Kreisbahn im B-Feld', 339),
-    ('v - Geschwindigkeit nach Beschleunigungsspannung', 348),
-    ('m - Masse im Massenspektrometer', 322),
-    ('m - Masse aus Beschleunigung und Kreisbahn', 323),
-    ('E_kin - kinetische Energie klassisch', 151),
-    ('gamma - Lorentzfaktor', 307),
-    ('E_kin - kinetische Energie relativistisch', 153),
-    ('r - Radius aus Flaeche', 340),
-    ('F - Kraft auf Leiter im Magnetfeld', 161),
-    ('F - Kraft zwischen parallelen Leitern', 162),
-    ('I1 - Strom paralleler Leiter', 190),
-    ('I2 - Strom paralleler Leiter', 193),
-    ('a - Abstand paralleler Leiter', 278),
-    ('beta - beta aus gamma', 285),
-    ('T - Periodendauer aus Frequenz', 372),
-    ('f - Frequenz aus Periodendauer', 373),
-    ('omega - Kreisfrequenz', 374),
-    ('x - Auslenkung harmonische Schwingung', 375),
-    ('v - Momentangeschwindigkeit', 376),
-    ('v - Maximalgeschwindigkeit', 377),
-    ('a - Beschleunigung harmonisch', 378),
-    ('a - Maximalbeschleunigung', 379),
-    ('F - Rueckstellkraft Feder', 380),
-    ('T - Periodendauer Federpendel', 381),
-    ('D - Federkonstante aus Periodendauer', 382),
-    ('m - Masse aus Federpendel', 383),
-    ('T - Periodendauer Fadenpendel', 384),
-    ('l - Pendellaenge aus Periodendauer', 385),
-    ('g - Fallbeschleunigung aus Pendel', 386),
-    ('E - Gesamtenergie Federpendel', 387),
-    ('E_sp - Spannenergie bei Auslenkung', 388),
-    ('E_kin - Bewegungsenergie in Schwingung', 389),
-    ('A_s - Amplitude aus Gesamtenergie', 390),
-    ('phi - Phase', 391),
-    ('f - Frequenz aus Kreisfrequenz', 299),
-    ('T - Periodendauer aus Kreisfrequenz', 241),
-    ('A_s - Amplitude aus Maximalgeschwindigkeit', 119),
-    ('A_s - Amplitude aus Maximalbeschleunigung', 120),
-    ('omega - Kreisfrequenz aus Maximalgeschwindigkeit', 333),
-    ('omega - Kreisfrequenz aus Maximalbeschleunigung', 334),
-    ('h - Fallhoehe aus Geschwindigkeit', 309),
-    ('E_kin - kinetische Energie Mechanik', 154),
-    ('E_pot - potentielle Energie', 158),
-    ('W - mechanische Arbeit', 267),
-    ('F - Newtonsche Kraft', 160),
-    ('F_G - Gewichtskraft', 163),
-    ('F_R - Reibungskraft', 167),
-    ('p - Impuls', 335),
-    ('a_r - Radialbeschleunigung', 282),
-    ('F_r - Radialkraft', 171),
-    ('E_pot - potentielle Energie aus Energieerhaltung', 159),
-    ('W - Arbeit aus Energiedifferenz', 268),
-    ('p - Impulsaenderung', 336),
-    ('a_r - Radialbeschleunigung aus T', 283),
-    ('F_r - Radialkraft aus Winkelgeschwindigkeit', 172),
-    ('F_G - Gravitationskraft allgemein', 164),
-    ('F_R - Reibungskraft aus Arbeit', 168),
-    ('a - Beschleunigung nach Newton', 279),
-    ('a - Beschleunigung aus Geschwindigkeit', 280),
-    ('h - Hoehe aus Lageenergie', 310),
-    ('h - Fallhoehe aus Zeit', 311),
-    ('beta - Geschwindigkeit relativ zu c', 284),
-    ('gamma - gamma aus Zeitdilatation', 308),
-    ('E0 - Ruheenergie in eV', 147),
-    ('I - Strom aus Leistung am Widerstand', 181),
-    ('I - Stromstaerke nach Ohm', 184),
-]
 
-CHAPTERS = [
-    (0, 568),
-    (568, 1077),
-    (1645, 992),
-    (2637, 759),
-    (3396, 651),
-    (4047, 751),
-    (4798, 609),
-    (5407, 893),
-    (6300, 785),
-    (7085, 741),
-    (7826, 771),
-    (8597, 686),
-    (9283, 626),
-    (9909, 669),
-    (10578, 372),
-    (10950, 577),
-    (11527, 597),
-    (12124, 520),
-    (12644, 663),
-    (13307, 455),
-    (13762, 477),
-    (14239, 640),
-    (14879, 603),
-    (15482, 677),
-    (16159, 608),
-    (16767, 649),
-    (17416, 671),
-    (18087, 766),
-    (18853, 495),
-    (19348, 503),
-    (19851, 705),
-    (20556, 561),
-    (21117, 593),
-    (21710, 647),
-    (22357, 561),
-    (22918, 557),
-    (23475, 675),
-    (24150, 623),
-    (24773, 748),
-    (25521, 908),
-    (26429, 426),
-    (26855, 423),
-    (27278, 319),
-    (27597, 391),
-    (27988, 341),
-    (28329, 311),
-    (28640, 301),
-    (28941, 410),
-    (29351, 269),
-    (29620, 342),
-    (29962, 383),
-    (30345, 334),
-    (30679, 340),
-    (31019, 324),
-    (31343, 308),
-    (31651, 312),
-    (31963, 334),
-    (32297, 297),
-    (32594, 324),
-    (32918, 310),
-    (33228, 320),
-    (33548, 363),
-    (33911, 307),
-    (34218, 252),
-    (34470, 307),
-    (34777, 277),
-    (35054, 273),
-    (35327, 274),
-    (35601, 335),
-    (35936, 341),
-    (36277, 266),
-    (36543, 316),
-    (36859, 224),
-    (37083, 202),
-    (37285, 215),
-    (37500, 234),
-    (37734, 236),
-    (37970, 207),
-    (38177, 227),
-    (38404, 218),
-    (38622, 317),
-    (38939, 328),
-    (39267, 297),
-    (39564, 358),
-    (39922, 332),
-    (40254, 255),
-    (40509, 232),
-    (40741, 232),
-    (40973, 261),
-    (41234, 237),
-    (41471, 273),
-    (41744, 282),
-    (42026, 282),
-    (42308, 269),
-    (42577, 324),
-    (42901, 347),
-    (43248, 268),
-    (43516, 293),
-    (43809, 354),
-    (44163, 293),
-    (44456, 307),
-    (44763, 285),
-    (45048, 313),
-    (45361, 285),
-    (45646, 299),
-    (45945, 285),
-    (46230, 321),
-    (46551, 311),
-    (46862, 314),
-    (47176, 345),
-    (47521, 325),
-    (47846, 246),
-    (48092, 255),
-    (48347, 225),
-    (48572, 334),
-    (48906, 239),
-    (49145, 255),
-    (49400, 251),
-    (49651, 272),
-    (49923, 278),
-    (50201, 283),
-    (50484, 276),
-    (50760, 295),
-    (51055, 324),
-    (51379, 290),
-    (51669, 302),
-    (51971, 267),
-    (52238, 283),
-    (52521, 267),
-    (52788, 255),
-    (53043, 262),
-    (53305, 292),
-    (53597, 274),
-    (53871, 294),
-    (54165, 229),
-    (54394, 266),
-    (54660, 234),
-    (54894, 331),
-    (55225, 213),
-    (55438, 306),
-    (55744, 361),
-    (56105, 345),
-    (56450, 304),
-    (56754, 278),
-    (57032, 269),
-    (57301, 250),
-    (57551, 184),
-    (57735, 222),
-    (57957, 274),
-    (58231, 264),
-    (58495, 245),
-    (58740, 314),
-    (59054, 291),
-    (59345, 335),
-    (59680, 218),
-    (59898, 292),
-    (60190, 276),
-    (60466, 297),
-    (60763, 236),
-    (60999, 272),
-    (61271, 191),
-    (61462, 286),
-    (61748, 318),
-    (62066, 195),
-    (62261, 272),
-    (62533, 264),
-    (62797, 262),
-    (63059, 198),
-    (63257, 243),
-    (63500, 255),
-    (63755, 255),
-    (64010, 266),
-    (64276, 245),
-    (64521, 228),
-    (64749, 283),
-    (65032, 246),
-    (65278, 392),
-    (65670, 284),
-    (65954, 326),
-    (66280, 347),
-    (66627, 263),
-    (66890, 264),
-    (67154, 302),
-    (67456, 281),
-    (67737, 211),
-    (67948, 266),
-    (68214, 273),
-    (68487, 241),
-    (68728, 242),
-    (68970, 266),
-    (69236, 279),
-    (69515, 296),
-    (69811, 271),
-    (70082, 282),
-    (70364, 261),
-    (70625, 252),
-    (70877, 261),
-    (71138, 275),
-    (71413, 317),
-    (71730, 246),
-    (71976, 233),
-    (72209, 265),
-    (72474, 292),
-    (72766, 305),
-    (73071, 254),
-    (73325, 292),
-    (73617, 240),
-    (73857, 241),
-    (74098, 242),
-    (74340, 270),
-    (74610, 284),
-    (74894, 248),
-    (75142, 303),
-    (75445, 256),
-    (75701, 282),
-    (75983, 313),
-    (76296, 249),
-    (76545, 246),
-    (76791, 342),
-    (77133, 302),
-    (77435, 271),
-    (77706, 357),
-    (78063, 257),
-    (78320, 224),
-    (78544, 225),
-    (78769, 250),
-    (79019, 274),
-    (79293, 268),
-    (79561, 324),
-    (79885, 284),
-    (80169, 324),
-    (80493, 255),
-    (80748, 269),
-    (81017, 238),
-    (81255, 234),
-    (81489, 204),
-    (81693, 264),
-    (81957, 242),
-    (82199, 262),
-    (82461, 210),
-    (82671, 262),
-    (82933, 247),
-    (83180, 257),
-    (83437, 262),
-    (83699, 213),
-    (83912, 243),
-    (84155, 255),
-    (84410, 257),
-    (84667, 245),
-    (84912, 239),
-    (85151, 273),
-    (85424, 243),
-    (85667, 256),
-    (85923, 244),
-    (86167, 287),
-    (86454, 296),
-    (86750, 341),
-    (87091, 339),
-    (87430, 300),
-    (87730, 336),
-    (88066, 373),
-    (88439, 365),
-    (88804, 288),
-    (89092, 316),
-    (89408, 337),
-    (89745, 261),
-    (90006, 301),
-    (90307, 232),
-    (90539, 221),
-    (90760, 318),
-    (91078, 236),
-    (91314, 282),
-    (91596, 271),
-    (91867, 265),
-    (92132, 251),
-    (92383, 287),
-    (92670, 237),
-    (92907, 230),
-    (93137, 273),
-    (93410, 233),
-    (93643, 233),
-    (93876, 311),
-    (94187, 276),
-    (94463, 232),
-    (94695, 261),
-    (94956, 217),
-    (95173, 241),
-    (95414, 290),
-    (95704, 254),
-    (95958, 244),
-    (96202, 195),
-    (96397, 236),
-    (96633, 229),
-    (96862, 247),
-    (97109, 277),
-    (97386, 256),
-    (97642, 246),
-    (97888, 256),
-    (98144, 214),
-    (98358, 249),
-    (98607, 253),
-    (98860, 271),
-    (99131, 298),
-    (99429, 266),
-    (99695, 317),
-    (100012, 247),
-    (100259, 267),
-    (100526, 250),
-    (100776, 230),
-    (101006, 202),
-    (101208, 240),
-    (101448, 203),
-    (101651, 397),
-    (102048, 404),
-    (102452, 329),
-    (102781, 386),
-    (103167, 359),
-    (103526, 367),
-    (103893, 310),
-    (104203, 243),
-    (104446, 309),
-    (104755, 268),
-    (105023, 312),
-    (105335, 307),
-    (105642, 298),
-    (105940, 329),
-    (106269, 331),
-    (106600, 322),
-    (106922, 248),
-    (107170, 228),
-    (107398, 250),
-    (107648, 217),
-    (107865, 227),
-    (108092, 282),
-    (108374, 302),
-    (108676, 190),
-    (108866, 209),
-    (109075, 288),
-    (109363, 280),
-    (109643, 326),
-    (109969, 236),
-    (110205, 260),
-    (110465, 326),
-    (110791, 265),
-    (111056, 288),
-    (111344, 296),
-    (111640, 254),
-    (111894, 302),
-    (112196, 361),
-    (112557, 276),
-    (112833, 265),
-    (113098, 314),
-    (113412, 330),
-    (113742, 272),
-    (114014, 260),
-    (114274, 283),
-    (114557, 253),
-    (114810, 260),
-    (115070, 257),
-    (115327, 292),
-    (115619, 300),
-    (115919, 268),
-    (116187, 243),
-    (116430, 241),
-    (116671, 281),
-    (116952, 248),
-    (117200, 273),
-    (117473, 277),
-    (117750, 270),
-    (118020, 274),
-    (118294, 273),
-    (118567, 281),
-    (118848, 260),
-    (119108, 261),
-    (119369, 259),
-    (119628, 342),
-    (119970, 300),
-    (120270, 276),
-    (120546, 274),
-    (120820, 266),
-    (121086, 256),
-    (121342, 265),
-    (121607, 268),
-    (121875, 251),
-    (122126, 292),
-    (122418, 267),
-    (122685, 272),
-    (122957, 288),
-    (123245, 275),
-    (123520, 285),
-    (123805, 260),
-    (124065, 272),
-]
+def skip_store(handle, remaining):
+    if remaining < 0:
+        raise ValueError("Ungueltige Datenposition")
+    blocks = 0
+    while remaining:
+        chunk = handle.read(min(SKIP_BLOCK, remaining))
+        if not chunk:
+            raise ValueError("Datendatei ist verkuerzt")
+        remaining -= len(chunk)
+        del chunk
+        blocks += 1
+        if blocks % 16 == 0:
+            gc.collect()
 
+
+def open_store(kind):
+    filename = "wissen.txt" if kind == 0 else "bilder.dat"
+    for path in sibling_paths(filename):
+        try:
+            handle = open(path, "rb")
+        except OSError:
+            continue
+        try:
+            if store_text(handle.read(len(STORE_HEADERS[kind]))) != STORE_HEADERS[kind]:
+                raise ValueError(filename + " passt nicht zu dieser App")
+        except Exception:
+            handle.close()
+            raise
+        return handle
+    raise OSError(filename + " fehlt neben der App")
+
+
+def record_value(text, position=0, depth=0):
+    if depth > 6 or position >= len(text):
+        raise ValueError("Ungueltiger Datensatz")
+    tag = text[position]
+    end = text.find(":", position + 1)
+    if end < 0 or end - position > 12:
+        raise ValueError("Ungueltiger Datensatzkopf")
+    number = int(text[position + 1:end])
+    position = end + 1
+    if tag == "i":
+        return number, position
+    if tag == "s":
+        if number < 0 or position + number > len(text):
+            raise ValueError("Text im Datensatz verkuerzt")
+        return text[position:position + number], position + number
+    if tag != "t" or number < 0 or number > 32:
+        raise ValueError("Unbekannter Datensatztyp")
+    values = []
+    for i in range(number):
+        value, position = record_value(text, position, depth + 1)
+        values.append(value)
+    return tuple(values), position
+
+
+def decode_record(block):
+    text = store_text(block)
+    value, end = record_value(text)
+    if text[end:].strip():
+        raise ValueError("Unerwartete Daten im Datensatz")
+    return value
+
+
+class DiskTable:
+    def __init__(self, kind, count, start, width):
+        self.kind = kind
+        self.count = count
+        self.start = start
+        self.width = width
+
+    def __len__(self):
+        return self.count
+
+    def open_rows(self, start):
+        handle = open_store(self.kind)
+        try:
+            skip_store(handle, self.start + start * self.width - len(STORE_HEADERS[self.kind]))
+        except Exception:
+            handle.close()
+            raise
+        return handle
+
+    def read_one(self, handle):
+        block = handle.read(self.width)
+        if len(block) != self.width:
+            raise ValueError("Datensatz fehlt oder ist verkuerzt")
+        return decode_record(block)
+
+    def __getitem__(self, index):
+        if index < 0:
+            index += self.count
+        if not 0 <= index < self.count:
+            raise IndexError("Datensatz ausserhalb des Verzeichnisses")
+        handle = self.open_rows(index)
+        try:
+            return self.read_one(handle)
+        finally:
+            handle.close()
+
+    def __iter__(self):
+        handle = self.open_rows(0)
+        try:
+            for i in range(self.count):
+                yield self.read_one(handle)
+        finally:
+            handle.close()
+
+    def read_rows(self, start, count):
+        if start < 0 or count < 0 or start + count > self.count:
+            raise IndexError("Menue ausserhalb des Verzeichnisses")
+        rows = []
+        handle = self.open_rows(start)
+        try:
+            for i in range(count):
+                rows.append(self.read_one(handle))
+        finally:
+            handle.close()
+        return rows
+
+
+class DiskMap:
+    def __init__(self, kind, count, start, width):
+        self.table = DiskTable(kind, count, start, width)
+        self.last_key = None
+        self.last_value = None
+
+    def __len__(self):
+        return len(self.table)
+
+    def get(self, key, default=None):
+        if self.last_key is not None and key == self.last_key:
+            return self.last_value
+        handle = self.table.open_rows(0)
+        try:
+            for i in range(len(self.table)):
+                name, value = self.table.read_one(handle)
+                if name == key:
+                    self.last_key, self.last_value = key, value
+                    return value
+        finally:
+            handle.close()
+        return default
+
+    def __getitem__(self, key):
+        value = self.get(key)
+        if value is None:
+            raise KeyError(key)
+        return value
+
+    def __contains__(self, key):
+        return self.get(key) is not None
+
+    def items(self):
+        return iter(self.table)
+
+    def __iter__(self):
+        for key, value in self.table:
+            yield key
+
+    def values(self):
+        for key, value in self.table:
+            yield value
+
+
+def load_chapter(chapter_id):
+    start, length = CHAPTERS[chapter_id]
+    handle = open_store(0)
+    try:
+        skip_store(handle, start - len(STORE_HEADERS[0]))
+        data = handle.read(length)
+    finally:
+        handle.close()
+    if len(data) != length:
+        raise ValueError("Kapitel unvollstaendig")
+    return store_text(data)
+
+STORE_HEADERS = ('PCKNOW2 0483387abfbf9e15b57a728d\n', 'PCMEDIA2 7b728949c66e57f9a12819be\n')
+MODES = DiskTable(0, 3, 33, 40)
+CALC_CATS = DiskTable(0, 17, 153, 48)
+CHAPTERS = DiskTable(0, 514, 969, 48)
+SECTIONS = DiskTable(0, 171, 25641, 48)
+CALCS = DiskTable(0, 167, 33849, 152)
+CALC_NOTES = DiskMap(0, 81, 59233, 208)
+ARTICLE_MEDIA = DiskMap(0, 32, 76081, 48)
+ENTRIES = DiskTable(0, 840, 77617, 72)
+MEDIA_HEADER = b'PCMEDIA2 7b728949c66e57f9a12819be\n'
+MEDIA_INDEX = DiskMap(1, 39, 34, 224)
 import gc
 import time
 
@@ -1168,113 +211,16 @@ DIM = C_RGB(10, 14, 10)
 ACCENT = C_RGB(4, 18, 12)
 SELECTED = C_RGB(20, 26, 20)
 
-KNOWLEDGE_FILE = "wissen.txt"
-KNOWLEDGE_PATH = None
 SKIP_BLOCK = 512
-DEBUG = False
 PI = 3.141592653589793
 
-CALC_CATS = (
-    ("Grundgroessen", 0, 5),
-    ("Mechanik Basis", 5, 8),
-    ("Mechanische Schwingungen", 13, 15),
-    ("Elektrische Schwingungen", 28, 11),
-    ("Wechselstrom / RLC", 39, 24),
-    ("Elektrisches Feld / Strom", 63, 9),
-    ("Wellen", 72, 5),
-    ("Magnetfeld / Induktion", 77, 5),
-)
 
-CALCS = (
-    ("T aus f", "T = 1/f", "T", "s", (("f", "Hz"),), "T_FROM_F"),
-    ("f aus T", "f = 1/T", "f", "Hz", (("T", "s"),), "F_FROM_T"),
-    ("omega aus f", "omega = 2*pi*f", "omega", "rad/s", (("f", "Hz"),), "OMEGA_FROM_F"),
-    ("f aus omega", "f = omega/(2*pi)", "f", "Hz", (("omega", "rad/s"),), "F_FROM_OMEGA"),
-    ("T aus omega", "T = 2*pi/omega", "T", "s", (("omega", "rad/s"),), "T_FROM_OMEGA"),
-    ("v aus s,t", "v = s/t", "v", "m/s", (("s", "m"), ("t", "s")), "V_FROM_S_T"),
-    ("s aus v,t", "s = v*t", "s", "m", (("v", "m/s"), ("t", "s")), "S_FROM_V_T"),
-    ("a aus dv,dt", "a = dv/dt", "a", "m/s^2", (("dv", "m/s"), ("dt", "s")), "A_FROM_DV_DT"),
-    ("F aus m,a", "F = m*a", "F", "N", (("m", "kg"), ("a", "m/s^2")), "F_FROM_M_A"),
-    ("Impuls", "p = m*v", "p", "kg*m/s", (("m", "kg"), ("v", "m/s")), "P_FROM_M_V"),
-    ("E_kin", "E_kin = 0.5*m*v^2", "E_kin", "J", (("m", "kg"), ("v", "m/s")), "E_KIN"),
-    ("E_pot", "E_pot = m*g*h", "E_pot", "J", (("m", "kg"), ("g", "m/s^2"), ("h", "m")), "E_POT"),
-    ("Leistung", "P = W/t", "P", "W", (("W", "J"), ("t", "s")), "P_MECH"),
-    ("T Federpendel", "T = 2*pi*sqrt(m/D)", "T", "s", (("m", "kg"), ("D", "N/m")), "T_SPRING"),
-    ("D Federpendel", "D = 4*pi^2*m/T^2", "D", "N/m", (("m", "kg"), ("T", "s")), "D_SPRING"),
-    ("m Federpendel", "m = D*T^2/(4*pi^2)", "m", "kg", (("D", "N/m"), ("T", "s")), "M_SPRING"),
-    ("omega Feder", "omega = sqrt(D/m)", "omega", "rad/s", (("D", "N/m"), ("m", "kg")), "OMEGA_SPRING"),
-    ("f Feder", "f = 1/(2*pi)*sqrt(D/m)", "f", "Hz", (("D", "N/m"), ("m", "kg")), "F_SPRING_OSC"),
-    ("T Fadenpendel", "T = 2*pi*sqrt(l/g)", "T", "s", (("l", "m"), ("g", "m/s^2")), "T_PENDULUM"),
-    ("l Fadenpendel", "l = g*T^2/(4*pi^2)", "l", "m", (("g", "m/s^2"), ("T", "s")), "L_PENDULUM"),
-    ("v_max", "v_max = omega*A_s", "v_max", "m/s", (("omega", "rad/s"), ("A_s", "m")), "V_MAX"),
-    ("a_max", "a_max = omega^2*A_s", "a_max", "m/s^2", (("omega", "rad/s"), ("A_s", "m")), "A_MAX"),
-    ("E Federpendel", "E_ges = 0.5*D*A_s^2", "E_ges", "J", (("D", "N/m"), ("A_s", "m")), "E_SPRING"),
-    ("A_s aus v_max", "A_s = v_max/omega", "A_s", "m", (("v_max", "m/s"), ("omega", "rad/s")), "A_FROM_VMAX_OMEGA"),
-    ("A_s aus a_max", "A_s = a_max/omega^2", "A_s", "m", (("a_max", "m/s^2"), ("omega", "rad/s")), "A_FROM_AMAX_OMEGA"),
-    ("omega aus v_max", "omega = v_max/A_s", "omega", "rad/s", (("v_max", "m/s"), ("A_s", "m")), "OMEGA_FROM_VMAX_A"),
-    ("omega aus a_max", "omega = sqrt(a_max/A_s)", "omega", "rad/s", (("a_max", "m/s^2"), ("A_s", "m")), "OMEGA_FROM_AMAX_A"),
-    ("g Fadenpendel", "g = 4*pi^2*l/T^2", "g", "m/s^2", (("l", "m"), ("T", "s")), "G_PENDULUM"),
-    ("omega0 LC", "omega0 = 1/sqrt(L*C)", "omega0", "rad/s", (("L", "H"), ("C", "F")), "OMEGA_LC"),
-    ("f0 LC", "f0 = 1/(2*pi*sqrt(L*C))", "f0", "Hz", (("L", "H"), ("C", "F")), "F_LC"),
-    ("T LC", "T = 2*pi*sqrt(L*C)", "T", "s", (("L", "H"), ("C", "F")), "T_LC"),
-    ("L aus T,C", "L = T^2/(4*pi^2*C)", "L", "H", (("T", "s"), ("C", "F")), "L_FROM_TC"),
-    ("C aus T,L", "C = T^2/(4*pi^2*L)", "C", "F", (("T", "s"), ("L", "H")), "C_FROM_TL"),
-    ("I0 aus U0", "I0 = U0*sqrt(C/L)", "I0", "A", (("U0", "V"), ("C", "F"), ("L", "H")), "I0_FROM_U0"),
-    ("U0 aus I0", "U0 = I0*sqrt(L/C)", "U0", "V", (("I0", "A"), ("L", "H"), ("C", "F")), "U0_FROM_I0"),
-    ("E Kondensator", "E = 0.5*C*U0^2", "E", "J", (("C", "F"), ("U0", "V")), "E_CAP_OSC"),
-    ("E Spule", "E = 0.5*L*I0^2", "E", "J", (("L", "H"), ("I0", "A")), "E_COIL_OSC"),
-    ("L aus omega0,C", "L = 1/(omega0^2*C)", "L", "H", (("omega0", "rad/s"), ("C", "F")), "L_FROM_OMEGA_C"),
-    ("C aus omega0,L", "C = 1/(omega0^2*L)", "C", "F", (("omega0", "rad/s"), ("L", "H")), "C_FROM_OMEGA_L"),
-    ("X_L", "X_L = 2*pi*f*L", "X_L", "Ohm", (("f", "Hz"), ("L", "H")), "XL"),
-    ("X_C", "X_C = 1/(2*pi*f*C)", "X_C", "Ohm", (("f", "Hz"), ("C", "F")), "XC"),
-    ("Z RLC Reihe", "Z = sqrt(R^2+(X_L-X_C)^2)", "Z", "Ohm", (("R", "Ohm"), ("X_L", "Ohm"), ("X_C", "Ohm")), "Z_RLC"),
-    ("I_eff aus Z", "I_eff = U_eff/Z", "I_eff", "A", (("U_eff", "V"), ("Z", "Ohm")), "I_EFF"),
-    ("P WSK", "P = U_eff*I_eff*cos_phi", "P", "W", (("U_eff", "V"), ("I_eff", "A"), ("cos_phi", "1")), "P_AC"),
-    ("cos_phi", "cos_phi = R/Z", "cos_phi", "1", (("R", "Ohm"), ("Z", "Ohm")), "COS_PHI"),
-    ("U_R", "U_R = I_eff*R", "U_R", "V", (("I_eff", "A"), ("R", "Ohm")), "U_R_AC"),
-    ("U_L", "U_L = I_eff*X_L", "U_L", "V", (("I_eff", "A"), ("X_L", "Ohm")), "U_L_AC"),
-    ("U_C", "U_C = I_eff*X_C", "U_C", "V", (("I_eff", "A"), ("X_C", "Ohm")), "U_C_AC"),
-    ("L aus X_L,f", "L = X_L/(2*pi*f)", "L", "H", (("X_L", "Ohm"), ("f", "Hz")), "L_FROM_XL_F"),
-    ("f aus X_L,L", "f = X_L/(2*pi*L)", "f", "Hz", (("X_L", "Ohm"), ("L", "H")), "F_FROM_XL_L"),
-    ("C aus X_C,f", "C = 1/(2*pi*f*X_C)", "C", "F", (("X_C", "Ohm"), ("f", "Hz")), "C_FROM_XC_F"),
-    ("f aus X_C,C", "f = 1/(2*pi*C*X_C)", "f", "Hz", (("X_C", "Ohm"), ("C", "F")), "F_FROM_XC_C"),
-    ("U_eff aus I,Z", "U_eff = I_eff*Z", "U_eff", "V", (("I_eff", "A"), ("Z", "Ohm")), "U_EFF_FROM_IZ"),
-    ("R aus Z,cos_phi", "R = Z*cos_phi", "R", "Ohm", (("Z", "Ohm"), ("cos_phi", "1")), "R_FROM_Z_COS"),
-    ("Scheinleistung", "S = U_eff*I_eff", "S", "VA", (("U_eff", "V"), ("I_eff", "A")), "S_AC"),
-    ("Blindleistung", "Q = U_eff*I_eff*sin_phi", "Q", "var", (("U_eff", "V"), ("I_eff", "A"), ("sin_phi", "1")), "Q_AC"),
-    ("P aus S,cos_phi", "P = S*cos_phi", "P", "W", (("S", "VA"), ("cos_phi", "1")), "P_FROM_S_COS"),
-    ("Q aus S,sin_phi", "Q = S*sin_phi", "Q", "var", (("S", "VA"), ("sin_phi", "1")), "Q_FROM_S_SIN"),
-    ("S aus P,Q", "S = sqrt(P^2+Q^2)", "S", "VA", (("P", "W"), ("Q", "var")), "S_FROM_P_Q"),
-    ("cos_phi aus P,S", "cos_phi = P/S", "cos_phi", "1", (("P", "W"), ("S", "VA")), "COS_FROM_P_S"),
-    ("sin_phi aus Q,S", "sin_phi = Q/S", "sin_phi", "1", (("Q", "var"), ("S", "VA")), "SIN_FROM_Q_S"),
-    ("Blindleistung Spule", "Q_L = I_eff^2*X_L", "Q_L", "var", (("I_eff", "A"), ("X_L", "Ohm")), "Q_L"),
-    ("Blindleistung Kondensator", "Q_C = I_eff^2*X_C", "Q_C", "var", (("I_eff", "A"), ("X_C", "Ohm")), "Q_C"),
-    ("U aus R,I", "U = R*I", "U", "V", (("R", "Ohm"), ("I", "A")), "U_OHM"),
-    ("I aus U,R", "I = U/R", "I", "A", (("U", "V"), ("R", "Ohm")), "I_OHM"),
-    ("R aus U,I", "R = U/I", "R", "Ohm", (("U", "V"), ("I", "A")), "R_OHM"),
-    ("P aus U,I", "P = U*I", "P", "W", (("U", "V"), ("I", "A")), "P_UI"),
-    ("Q aus C,U", "Q = C*U", "Q", "C", (("C", "F"), ("U", "V")), "Q_CU"),
-    ("C aus Q,U", "C = Q/U", "C", "F", (("Q", "C"), ("U", "V")), "C_QU"),
-    ("E Feld", "E = U/d", "E", "V/m", (("U", "V"), ("d", "m")), "E_FIELD"),
-    ("F im E-Feld", "F = q*E", "F", "N", (("q", "C"), ("E", "N/C")), "F_QE"),
-    ("Arbeit qU", "W = q*U", "W", "J", (("q", "C"), ("U", "V")), "W_QU"),
-    ("c Welle", "c = lambda*f", "c", "m/s", (("lambda", "m"), ("f", "Hz")), "C_WAVE"),
-    ("f Welle", "f = c/lambda", "f", "Hz", (("c", "m/s"), ("lambda", "m")), "F_WAVE"),
-    ("lambda Welle", "lambda = c/f", "lambda", "m", (("c", "m/s"), ("f", "Hz")), "LAMBDA_WAVE"),
-    ("T Welle", "T = lambda/c", "T", "s", (("lambda", "m"), ("c", "m/s")), "T_WAVE"),
-    ("Wellenzahl", "k = 2*pi/lambda", "k", "1/m", (("lambda", "m"),), "K_WAVE"),
-    ("Lorentzkraft", "F = q*v*B", "F", "N", (("q", "C"), ("v", "m/s"), ("B", "T")), "F_LORENTZ"),
-    ("Leiterkraft", "F = B*I*l", "F", "N", (("B", "T"), ("I", "A"), ("l", "m")), "F_WIRE"),
-    ("Induktion blv", "U_ind = B*l*v", "U_ind", "V", (("B", "T"), ("l", "m"), ("v", "m/s")), "U_IND_BLV"),
-    ("Induktion N dPhi", "U_ind = N*dPhi/dt", "U_ind", "V", (("N", "1"), ("dPhi", "Wb"), ("dt", "s")), "U_IND_NPHI"),
-    ("B aus Leiterkraft", "B = F/(I*l)", "B", "T", (("F", "N"), ("I", "A"), ("l", "m")), "B_WIRE"),
-)
 
 NUM_KEYS = (
     ("7", "8", "9", "DEL"),
     ("4", "5", "6", "-"),
     ("1", "2", "3", "E"),
-    ("0", ".", "OK", ""),
+    ("0", ".", "OK", "Einheit"),
 )
 
 KEYPAD_X = 7
@@ -1291,67 +237,10 @@ def memory_free():
         return -1
 
 
-def knowledge_paths():
-    """Ermittelt den Ordner der gestarteten physchem_final.py."""
-    paths = []
-    source_path = globals().get("__file__", "")
-    slash = max(source_path.rfind("/"), source_path.rfind("\\"))
-    if slash >= 0:
-        paths.append(source_path[:slash + 1] + KNOWLEDGE_FILE)
-    paths.append("Python/" + KNOWLEDGE_FILE)
-    paths.append("/Python/" + KNOWLEDGE_FILE)
-    paths.append(KNOWLEDGE_FILE)
-    return paths
 
 
-def open_knowledge():
-    global KNOWLEDGE_PATH
-    if KNOWLEDGE_PATH is not None:
-        return open(KNOWLEDGE_PATH, "rb")
-    for path in knowledge_paths():
-        try:
-            handle = open(path, "rb")
-            KNOWLEDGE_PATH = path
-            if DEBUG:
-                print("[DEBUG] Wissen gefunden. Das verdammte Pfadchaos hat verloren:", path)
-            return handle
-        except OSError:
-            pass
-    raise OSError("wissen.txt fehlt neben physchem_final.py")
 
 
-def load_chapter(chapter_id):
-    start, length = CHAPTERS[chapter_id]
-    if DEBUG:
-        print("[DEBUG] Kapitel laden. Bitte jetzt keinen Mist bauen:", chapter_id)
-    handle = open_knowledge()
-    try:
-        remaining = start
-        blocks_since_gc = 0
-        # Kein seek(): PythonExtra stellt sich bei grossen Offsets gern bloed an.
-        while remaining > 0:
-            block_size = min(SKIP_BLOCK, remaining)
-            skipped = handle.read(block_size)
-            if len(skipped) != block_size:
-                raise OSError("Byteposition ausserhalb von wissen.txt")
-            remaining -= block_size
-            del skipped
-            blocks_since_gc += 1
-            if blocks_since_gc == 16:
-                # Der winzige Heap ist eine Diva, also regelmaessig aufraeumen.
-                gc.collect()
-                blocks_since_gc = 0
-        data = handle.read(length)
-    finally:
-        handle.close()
-    if len(data) != length:
-        raise OSError("Kapitel unvollstaendig")
-    if isinstance(data, str):
-        return data
-    text = data.decode("ascii")
-    # Bytes sofort loswerden. Der kleine Speicher hat schon genug Stress.
-    del data
-    return text
 
 
 def wrap_text(text, width):
@@ -1362,6 +251,12 @@ def wrap_text(text, width):
             continue
         line = ""
         for word in raw.split(" "):
+            while len(word) > width:
+                if line:
+                    lines.append(line)
+                    line = ""
+                lines.append(word[:width])
+                word = word[width:]
             if line == "":
                 line = word
             elif len(line) + len(word) + 1 <= width:
@@ -1404,6 +299,8 @@ def draw_header(title, back):
 
 
 def list_rows(source, start, count):
+    if hasattr(source, "read_rows"):
+        return source.read_rows(start, count)
     rows = []
     index = start
     end = start + count
@@ -1434,6 +331,8 @@ def draw_list(title, rows, selected, back):
 
 
 def select_list(title, rows, back):
+    if hasattr(rows, "read_rows"):
+        rows = rows.read_rows(0, len(rows))
     selected = 0
     running = True
     while running:
@@ -1466,15 +365,17 @@ def select_list(title, rows, back):
 
 
 def show_article(title, chapter_id):
-    before = memory_free()
-    text = load_chapter(chapter_id)
-    after_load = memory_free()
-    lines = wrap_text(text, 39)
-    after_wrap = memory_free()
+    try:
+        text = load_chapter(chapter_id)
+    except (OSError, ValueError, MemoryError) as error:
+        show_text('Wissen nicht verfuegbar', str(error))
+        return
+    lines = wrap_text(text, 38)
     scroll = 0
-    max_scroll = max(0, len(lines) * 18 - (SCREEN_H - HEADER_H - 12))
+    media = ARTICLE_MEDIA.get(chapter_id, ())
+    bottom = SCREEN_H - 48 if media else SCREEN_H
+    max_scroll = max(0, len(lines) * 18 - (bottom - HEADER_H - 12))
     running = True
-
     while running:
         dclear(BG)
         y = HEADER_H + 8 - scroll
@@ -1483,9 +384,11 @@ def show_article(title, chapter_id):
                 dtext_opt(8, y, FG, C_NONE, DTEXT_LEFT, DTEXT_TOP, line, -1)
             y += 18
         draw_header(title, True)
+        if media:
+            drect(0, bottom, SCREEN_W, SCREEN_H, SELECTED)
+            dtext_opt(160, bottom + 24, FG, C_NONE, DTEXT_CENTER, DTEXT_MIDDLE, 'Abbildungen (EXE)', -1)
         dupdate()
         cleareventflips()
-
         events = poll_events()
         if keypressed(KEY_DEL):
             running = False
@@ -1495,59 +398,28 @@ def show_article(title, chapter_id):
                     scroll = max(0, scroll - 18)
                 elif event.key == KEY_DOWN:
                     scroll = min(max_scroll, scroll + 18)
+                elif event.key == KEY_EXE and media:
+                    show_media(media)
                 elif event.key in (KEY_DEL, KEY_EXIT):
                     running = False
             elif event.type == KEYEV_TOUCH_UP:
                 if event.y < HEADER_H and event.x < 70:
                     running = False
+                elif media and event.y >= bottom:
+                    show_media(media)
+                elif event.y >= HEADER_H:
+                    scroll = max(0, scroll - 72) if event.y < (HEADER_H + bottom) // 2 else min(max_scroll, scroll + 72)
         time.sleep(0.01)
-
-    # Nach dem Lesen fliegt der Kram raus, sonst wird der RAM zur Muellhalde.
     del lines
     del text
     gc.collect()
-    if DEBUG:
-        print("[DEBUG] Artikel geschlossen. Der Heap darf wieder durchatmen.")
-    return before, after_load, after_wrap, memory_free()
+    return
 
 
-def show_memory(result):
-    labels = ("vorher", "geladen", "umgebrochen", "freigegeben")
-    running = True
-    while running:
-        dclear(BG)
-        draw_header("RAM-Messung", True)
-        y = HEADER_H + 35
-        index = 0
-        while index < len(labels):
-            dtext_opt(
-                14,
-                y,
-                FG,
-                C_NONE,
-                DTEXT_LEFT,
-                DTEXT_TOP,
-                labels[index] + ": " + str(result[index]),
-                -1,
-            )
-            y += 38
-            index += 1
-        dtext_opt(14, y + 20, DIM, C_NONE, DTEXT_LEFT, DTEXT_TOP, "DEL: zurueck", -1)
-        dupdate()
-        cleareventflips()
-        events = poll_events()
-        if keypressed(KEY_DEL):
-            running = False
-        for event in events:
-            if event.type == KEYEV_DOWN and event.key in (KEY_DEL, KEY_EXIT, KEY_EXE):
-                running = False
-            elif event.type == KEYEV_TOUCH_UP and event.y < HEADER_H and event.x < 70:
-                running = False
-        time.sleep(0.01)
 
 
 def show_text(title, text):
-    lines = wrap_text(text, 39)
+    lines = wrap_text(text, 38)
     scroll = 0
     max_scroll = max(0, len(lines) * 18 - (SCREEN_H - HEADER_H - 12))
     running = True
@@ -1575,12 +447,15 @@ def show_text(title, text):
             elif event.type == KEYEV_TOUCH_UP:
                 if event.y < HEADER_H and event.x < 70:
                     running = False
+                elif event.y >= HEADER_H:
+                    scroll = max(0,scroll-72) if event.y < (SCREEN_H+HEADER_H)//2 else min(max_scroll,scroll+72)
         time.sleep(0.01)
     del lines
 
 
 def format_number(value):
-    if value > -0.0000000001 and value < 0.0000000001:
+    finite(value)
+    if value == 0:
         return "0"
     return "%.6g" % value
 
@@ -1765,6 +640,8 @@ def calc_value(calc_id, values):
         return values[0] * values[1] / need_nonzero(values[2], "dt")
     elif calc_id == "B_WIRE":
         return values[0] / need_nonzero(values[1] * values[2], "I*l")
+    if calc_id.startswith("Q_"):
+        return finite(quantum_value(calc_id, values))
     raise ValueError("Unbekannte Formel")
 
 
@@ -1823,7 +700,7 @@ def append_number_char(text, key):
         part = text
         pos = text.find("E")
         if pos >= 0:
-            part = text[pos + 1:]
+            return text
         if part.find(".") < 0:
             return text + key
         return text
@@ -1838,13 +715,18 @@ def append_number_char(text, key):
     return text
 
 
-def input_number(name, unit, formula):
+def input_number(name, unit, formula, default_unit=None):
     text = ""
-    message = "SI-Einheit eingeben"
+    options = unit_options(unit)
+    unit_index = 0
+    for i in range(len(options)):
+        if options[i][0] == default_unit:
+            unit_index = i
+    message = "Einheit wechselt die Eingabeeinheit"
     selected_key = 0
     running = True
     while running:
-        draw_number_input(name, unit, formula, text, message, selected_key)
+        draw_number_input(name, options[unit_index][0], formula, text, message, selected_key)
         dupdate()
         cleareventflips()
         events = poll_events()
@@ -1873,9 +755,12 @@ def input_number(name, unit, formula):
                     selected_key = touched
             if key == "DEL":
                 text = text[:-1]
+            elif key == "Einheit":
+                unit_index = (unit_index + 1) % len(options)
+                message = "Zahl gilt jetzt in " + options[unit_index][0]
             elif key == "OK":
                 try:
-                    return float(text)
+                    return scaled_input(text, options, unit_index)
                 except ValueError:
                     message = "Ungueltige Zahl"
                 except OverflowError:
@@ -1888,21 +773,25 @@ def input_number(name, unit, formula):
 
 def run_calc(calc):
     title, formula, result_name, result_unit, params, calc_id = calc
+    if calc_id.startswith("FIT_"):
+        run_fit(calc)
+        return
     values = []
     index = 0
     while index < len(params):
-        name, unit = params[index]
-        value = input_number(name, unit, formula)
+        param = params[index]
+        name, unit = param[0], param[1]
+        value = input_number(name, unit, formula, param[2] if len(param) > 2 else None)
         if value is None:
             return
         values.append(value)
         index += 1
     try:
         result = calc_value(calc_id, values)
-        body = formula + "\n\n" + result_name + " = " + format_number(result) + " " + result_unit
-    except ValueError as error:
-        body = formula + "\n\nFehler:\n" + str(error)
-    except OverflowError as error:
+        body = formula + "\n\n" + result_text(result_name, result, result_unit)
+        if calc_id in CALC_NOTES:
+            body += "\n\nGeltung:\n" + CALC_NOTES[calc_id]
+    except (ValueError, OverflowError, ZeroDivisionError) as error:
         body = formula + "\n\nFehler:\n" + str(error)
     del values
     gc.collect()
@@ -1929,10 +818,10 @@ def run():
     while index < len(MODES):
         main_rows.append(MODES[index])
         index += 1
-    main_rows.append(("Physik-Rechner", 0, 0))
-    main_rows.append(("Beenden", 0, 0))
+    main_rows.append(('Physik-Rechner', 0, 0))
+    main_rows.append(('Beenden', 0, 0))
     while True:
-        mode_index = select_list("Physik LK On-Demand", main_rows, False)
+        mode_index = select_list('Physik LK', main_rows, False)
         if mode_index is None:
             return
         if mode_index == len(MODES):
@@ -1949,10 +838,453 @@ def run():
             entry_index = select_list(section_title, entries, True)
             while entry_index is not None:
                 title, chapter_id = entries[entry_index]
-                result = show_article(title, chapter_id)
-                show_memory(result)
+                show_article(title, chapter_id)
                 entry_index = select_list(section_title, entries, True)
+            del entries
+            gc.collect()
             section_index = select_list(mode_title, sections, True)
+        del sections
+        gc.collect()
+
+
+"""Embedded by the builder; not a separate file on the calculator."""
+import math
+
+H_PLANCK = 6.62607015e-34
+E_CHARGE = 1.602176634e-19
+LIGHT_C = 299792458.0
+M_E = 9.1093837139e-31
+BOHR_A = 5.29177210544e-11
+UNITS = {
+    "m": (("m", 1), ("nm", 1e-9), ("pm", 1e-12), ("um", 1e-6), ("mm", 1e-3)),
+    "J": (("J", 1), ("eV", E_CHARGE), ("keV", E_CHARGE * 1000)),
+    "V": (("V", 1), ("kV", 1000)),
+    "s": (("s", 1), ("ns", 1e-9), ("ps", 1e-12), ("fs", 1e-15)),
+    "Hz": (("Hz", 1), ("THz", 1e12)),
+}
+
+
+def finite(value):
+    if value != value or value == float("inf") or value == -float("inf"):
+        raise ValueError("Zahl nicht endlich / zu gross")
+    return value
+
+
+def positive(value):
+    finite(value)
+    if value <= 0:
+        raise ValueError("Wert muss groesser als 0 sein")
+    return value
+
+
+def natural(value):
+    positive(value)
+    if value != int(value):
+        raise ValueError("Quantenzahl muss ganzzahlig sein")
+    return value
+
+
+def nonnegative(value):
+    finite(value)
+    if value < 0:
+        raise ValueError("Wert darf nicht negativ sein")
+    return value
+
+
+def classical_v(value):
+    if value >= LIGHT_C * 0.1:
+        raise ValueError("v >= 0.1 c: relativistisch rechnen")
+    return value
+
+
+def box_energy(a, n, mass=M_E):
+    # Factored to avoid squaring h before division on small-float runtimes.
+    p = H_PLANCK * natural(n) / (2 * positive(a))
+    return (p / positive(mass)) * p / 2
+
+
+def quantum_value(ident, values):
+    k = ident[2:]
+    v = values
+    if k not in ("LEVEL_D", "LEVEL_L", "LEVEL_F"):
+        for value in v:
+            nonnegative(value)
+    if k == "EF": return H_PLANCK * positive(v[0])
+    if k == "EL": return H_PLANCK * LIGHT_C / positive(v[0])
+    if k == "FE": return positive(v[0]) / H_PLANCK
+    if k == "LE": return H_PLANCK * LIGHT_C / positive(v[0])
+    if k in ("PL", "LP", "DB", "PD"): return H_PLANCK / positive(v[0])
+    if k == "PE": return positive(v[0]) / LIGHT_C
+    if k == "EP": return positive(v[0]) * LIGHT_C
+    if k == "NE": return v[0] / positive(v[1])
+    if k == "EN": return v[0] * positive(v[1])
+    if k == "NPT": return v[0] * v[1] / positive(v[2])
+    if k == "PN": return v[0] * positive(v[1]) / positive(v[2])
+    if k == "TN": return v[0] * positive(v[1]) / positive(v[2])
+    if k in ("KF", "KL"):
+        energy = H_PLANCK * positive(v[0]) if k == "KF" else H_PLANCK * LIGHT_C / positive(v[0])
+        result = energy - v[1]
+        if result < 0: raise ValueError("Kein Photoeffekt: unter Schwelle")
+        return result
+    if k in ("UK", "EXU"): return v[0] / E_CHARGE
+    if k in ("KU", "EU", "EX"): return E_CHARGE * v[0]
+    if k in ("WF", "WL"):
+        result = H_PLANCK * v[0] - E_CHARGE * v[1] if k == "WF" else H_PLANCK * LIGHT_C / positive(v[0]) - v[1]
+        if result < 0: raise ValueError("Negative Austrittsarbeit: Daten pruefen")
+        return result
+    if k == "FG": return v[0] / H_PLANCK
+    if k == "WFG": return H_PLANCK * v[0]
+    if k in ("LG", "WLG"): return H_PLANCK * LIGHT_C / positive(v[0])
+    if k == "VK": return classical_v(math.sqrt(2 * v[0] / M_E))
+    if k == "FKW": return (v[0] + v[1]) / H_PLANCK
+    if k == "LKW": return H_PLANCK * LIGHT_C / positive(v[0] + v[1])
+    if k == "LMV": return H_PLANCK / positive(v[0]) / positive(classical_v(v[1]))
+    if k == "VD": return classical_v(H_PLANCK / positive(v[0]) / positive(v[1]))
+    if k == "MD": return H_PLANCK / positive(classical_v(v[0])) / positive(v[1])
+    if k == "LK":
+        classical_v(math.sqrt(2 * positive(v[1]) / positive(v[0])))
+        return H_PLANCK / math.sqrt(2 * v[0]) / math.sqrt(v[1])
+    if k == "KD":
+        p = H_PLANCK / positive(v[1])
+        classical_v(p / positive(v[0]))
+        return (p / v[0]) * p / 2
+    if k in ("LUC", "LUR"):
+        energy = E_CHARGE * positive(v[0])
+        if k == "LUC": classical_v(math.sqrt(2 * energy / M_E))
+        result = H_PLANCK / math.sqrt(2 * M_E) / math.sqrt(energy)
+        if k == "LUR": result /= math.sqrt(1 + energy / (2 * M_E * LIGHT_C * LIGHT_C))
+        return result
+    if k == "UD":
+        speed = classical_v(H_PLANCK / M_E / positive(v[0]))
+        return (M_E / E_CHARGE) * speed * speed / 2
+    if k in ("BL", "BD", "BT", "RL", "RR"):
+        n = natural(v[-1])
+        if k in ("BL", "BD"):
+            if not 0 < v[1] <= 90: raise ValueError("Glanzwinkel: 0 < theta <= 90")
+            sine = math.sin(v[1] * PI / 180)
+            if k == "BL": return 2 * positive(v[0]) * sine / n
+            return n * positive(v[0]) / (2 * sine)
+        if k in ("BT", "RR"):
+            ratio = n * positive(v[0]) / (2 * positive(v[1]))
+            if ratio > 1: raise ValueError("Bragg-Bedingung nicht erfuellbar")
+            angle = math.asin(ratio)
+            if k == "BT": return angle * 180 / PI
+            if angle >= PI / 4: raise ValueError("Ring trifft vorderen Schirm nicht")
+            return positive(v[2]) * math.tan(2 * angle)
+        return 2 * positive(v[0]) * math.sin(math.atan(positive(v[1]) / positive(v[2])) / 2) / n
+    if k in ("DS", "DL", "DD", "DDIST"):
+        for value in v: positive(value)
+        return v[0] * v[1] / v[2]
+    if k in ("SP", "SX"): return H_PLANCK / (4 * PI) / positive(v[0])
+    if k in ("SV", "SXV"): return H_PLANCK / (4 * PI) / positive(v[0]) / positive(v[1])
+    if k == "SVE": return H_PLANCK / (4 * PI * M_E) / positive(v[0])
+    if k in ("SF", "ST"): return 1 / (4 * PI * positive(v[0]))
+    if k in ("GF", "GT"): return (2 * math.log(2) / PI) / positive(v[0])
+    if k in ("SCHOOL", "SCHOOLT"): return 1 / positive(v[0])
+    if k in ("GAMMA", "TAU"): return H_PLANCK / (2 * PI) / positive(v[0])
+    if k == "BOX_L": return 2 * positive(v[0]) / natural(v[1])
+    if k == "BOX_P": return H_PLANCK * natural(v[1]) / (2 * positive(v[0]))
+    if k == "BOX_E": return box_energy(v[0], v[1])
+    if k == "BOX_EM": return box_energy(v[0], v[1], v[2])
+    if k == "BOX_A": return H_PLANCK * natural(v[1]) / math.sqrt(8 * M_E) / math.sqrt(positive(v[0]))
+    if k in ("BOX_D", "BOX_PH"):
+        delta = abs(box_energy(v[0], v[1]) - box_energy(v[0], v[2]))
+        positive(delta)
+        return delta if k == "BOX_D" else H_PLANCK * LIGHT_C / delta
+    if k in ("BOHR", "ION", "RAD", "H_D", "H_PH"):
+        z = natural(v[0])
+        n = natural(v[1])
+        if k == "RAD": return BOHR_A * n * n / z
+        energy = 13.6 * E_CHARGE * (z / n) ** 2
+        if k == "BOHR": return -energy
+        if k == "ION": return energy
+        nf = natural(v[2])
+        delta = abs(energy - 13.6 * E_CHARGE * (z / nf) ** 2)
+        positive(delta)
+        return delta if k == "H_D" else H_PLANCK * LIGHT_C / delta
+    if k in ("LEVEL_D", "LEVEL_L", "LEVEL_F"):
+        for value in v: finite(value)
+        delta = positive(abs(v[0] - v[1]))
+        if k == "LEVEL_D": return delta
+        if k == "LEVEL_L": return H_PLANCK * LIGHT_C / delta
+        return delta / H_PLANCK
+    if k in ("EXL", "XR", "XU"): return (H_PLANCK * LIGHT_C / E_CHARGE) / positive(v[0])
+    if k in ("COMP", "COMPL"):
+        theta = v[-1]
+        if theta > 180: raise ValueError("Streuwinkel: 0 bis 180 Grad")
+        delta = H_PLANCK / M_E / LIGHT_C * (1 - math.cos(theta * PI / 180))
+        return delta if k == "COMP" else positive(v[0]) + delta
+    raise ValueError("Unbekannte Quantenformel")
+
+
+def unit_options(unit):
+    return UNITS.get(unit, ((unit, 1),))
+
+
+def scaled_input(text, options, selected):
+    value = finite(float(text))
+    if value == 0:
+        for char in text.upper().split("E")[0]:
+            if "1" <= char <= "9":
+                raise ValueError("Wert zu klein fuer diese Laufzeit")
+    result = finite(value * options[selected][1])
+    if value != 0 and result == 0:
+        raise ValueError("Wert zu klein fuer diese Laufzeit")
+    return result
+
+
+def result_text(name, value, unit):
+    finite(value)
+    result = name + " = " + format_number(value) + " " + unit
+    if unit == "J": result += "\n= " + format_number(value / E_CHARGE) + " eV"
+    elif unit == "m" and value != 0 and abs(value) < 1e-6:
+        scale, label = (1e-12, "pm") if abs(value) < 1e-9 else (1e-9, "nm")
+        result += "\n= " + format_number(value / scale) + " " + label
+    elif unit == "V" and abs(value) >= 1000:
+        result += "\n= " + format_number(value / 1000) + " kV"
+    return result
+
+
+def fit_planck(points, wavelength=False):
+    if not 2 <= len(points) <= 10: raise ValueError("2 bis 10 Messpunkte erforderlich")
+    xs, ys = [], []
+    for x, y in points:
+        positive(x)
+        nonnegative(y)
+        xs.append((LIGHT_C / x if wavelength else x) / 1e14)
+        ys.append(y / E_CHARGE if wavelength else y)
+    xm, ym = sum(xs) / len(xs), sum(ys) / len(ys)
+    spread = sum((x - xm) ** 2 for x in xs)
+    if spread <= 0: raise ValueError("Frequenzen muessen verschieden sein")
+    slope = sum((xs[i] - xm) * (ys[i] - ym) for i in range(len(xs))) / spread
+    positive(slope)
+    intercept = ym - slope * xm
+    if intercept > 0: raise ValueError("Fit ergibt negative Austrittsarbeit")
+    h_fit = finite(slope * E_CHARGE / 1e14)
+    work = finite(-intercept * E_CHARGE)
+    residual = sum((ys[i] - slope * xs[i] - intercept) ** 2 for i in range(len(xs)))
+    return h_fit, work, finite(work / positive(h_fit)), math.sqrt(residual / len(xs))
+
+
+def run_fit(calc):
+    ident = calc[-1]
+    wavelength = ident.startswith("FIT_L")
+    count = 2
+    if ident.endswith("N"):
+        entered = input_number("Messpunkte (3-10)", "1", calc[1])
+        if entered is None: return
+        if entered != int(entered) or not 3 <= entered <= 10:
+            show_text("Messreihe", "Bitte 3 bis 10 ganze Messpunkte.")
+            return
+        count = int(entered)
+    points = []
+    for i in range(count):
+        label = "Punkt " + str(i + 1) + "/" + str(count)
+        x = input_number("lambda" if wavelength else "f", "m" if wavelength else "Hz", label, "nm" if wavelength else "THz")
+        if x is None: return
+        y = input_number("E_kin" if wavelength else "U_G", "J" if wavelength else "V", label, "eV" if wavelength else "V")
+        if y is None: return
+        points.append((x, y))
+    try:
+        h_fit, work, threshold, rms = fit_planck(points, wavelength)
+        body = result_text("h_fit", h_fit, "Js") + "\n\n" + result_text("W_A", work, "J")
+        body += "\n\n" + result_text("f_G", threshold, "Hz")
+        body += "\n\nRMS=" + format_number(rms) + (" eV" if wavelength else " V")
+        body += "\nUngewichteter Fit; keine Fehlerabschaetzung. Konstanten bleiben unveraendert."
+    except (ValueError, OverflowError, ZeroDivisionError) as error:
+        body = "Fehler: " + str(error)
+    show_text("Planck-Messreihe", body)
+
+"""Embedded static-media viewer; no seek, image cache or PNG/JPEG decoder."""
+MEDIA_STAGE = "Start"
+MEDIA_RAM = -1
+
+
+def media_stage(label):
+    global MEDIA_STAGE, MEDIA_RAM
+    MEDIA_STAGE = label
+    MEDIA_RAM = memory_free()
+
+
+def media_error(error, ident):
+    after = memory_free()
+    body = "Bild: " + ident + "\nFehler: " + type(error).__name__
+    body += "\nSchritt: " + MEDIA_STAGE
+    body += "\nRAM vor Schritt: " + str(MEDIA_RAM) + " B"
+    body += "\nRAM nach Fehler: " + str(after) + " B"
+    body += "\nDetails: " + (str(error) or "keine Zusatzmeldung")
+    if MEDIA_RAM < 0 or after < 0: body += "\nRAM -1: nicht verfuegbar."
+    return body + "\nTheorie und Rechner bleiben nutzbar."
+
+
+def sibling_paths(filename):
+    source = globals().get("__file__", "")
+    slash = max(source.rfind("/"), source.rfind("\\"))
+    paths = [source[:slash + 1] + filename] if slash >= 0 else []
+    return paths + ["Python/" + filename, "/Python/" + filename, filename]
+
+
+def fill_media(readinto, target):
+    # Bypass text decoding, including ports that ignore the rb mode.
+    view = memoryview(target)
+    position = 0
+    while position < len(view):
+        part = view[position:min(position + SKIP_BLOCK, len(view))]
+        count = readinto(part)
+        if not isinstance(count, int) or count < 0 or count > len(part):
+            raise ValueError("Ungueltige Byteanzahl beim Lesen")
+        if count == 0: raise ValueError("bilder.dat ist verkuerzt")
+        position += count
+
+
+def read_media(ident):
+    media_stage("Bildverzeichnis")
+    row = MEDIA_INDEX[ident]
+    start, length = row[2], row[3]
+    handle = None
+    media_stage("Datei oeffnen")
+    for path in sibling_paths("bilder.dat"):
+        try:
+            handle = open(path, "rb")
+            break
+        except OSError:
+            pass
+    if handle is None: raise OSError("bilder.dat fehlt neben der App")
+    try:
+        media_stage("Paketkennung pruefen")
+        readinto = getattr(handle, "readinto", None)
+        if readinto is None: raise ValueError("PythonExtra ohne bytegenaues readinto")
+        header = bytearray(len(MEDIA_HEADER))
+        fill_media(readinto, header)
+        if header != MEDIA_HEADER:
+            raise ValueError("bilder.dat passt nicht zu dieser App")
+        del header
+        media_stage("Bildposition suchen")
+        remaining = start - len(MEDIA_HEADER)
+        if remaining < 0: raise ValueError("Ungueltige Bildposition")
+        skip = memoryview(bytearray(SKIP_BLOCK))
+        blocks = 0
+        while remaining:
+            size = min(SKIP_BLOCK, remaining)
+            fill_media(readinto, skip[:size])
+            remaining -= size
+            blocks += 1
+            if blocks % 16 == 0: gc.collect()
+        del skip
+        gc.collect()
+        media_stage("Bildpuffer anlegen")
+        buffer = bytearray(length)
+        media_stage("Bilddaten lesen")
+        fill_media(readinto, buffer)
+        media_stage("Pruefsumme pruefen")
+        if sum(buffer) % 65536 != row[6]: raise ValueError("Abbildung beschaedigt")
+        return buffer
+    finally:
+        handle.close()
+
+
+def rgb_word(word):
+    return C_RGB((word >> 11) & 31, ((word >> 5) & 63) // 2, word & 31)
+
+
+def draw_media(ident, data):
+    row = MEDIA_INDEX[ident]
+    kind, width, height = (row[1], row[4], row[5])
+    if kind == 'V':
+        media_stage('Vektorskizze zeichnen')
+        for line in str(data, 'ascii').split('\n'):
+            if not line:
+                continue
+            parts = line.split(' ', 4 if line.startswith('T ') else 5)
+            if parts[0] == 'T':
+                x, y, color = (int(parts[1]), int(parts[2]), int(parts[3]))
+                dtext_opt(x + 8, y + 68, rgb_word(color), C_NONE, DTEXT_LEFT, DTEXT_TOP, parts[4], -1)
+            elif parts[0] == 'L':
+                dline(int(parts[1]) + 8, int(parts[2]) + 68, int(parts[3]) + 8, int(parts[4]) + 68, rgb_word(int(parts[5])))
+            else:
+                raise ValueError('Unbekannter Zeichenbefehl')
+        return
+    media_stage('Rasterdaten pruefen')
+    if kind not in ('P4', 'P8'):
+        raise ValueError('Unbekanntes Bildformat')
+    count = 16 if kind == 'P4' else 256
+    stride = (width + 1) // 2 if count == 16 else width
+    expected = 2 * count + stride * height
+    if len(data) != expected:
+        raise ValueError('Ungueltige Pixeldaten')
+    media_stage('Palette vorbereiten')
+    view = memoryview(data)
+    palette = view[:2 * count]
+    pixels = view[2 * count:]
+    constructor = globals().get('image_p4_rgb565' if count == 16 else 'image_p8_rgb565')
+    if constructor is None:
+        raise ValueError('PythonExtra ohne P4/P8-Bild-API')
+    media_stage('Bildobjekt erzeugen')
+    image_obj = constructor(width, height, pixels, palette)
+    media_stage('Rasterbild zeichnen')
+    draw_part = globals().get('dsubimage')
+    if draw_part is None:
+        raise ValueError('PythonExtra ohne Teilbild-API')
+    for top in range(0, height, 128):
+        draw_part(8, 68 + top, image_obj, 0, top, width, min(128, height - top))
+    del image_obj, pixels, palette, view
+
+
+def render_media_page(ident, position, total):
+    media_stage('Bildansicht vorbereiten')
+    dclear(C_WHITE)
+    row = MEDIA_INDEX[ident]
+    draw_header(row[0], True)
+    dtext_opt(160, 47, FG, C_NONE, DTEXT_CENTER, DTEXT_TOP, str(position + 1) + ' / ' + str(total), -1)
+    data = read_media(ident)
+    draw_media(ident, data)
+    del data
+    gc.collect()
+    media_stage('Bildbeschriftung')
+    for i, line in enumerate(wrap_text(row[7], 38)[:4]):
+        dtext_opt(8, 400 + i * 18, FG, C_NONE, DTEXT_LEFT, DTEXT_TOP, line, -1)
+    drect(0, 482, 319, 527, SELECTED)
+    for x, label in ((55, '<'), (162, '>'), (267, 'Zurueck')):
+        dtext_opt(x, 505, FG, C_NONE, DTEXT_CENTER, DTEXT_MIDDLE, label, -1)
+    media_stage('Bildschirm aktualisieren')
+    dupdate()
+    return
+
+
+def show_media(ids):
+    if not ids: return
+    index = 0
+    dirty = True
+    while True:
+        if dirty:
+            try:
+                media_stage("Bildansicht")
+                render_media_page(ids[index],index,len(ids))
+            except (OSError, ValueError, TypeError, AttributeError, MemoryError, KeyError, IndexError, OverflowError) as error:
+                gc.collect()
+                show_text("Abbildung nicht verfuegbar",media_error(error,ids[index]))
+                return
+            dirty = False
+        cleareventflips()
+        for event in poll_events():
+            direction = 0
+            if event.type == KEYEV_DOWN:
+                if event.key in (KEY_DEL,KEY_EXIT,KEY_EXE): return
+                if event.key == KEY_LEFT: direction = -1
+                elif event.key == KEY_RIGHT: direction = 1
+            elif event.type == KEYEV_TOUCH_UP:
+                if event.y < HEADER_H and event.x < 70: return
+                if event.y >= 482:
+                    if event.x >= 215: return
+                    direction = -1 if event.x < 110 else 1
+            if direction:
+                index = (index + direction) % len(ids)
+                gc.collect()
+                dirty = True
+        time.sleep(0.01)
+
+
+
 
 
 run()
