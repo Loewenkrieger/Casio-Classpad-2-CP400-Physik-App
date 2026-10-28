@@ -1,5 +1,11 @@
 # Physik LK On-Demand für den Casio ClassPad II
 
+> [!IMPORTANT]
+> Diese Projektlinie ist für **Hollyhock 2** vorgesehen. Zuverlässiger Betrieb
+> unter Hollyhock 3 wird nicht zugesichert; insbesondere sind dort stark
+> verlängerte Bildladezeiten bekannt. Die HH3-Weiterentwicklung erfolgt
+> separat in einem privaten Projekt. Diese Projektlinie bleibt bei HH2.
+
 Eine kompakte Physik-Lernapp für den Casio ClassPad II. Sie enthält
 Theorieartikel, Formelsammlungen, einen Physik-Rechner und passende
 Abbildungen für den Physik-Leistungskurs.
