@@ -86,7 +86,7 @@ Installiere Hollyhock 2 nicht auf einem inkompatiblen oder ungeklärten Gerät.
 2. Lade einen vorbereiteten
    [Hollyhock-2-Release](https://github.com/SnailMath/hollyhock-2/releases) herunter.
 
-!!!falls du Windows 11 nutzt wird die Hollyhock-2 Installation nicht richtig nutzen. Um es trotzdem zu installieren könnt ihr die gepachte Version nutzen die ihr hier bekommt: https://github.com/michaelK-F/hollyhock-2
+!!!falls du Windows 11 nutzt wird die Hollyhock-2 Installation nicht richtig funktionieren. Um es trotzdem zu installieren könnt ihr die gepachte Version nutzen die ihr hier bekommt: https://github.com/michaelK-F/hollyhock-2
 
 4. Entpacke den enthaltenen Ordner `Snail2021` auf den Windows-Desktop.
 5. Starte `Snail2021.exe` und folge der Originalanleitung. Verbinde den
