@@ -85,10 +85,13 @@ Installiere Hollyhock 2 nicht auf einem inkompatiblen oder ungeklärten Gerät.
 1. Prüfe dein Gerät anhand der Kompatibilitätsprüfung der Projektseite.
 2. Lade einen vorbereiteten
    [Hollyhock-2-Release](https://github.com/SnailMath/hollyhock-2/releases) herunter.
-3. Entpacke den enthaltenen Ordner `Snail2021` auf den Windows-Desktop.
-4. Starte `Snail2021.exe` und folge der Originalanleitung. Verbinde den
+
+!!!falls du Windows 11 nutzt wird die Hollyhock-2 Installation nicht richtig nutzen. Um es trotzdem zu installieren könnt ihr die gepachte Version nutzen die ihr hier bekommt: https://github.com/michaelK-F/hollyhock-2
+
+4. Entpacke den enthaltenen Ordner `Snail2021` auf den Windows-Desktop.
+5. Starte `Snail2021.exe` und folge der Originalanleitung. Verbinde den
    ClassPad erst, wenn du dazu aufgefordert wirst.
-5. Unterbrich das Firmware-Update nicht. Kopiere anschließend die in der
+6. Unterbrich das Firmware-Update nicht. Kopiere anschließend die in der
    Anleitung genannten Launcher-Dateien, einschließlich `run.bin`, in das
    Hauptverzeichnis des ClassPad-Speichers und wirf das Gerät sicher aus.
 
